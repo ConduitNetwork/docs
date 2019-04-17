@@ -161,7 +161,7 @@ display: none;
 }
 
 .wy-nav-top {
-    background: #404040 !important
+    background: #111 !important
 }
 
 h2 {
@@ -193,7 +193,7 @@ h2 {
   display: none!important;
 }
 
-.wy-nav-side, a:link, a:visited {
+.wy-nav-side, .wy-nav-content a:link, .wy-nav-content a:visited {
   color: #ff7315!important;
 }
 

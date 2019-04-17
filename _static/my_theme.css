@@ -7,7 +7,7 @@ max-width: 1200px !important;
 }
 
 .wy-side-nav-search {
-  background-color: #404040 !important;
+  background-color: #222 !important;
 }
 .wy-alert.wy-alert-success .wy-alert-title, .rst-content .wy-alert-success.note .wy-alert-title,
 .rst-content .wy-alert-success.attention .wy-alert-title, .rst-content .wy-alert-success.caution .wy-alert-title,
@@ -43,7 +43,7 @@ max-width: 1200px !important;
 
 @media screen and (min-width: 1400px) {
     .wy-nav-content-wrap {
-        background: #272525;
+        background: #222;
     }
 
 .fa-book {
@@ -53,7 +53,7 @@ max-width: 1200px !important;
 .fa-book:before, .icon-book:before {
     font-family: inherit;
     font-weight: bold;
-    content: "Morpheus Version:";
+    content: "conduit Version:";
     visibility: visible;
 }
 
@@ -128,7 +128,7 @@ display: none;
 .cs {
     color: #999;
     font-weight: bold;
-    font-style: italic  
+    font-style: italic
 }
 
 .gd {

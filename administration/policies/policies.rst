@@ -4,7 +4,7 @@ Policies
 Overview
 --------
 
-Policies add governance, ease of use, cost-savings, and auditing features to |morpheus|.  |morpheus| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.  Policy generation is a role permission.
+Policies add governance, ease of use, cost-savings, and auditing features to |conduit|.  |conduit| enables end users to create user, group, cloud, and global policies to give users full control and governance over their environments!  Policies can apply towards any instance provisioned by a specific user, globally or into a group or cloud with active policies.  Policy generation is a role permission.
 
 Creating Policies
 -----------------
@@ -26,7 +26,7 @@ Backup Creation
 Budget
   Sets a maximum total combined price for all instances in the Group, Cloud, Tenant or owned by the User this policy is applied to.
 Expiration
-  Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+  Sets an expiration timeframe in days after which the Instance will be deleted. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Conduit Approvals or an Approval Integration.
 Host Name
   Pre-populates a fixed or editable name for Hosts and Virtual Machines using ${variable} naming patterns and/or text.
 Hostname
@@ -48,9 +48,9 @@ Max VMs
 Power Scheduling
   Adds a Power Schedule for the Instances in a Group or Cloud. Power Schedules can be created in ``Operations -> Scheduling``
 Provision Approval
-  Sets an Approval requirement for Provisioning into a Group or Cloud using Morpheus Approvals or an Approval Integration such a Service Now.
+  Sets an Approval requirement for Provisioning into a Group or Cloud using Conduit Approvals or an Approval Integration such a Service Now.
 Shutdown
-  Sets a shutdown timeframe in days upon provision after which the Instance will be stopped. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Morpheus Approvals or an Approval Integration.
+  Sets a shutdown timeframe in days upon provision after which the Instance will be stopped. Extensions can be auto-approved or require approval immediately or after x amount of auto-extensions using Conduit Approvals or an Approval Integration.
 User Creation
   Controls the "CREATE YOUR USER" flag in the User Config options during provisioning do be always disabled, always enabled, enabled by default, or disabled by default.
 
@@ -168,10 +168,10 @@ NAME PATTERN
 
   Cloud codes and Group codes are fields found in their respective configuration panes.
 
-  .. NOTE:: Static text can also be used in conjunction with ${variable}'s, such as ``morpheus${cloudCode}${type}${sequence+3000}``
+  .. NOTE:: Static text can also be used in conjunction with ${variable}'s, such as ``conduit${cloudCode}${type}${sequence+3000}``
 
 AUTO RESOLVE CONFLICTS
-  |morpheus| will automatically resolve naming conflicts by appending a sequential -number to the name when enabled.
+  |conduit| will automatically resolve naming conflicts by appending a sequential -number to the name when enabled.
 
 Shutdown Policies
 ^^^^^^^^^^^^^^^^^
@@ -201,9 +201,9 @@ Auto Approve Extensions
 Provision Approval
 ^^^^^^^^^^^^^^^^^^
 
-|morpheus| Provision Approvals enable an approval workflow via internal |morpheus| approval or via ServiceNow workflow. If a ServiceNow integration is present, the ServiceNow option is enabled. The Approval workflow to be selected is dynamically created by querying the ServiceNow Workflow table in the integrated ServiceNow instance.
+|conduit| Provision Approvals enable an approval workflow via internal |conduit| approval or via ServiceNow workflow. If a ServiceNow integration is present, the ServiceNow option is enabled. The Approval workflow to be selected is dynamically created by querying the ServiceNow Workflow table in the integrated ServiceNow instance.
 
-This ServiceNow approval integration enables users to use the |morpheus| Self-Service provisioning portal to provision new instances and still respect the required ServiceNow business approval workflow.
+This ServiceNow approval integration enables users to use the |conduit| Self-Service provisioning portal to provision new instances and still respect the required ServiceNow business approval workflow.
 
 Power Schedules
 ^^^^^^^^^^^^^^^

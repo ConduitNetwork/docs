@@ -4,21 +4,21 @@ Blueprints
 Overview
 --------
 
-With the release of Morpheus version 3, a new app blueprint builder was developed from scratch and extended to support a vast array of configurations even with programmatic markup or (Infrastructure as Code) capabilities.
+With the release of Conduit version 3, a new app blueprint builder was developed from scratch and extended to support a vast array of configurations even with programmatic markup or (Infrastructure as Code) capabilities.
 
-App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``Provisioning -> Apps`` section and can be fully configured for one click provisioning. Blueprints can be built within the Builder section or by code in the Raw section. Blueprints can also be exported as YAML or JSON and created with the |morpheus| API and CLI.
+App Blueprints allow pre-configured full multi-tier application deployments for multiple environments. Blueprints can be provisioned from the ``Provisioning -> Apps`` section and can be fully configured for one click provisioning. Blueprints can be built within the Builder section or by code in the Raw section. Blueprints can also be exported as YAML or JSON and created with the |conduit| API and CLI.
 
-Some unique capabilities of the YAML/JSON based Morpheus blueprint structure is it's ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud or group the app is being provisioned in as a target. The environment can also be used as a scope. Maybe the "development" environment doesn't need as many horizontally scaled nodes (for example) as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while Cloud Formation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
+Some unique capabilities of the YAML/JSON based Conduit blueprint structure is it's ability to have multiple configurations per instance being provisioned within the app blueprint. This can be a scoped configuration that acts as overrides based on selected cloud or group the app is being provisioned in as a target. The environment can also be used as a scope. Maybe the "development" environment doesn't need as many horizontally scaled nodes (for example) as the "production" environment. Another great aspect of this configuration markup is a blueprint can be defined as a hybrid cloud blueprint. This makes the app blueprint structure very powerful and in some ways better than alternative infrastructure as code orchestrators. For Example, ARM is locked into Azure, while Cloud Formation is locked into AWS. Even Terraform does not allow a tf file to expand its bounds beyond a specific provider type.
 
 Basic Blueprint Structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a Morpheus App Blueprint there are a few structural concepts to be aware of. Firstly there is a concept of a `Tier`. A `Tier` is a grouping of instances within an app blueprint. Tiers can be used for a variety of things including sequenced booting of instances or even properly creating endpoint groups and security group contexts in network security tools like Cisco ACI. An example of a Tier structure might be a `Web` tier and a `Database` tier. These tiers can also be marked as connected such that network communication rules can appropriately be defined. A basic 2 Tier blueprint skeleton might look something like this:
+In a Conduit App Blueprint there are a few structural concepts to be aware of. Firstly there is a concept of a `Tier`. A `Tier` is a grouping of instances within an app blueprint. Tiers can be used for a variety of things including sequenced booting of instances or even properly creating endpoint groups and security group contexts in network security tools like Cisco ACI. An example of a Tier structure might be a `Web` tier and a `Database` tier. These tiers can also be marked as connected such that network communication rules can appropriately be defined. A basic 2 Tier blueprint skeleton might look something like this:
 
 .. code-block:: bash
 
   name: Tier Example
-  type: morpheus
+  type: conduit
   tiers:
     Web:
       linkedTiers:
@@ -37,14 +37,14 @@ This example has defined 2 tiers as yaml properties under the `tiers` object. Th
 Configuration Scopes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another capability of Morpheus App Blueprint structure is its configuration scoping. This allows properties to be overridden based on the apps target environment or even target group and cloud. For example. Maybe we want to use a larger plan size in production vs. development
+Another capability of Conduit App Blueprint structure is its configuration scoping. This allows properties to be overridden based on the apps target environment or even target group and cloud. For example. Maybe we want to use a larger plan size in production vs. development
 
 An example of that can be done using "environments" overrides.
 
 .. code-block:: bash
 
   name: Simple Nginx
-  type: morpheus
+  type: conduit
   tiers:
     Web:
       instances:
@@ -72,7 +72,7 @@ An example of that can be done using "environments" overrides.
                          code: container-256
 
 
-Note the new environments object. The object graph of the morpheus blueprint structure gets merged and flattened at provision time based on the scope of the configurations provided as well as the users target cloud, group, and environment selection. In the Above example, a selective override was done for the `AWS Cali` cloud when using a Production Environment and deploying to the group `All Clouds Demo`. This specific example changes the plan to a larger size. Scoped configurations have various levels of precidence. Cloud is the lowest level of precedence. a cloud configuration in a group is the next level higher and finally an environment configuration in a group in a cloud is the highest level of scoped precedence.
+Note the new environments object. The object graph of the conduit blueprint structure gets merged and flattened at provision time based on the scope of the configurations provided as well as the users target cloud, group, and environment selection. In the Above example, a selective override was done for the `AWS Cali` cloud when using a Production Environment and deploying to the group `All Clouds Demo`. This specific example changes the plan to a larger size. Scoped configurations have various levels of precidence. Cloud is the lowest level of precedence. a cloud configuration in a group is the next level higher and finally an environment configuration in a group in a cloud is the highest level of scoped precedence.
 
 
 Getting Started
@@ -83,7 +83,7 @@ To get started, it may be best to look at a simple App Blueprint configuration. 
 .. code-block:: bash
 
   name: Simple Nginx
-  type: morpheus
+  type: conduit
   tiers:
     Web:
       linkedTiers: []
@@ -116,7 +116,7 @@ To get started, it may be best to look at a simple App Blueprint configuration. 
                   lb: HTTP
 
 
-Theres some useful things to look at in the above docker example. One is there are different objects based on the different available configuration options for the target provision type. These options are actually data driven and can be extracted from the option types api in the morpheus api doc. That is a useful resource to look at while building morpheus blueprints or by using the `morpheus-cli` which provides prompts for helping build custom morpheus app blueprints.
+Theres some useful things to look at in the above docker example. One is there are different objects based on the different available configuration options for the target provision type. These options are actually data driven and can be extracted from the option types api in the conduit api doc. That is a useful resource to look at while building conduit blueprints or by using the `conduit-cli` which provides prompts for helping build custom conduit app blueprints.
 
 
 .. image:: /images/provisioning/templates_301_1.png
@@ -189,7 +189,7 @@ In the APP BLUEPRINT modal, select the Preview section to display a graphical re
 
 .. image:: /images/provisioning/templates_301_3.png
 
-.. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |morpheus] is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
+.. IMPORTANT:: When Tiers are connected, the Instances in a Tier will import the evars from Instances in connected Tiers, and if |conduit] is managing the Instance Firewalls, communication between the Instances will be facilitated based on the Instances port configurations.
 
 Provisioning
 ^^^^^^^^^^^^

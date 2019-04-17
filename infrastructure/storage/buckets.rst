@@ -24,7 +24,7 @@ To Add an Alibaba Storage Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    ACCESS KEY
     Alibaba Access Key
    SECRET KEY
@@ -85,7 +85,7 @@ To Add an Amazon S3 Storage Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    ACCESS KEY
     AWS IAM Access Key
    SECRET KEY
@@ -146,7 +146,7 @@ To Add an Azure Storage Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    STORAGE ACCOUNT
     Name of the Storage Account in Azure for the Bucket
    STORAGE KEY
@@ -207,7 +207,7 @@ To Add a Dell EMC ECS Storage Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    STORAGE SERVICE
      Select existing Dell EMC ECS Storage Server (configured in `Infrastructure - Storage - Servers`)
    BUCKET NAME
@@ -269,7 +269,7 @@ To Add an Azure Storage Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    USERNAME
     Openstack Swift Username
    API KEY
@@ -330,7 +330,7 @@ To Add a Rackspace CDN Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    USERNAME
     Rackspace CDN Username
    API KEY

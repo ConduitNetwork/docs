@@ -4,9 +4,9 @@ Tenants
 Overview
 --------
 
-A Tenant in |morpheus| is an isolated environment with unique users and workloads. The Master Tenant is the default Tenant in |morpheus|, created upon installation. All other Tenants besides the Master Tenants are Sub Tenants.
+A Tenant in |conduit| is an isolated environment with unique users and workloads. The Master Tenant is the default Tenant in |conduit|, created upon installation. All other Tenants besides the Master Tenants are Sub Tenants.
 
-- The Master Tenant is the default Tenant created during the installation of |morpheus|.
+- The Master Tenant is the default Tenant created during the installation of |conduit|.
 - All Tenants created after installation are Sub Tenants. Only one Master Tenant can exist.
 - The Master Tenant creates and controls all Sub Tenants.
 - Tenants are isolated environments.
@@ -90,7 +90,7 @@ To edit a Tenant:
 Disabling Tenant
 ^^^^^^^^^^^^^^^^
 
-When disabling a tenant, they are not able to login and cannot be impersonated by another tenant. However all of their information will still remain in |morpheus| and they may still receive notifications and alerts.
+When disabling a tenant, they are not able to login and cannot be impersonated by another tenant. However all of their information will still remain in |conduit| and they may still receive notifications and alerts.
 
 To disable a Tenant:
 

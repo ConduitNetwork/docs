@@ -6,15 +6,15 @@ Requirements
 
 When performing a Hypervisor to Hypervisor migration from VMware to AWS, there are some requirements that must be met:
 
-#. Add S3 Storage Provider to |morpheus|
-#. Set Image Transfer Store in you AWS cloud(s) settings in |morpheus|
-#. Create VM Import Service roles in your AWS account (not in |morpheus| )
+#. Add S3 Storage Provider to |conduit|
+#. Set Image Transfer Store in you AWS cloud(s) settings in |conduit|
+#. Create VM Import Service roles in your AWS account (not in |conduit| )
 #. Storage Provider selected for migration destination must be set as a Local Storage Provider (not AWS)
 
 Add S3 Storage Provider
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In the ```Infrastructure-> Storage`` section, select :guilabel:`+ADD` and enter the same AWS Access key and Secret Key used to create your AWS cloud in |morpheus|. Then add the S3 bucket name that the migration image(s) will be added to.
+In the ```Infrastructure-> Storage`` section, select :guilabel:`+ADD` and enter the same AWS Access key and Secret Key used to create your AWS cloud in |conduit|. Then add the S3 bucket name that the migration image(s) will be added to.
 
 Set Image Transfer Store
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,10 +110,10 @@ For more information about IAM roles, see IAM Roles in the IAM User Guide.
 Storage Providers
 ^^^^^^^^^^^^^^^^^
 
-Set the "Storage Provider" in the migration wizard destination as a Local Storage type, or leave as Select to use the |morpheus| Appliance.
+Set the "Storage Provider" in the migration wizard destination as a Local Storage type, or leave as Select to use the |conduit| Appliance.
 
-A local image must be created by |morpheus| prior to S3 upload. A Local Storage provider can be used if one had been added in the ``Infrastructure-> Storage`` section. Simply leaving the Storage Provider setting as "select" will create an image on the |morpheus| appliance, provided sufficient storage existing on the |morpheus| appliance drive.
+A local image must be created by |conduit| prior to S3 upload. A Local Storage provider can be used if one had been added in the ``Infrastructure-> Storage`` section. Simply leaving the Storage Provider setting as "select" will create an image on the |conduit| appliance, provided sufficient storage existing on the |conduit| appliance drive.
 
 .. IMPORTANT:: Setting AWS as the Destination Storage Provider will result in a migration failure.
 
-These settings will allow a successful migration from VMware to AWS using the |morpheus| migration wizard.
+These settings will allow a successful migration from VMware to AWS using the |conduit| migration wizard.

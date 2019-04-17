@@ -19,9 +19,9 @@ Release Date 4/15/2018
 * Instances: Mute Checks option added on shutdown
 * Instance Details: Last Deployment Name and Version added
 * KeyPairs: Validation and conversion service added
-* Library: Morpheus Node Types for CentOS 7.3 for Nutanix and ESXi added
+* Library: Conduit Node Types for CentOS 7.3 for Nutanix and ESXi added
 * Load Balancers: F5 Pool Creation Validation, VIP Creation Validation, VIP Creation SSL Profile and Remove Policies Options added
-* Morpheus Appliance: Major Speed and resource utilization improvements
+* Conduit Appliance: Major Speed and resource utilization improvements
 * Networks- IP Pools: Used and Total IPs progress bar added
 * Networks- IP Pools: IP Pool Detail Pages added
 * Networks - Services: IPAM Service Detail Pages added with Host Record Grids and List views.

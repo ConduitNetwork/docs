@@ -6,15 +6,15 @@ Load Balancers
 Overview
 --------
 
-|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.
+|conduit| can provision VM or Container HaProxy Load Balancers, Amazon Elastic and Application Load Balancers, Azure Load Balancers, and integrates with several external Load Balancers, including F5, A10, Citrix, and AVI.
 
 Once created or integrated, Load Balancers are available as an option to be added during provision time or post-provisioning.
 
 Once a Load Balancer is added to an instance, you can manually scale or configure auto-scaling based on thresholds or schedules, and burst across clouds with cloud priority.
 
-.. NOTE:: HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |morpheus| 2.11.3+.
+.. NOTE:: HaProxy VM Load Balancer option, Load Balancer detail pages, Balance Mode, Sticky Mode and Shared VIP address option are available in |conduit| 2.11.3+.
 
-.. image Load_Balancers___|morpheus| .png
+.. image Load_Balancers___|conduit| .png
 
 In the Load Balancers page there are two sections:
 
@@ -112,7 +112,7 @@ In the main Load Balancer page, select an existing Load Balancer to go to that L
 Orchestrating Load Balancers
 ----------------------------
 
-A large part of application orchestration and automation involves tying various web services and backend services into different load balancer configurations. If the automation tool is unable to communicate or integrate with this aspect of your infrastructure, a lot of gaps will be created in the full orchestrated flow of application deployment. This is why Morpheus provides deep integration with load balancers and explicit definitions with catalog items as to how they are connected to provisioned instances. Some of the functionality includes:
+A large part of application orchestration and automation involves tying various web services and backend services into different load balancer configurations. If the automation tool is unable to communicate or integrate with this aspect of your infrastructure, a lot of gaps will be created in the full orchestrated flow of application deployment. This is why Conduit provides deep integration with load balancers and explicit definitions with catalog items as to how they are connected to provisioned instances. Some of the functionality includes:
 
 * Public Cloud Load Balancer Support
 * Private Cloud Load Balancer Support
@@ -120,7 +120,7 @@ A large part of application orchestration and automation involves tying various 
 * SSL Certificate Management and SSL Certificate Upload
 * SSL Passthrough or Forced Redirect
 
-Not only does Morpheus have an ability to provision HAProxy based load balancer containers for easy consumption in development environments, but also has direct tie ins with several Load Balancer Types:
+Not only does Conduit have an ability to provision HAProxy based load balancer containers for easy consumption in development environments, but also has direct tie ins with several Load Balancer Types:
 
 * F5 BigIP
 * A10
@@ -133,14 +133,14 @@ Not only does Morpheus have an ability to provision HAProxy based load balancer 
 * Openstack Octavia
 * HA Proxy
 
-Morpheus exposes configuration options during provisioning of an Instance relevant and common to each supported LB Integration. In some cases, Morpheus also provides direct management and sync support for VIP configurations on the various Load Balancers (such as F5, and AVI), However in a day to day orchestrated workflow this would not be the ideal means by which a user should consume load balancer services.
+Conduit exposes configuration options during provisioning of an Instance relevant and common to each supported LB Integration. In some cases, Conduit also provides direct management and sync support for VIP configurations on the various Load Balancers (such as F5, and AVI), However in a day to day orchestrated workflow this would not be the ideal means by which a user should consume load balancer services.
 
 By tying the Load Balancer associations into the provisioning of instances and the definition of the instance catalog item, the lifecycle of the VIP can more easily be maintained throughout the lifecycle of whatever application may be deployed.
 
 Setting up an Instance for Load Balancer Consumption
 ....................................................
 
-Several of the provided Morpheus instance types are ready to go with load balancer orchestration out of the box (Apache, Nginx, Tomcat, Node.js, etc). It is also fairly easy to extend existing generic instance types during provisioning to be tied to load balancers or to set up said catalog items in advanced for such functionality.
+Several of the provided Conduit instance types are ready to go with load balancer orchestration out of the box (Apache, Nginx, Tomcat, Node.js, etc). It is also fairly easy to extend existing generic instance types during provisioning to be tied to load balancers or to set up said catalog items in advanced for such functionality.
 
 When creating a custom Instance Type (in Provisioning -> Library), one can define a list of exposed ports that the node type within the instance exposes.  When defining these exposed ports it prompts for a Name, Port Number, and LB Type. The LB Type is what enables load-balancer functionality. This can either be HTTP,HTTPS, or TCP. This specification helps build the correct profile for the VIP as well as setup the appropriate types of Health Monitors within the target load balancer integration.
 

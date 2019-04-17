@@ -48,7 +48,7 @@ Add Slave
 Change Master
   Changes the database Master node in an Instance.
 Clone to Template (VMware)
-  Creates a new VMware Template from the Instance with corresponding |morpheus| Virtual Image record.
+  Creates a new VMware Template from the Instance with corresponding |conduit| Virtual Image record.
 
 
 .. TIP:: Scrolling down in the Actions dropdown may be necessary to see all options.
@@ -60,7 +60,7 @@ Performing Instance Actions
 #. Click the Instance from the list of instances you wish to perform an action on.
 #. Click the Actions drop down button and select an Action.
 
-.. Instances___|morpheus| _Reconfigure.png
+.. Instances___|conduit| _Reconfigure.png
 
 Notes
 ^^^^^

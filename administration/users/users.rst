@@ -10,7 +10,7 @@ Overview
 The Users page displays a list of all users. From the users page:
 Create, Edit, and Delete users. The list of users displayed on this page displays Account, Name, Username, Email, and Role.
 
-.. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |morpheus|, as it is synced with the Identity Source.
+.. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |conduit|, as it is synced with the Identity Source.
 
 
 Create User
@@ -41,13 +41,13 @@ To create a User:
    Password
     Password must contain at least one uppercase letter, one lowercase letter, a number, and a symbol.
    Enabled
-    If unchecked, the user will no longer be able to sign into |morpheus|, but their user data will remain.
+    If unchecked, the user will no longer be able to sign into |conduit|, but their user data will remain.
    Password Expired
     If enabled, the User will be forced to create a new password upon next login. The expired password cannot be used again.
    Linux Settings
-    Creates a User with the supplied Username, Password and/or Key-pair on Linux Instances when "Create my User" is selected during provisioning, or a User Group is added to an Instance of which this |morpheus| user is a member of.
+    Creates a User with the supplied Username, Password and/or Key-pair on Linux Instances when "Create my User" is selected during provisioning, or a User Group is added to an Instance of which this |conduit| user is a member of.
    Windows Settings
-    Creates a User with the supplied Username, Password and/or Key-pair on Windows Instances when "Create my User" is selected during provisioning, or a User Group is added to an Instance of which this |morpheus| user is a member of.
+    Creates a User with the supplied Username, Password and/or Key-pair on Windows Instances when "Create my User" is selected during provisioning, or a User Group is added to an Instance of which this |conduit| user is a member of.
 
     .. IMPORTANT:: Please ensure password entered is allowable by Windows.
 
@@ -68,7 +68,7 @@ Edit User
 
 User settings can be edited from `Administration -> Users`, `Administration -> Tenants -> Select a Tenant -> Users tab`, or from `User Settings`.
 
-.. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |morpheus|, as it is synced with the Identity Source.
+.. NOTE:: Some User data from Users created via an Identity Source Integration such as Active Directory is not editable in |conduit|, as it is synced with the Identity Source.
 
 To edit a User from the `Administration -> Users` Section:
 

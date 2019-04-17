@@ -1,15 +1,15 @@
-Adding VLANs to Morpheus KVM Hosts (CentOS)
+Adding VLANs to Conduit KVM Hosts (CentOS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Overview
 ''''''''
 
-Morpheus KVM is a powerful, cheaper alternative to virtualization when it comes to other hypervisor offerings. It is also very capable of setting up complex shared storage and multiple networks across many hosts. Currently this process is a manual process but will become automated in the coming months. This guide will go over how to configure VLANs on a Morpheus KVM Host.
+Conduit KVM is a powerful, cheaper alternative to virtualization when it comes to other hypervisor offerings. It is also very capable of setting up complex shared storage and multiple networks across many hosts. Currently this process is a manual process but will become automated in the coming months. This guide will go over how to configure VLANs on a Conduit KVM Host.
 
 Getting Started
 ''''''''''''''''
 
-To get started, the first step is to go ahead and add the KVM host to morpheus and allow morpheus to configure it just like any other kvm host. When provisioning a manual kvm host be sure to enter the proper network interface name for the management network (not the trunk port). For example ``eno2`` could be a management network while ``eno1`` could be the trunk port network that the VLAN's are going to be on as in this example.
+To get started, the first step is to go ahead and add the KVM host to conduit and allow conduit to configure it just like any other kvm host. When provisioning a manual kvm host be sure to enter the proper network interface name for the management network (not the trunk port). For example ``eno2`` could be a management network while ``eno1`` could be the trunk port network that the VLAN's are going to be on as in this example.
 
 Setting up a VLAN Interface
 ''''''''''''''''''''''''''''
@@ -33,7 +33,7 @@ If our trunk network is called ``eno1`` we need to make a new script for each VL
    VLAN=yes DEVICETYPE=ovs
    OVS_BRIDGE=br211
 
-There are a few important things to note about this script. Firstly there is a flag called ``VLAN=yes`` that enables the kernel tagging of the VLAN. Secondly we have defined an OVS_BRIDGE name. Morpheus utilizes openvswitch for its networking which is a very powerful tool used even by Openstack's Neutron. It supports not just VLANs but VxLAN interfacing.
+There are a few important things to note about this script. Firstly there is a flag called ``VLAN=yes`` that enables the kernel tagging of the VLAN. Secondly we have defined an OVS_BRIDGE name. Conduit utilizes openvswitch for its networking which is a very powerful tool used even by Openstack's Neutron. It supports not just VLANs but VxLAN interfacing.
 
 The **OVS_BRIDGE** name means we also need to define a bridge port script called ``br211`` by making a script called ``ifcfg-br211``:
 
@@ -59,7 +59,7 @@ These configurations will enable persistence on these interfaces so that a reboo
 Defining a LibVirt Network
 '''''''''''''''''''''''''''
 
-Now that the bridge interface is defined properly for OVS, it must be defined in LibVirt so that Morpheus will detect the network and KVM can use it properly. By convention, these resource configurations are stored in ``/var/morpheus/kvm/config``.
+Now that the bridge interface is defined properly for OVS, it must be defined in LibVirt so that Conduit will detect the network and KVM can use it properly. By convention, these resource configurations are stored in ``/var/conduit/kvm/config``.
 
 An XML definition must be created to properly define the network. In this case the network is named ``public 185.3.48.0.xml``:
 
@@ -72,7 +72,7 @@ An XML definition must be created to properly define the network. In this case t
    <virtualport type="openvswitch"/>
    </network>
 
-This configuration defines the network name that will be synced into morpheus for selection as well as the type of interface being used (in this case a bridge to the ``br211`` interface over openvswitch).
+This configuration defines the network name that will be synced into conduit for selection as well as the type of interface being used (in this case a bridge to the ``br211`` interface over openvswitch).
 
 Now that this xml specification is defined it must be registered with libvirt via the virsh commands:
 
@@ -82,4 +82,4 @@ Now that this xml specification is defined it must be registered with libvirt vi
    virsh net-autostart "public 185.3.48.0"
    virsh net-start "public 185.3.48.0"
 
-Once this is completed, simply refresh the cloud in morpheus and wait for the network to sync into the networks list. Once the network is synced make sure the appropriate settings are applied to it within Morpheus. This includes setting the CIDR, Gateway, Nameservers and if using IP Address Management, the IPAM Pool.
+Once this is completed, simply refresh the cloud in conduit and wait for the network to sync into the networks list. Once the network is synced make sure the appropriate settings are applied to it within Conduit. This includes setting the CIDR, Gateway, Nameservers and if using IP Address Management, the IPAM Pool.

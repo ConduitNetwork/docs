@@ -1,7 +1,7 @@
 Hyper-V
 --------
 
-Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and is a common hypervisor technology in data centers. |morpheus| provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.
+Hyper-V is the virtualized server computing environment introduced by Microsoft. Hyper-V is consumed by |conduit| as a private cloud offering and is a common hypervisor technology in data centers. |conduit| provides and avenue to aggregate Hyper-V resources together to allow efficient and seamless deployment of applications as a virtual machine (VM) or Docker host in the world of Hyper-V.
 
 Features
 ^^^^^^^^
@@ -19,7 +19,7 @@ Features
 • Lifecycle Management and Resize
 • Unique Kerberos Authentication
 
-|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.
+|conduit| can provide a single pane of glass and self-service portal for managing instances scattered across both Hyper-V and public cloud offerings like Azure.
 
 Getting Started
 ^^^^^^^^^^^^^^^^
@@ -31,9 +31,9 @@ A user account that is part of the local administrators group on the Hyper-V hos
 Understand WinRM
 ^^^^^^^^^^^^^^^^
 
-|morpheus| uses WinRM to communicate to the Hyper-V host for deployment of the |morpheus| agent. The |morpheus| agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this agent provides logging and monitoring capabilities.
+|conduit| uses WinRM to communicate to the Hyper-V host for deployment of the |conduit| agent. The |conduit| agent allows for the host dashboard to be populated with information in the form of graphs that cover CPU, Network, Storage, and memory consumption. Furthermore, this agent provides logging and monitoring capabilities.
 
-If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the WinRM command-line tool cannot perform data operations or allow for the |morpheus| agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.
+If Windows Remote Management (WinRM) is not installed and configured, WinRM scripts do not run and the WinRM command-line tool cannot perform data operations or allow for the |conduit| agent to be installed. WinRM uses Http port 5985 or Https port 5986 for communications.
 
 To better understand all of the default settings of WinRM please refer to the below Microsoft link:
 
@@ -105,9 +105,9 @@ Keep the default settings for client and server components of WinRM, or customiz
     $ winrm set winrm/config/service @{AllowUnencrypted="false"}
     $ winrm set winrm/config/service/Auth @{Kerberos="true"}
 
-Kerberos authentication will also need to be configured on the |morpheus| appliance to support Windows domain accounts to access the remote host with WINRM_INTERNAL connection type.
+Kerberos authentication will also need to be configured on the |conduit| appliance to support Windows domain accounts to access the remote host with WINRM_INTERNAL connection type.
 
-On the |morpheus| appliance the krb5-user package must be installed.
+On the |conduit| appliance the krb5-user package must be installed.
 
 For Ubuntu the command is as follows:
 
@@ -121,24 +121,24 @@ For Centos the command is as follows:
 
     $ sudo yum install krb5-workstation pam_krb5 -y
 
-Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |morpheus| .com as the domain.
+Create a file in /etc called krb5.conf and replace the domain name with the name of the domain to be used. In this case we used |conduit| .com as the domain.
 
 .. code-block:: bash
 
     [libdefaults]
-            default_realm = |morpheus| .COM
+            default_realm = |conduit| .COM
                 dns_lookup_kdc = true
                 verify_ap_req_nofail = false
             default_tgs_enctypes = rc4-hmac
             default_tkt_enctypes = rc4-hmac
     [realms]
-            |morpheus| .COM = {
-                    kdc = win-ad.|morpheus| .COM:88
-                    admin_server = win-ad.|morpheus| .COM:749
+            |conduit| .COM = {
+                    kdc = win-ad.|conduit| .COM:88
+                    admin_server = win-ad.|conduit| .COM:749
          }
     [domain_realm]
-        .|morpheus| .COM = |morpheus| .COM
-            |morpheus| .COM = |morpheus| .COM
+        .|conduit| .COM = |conduit| .COM
+            |conduit| .COM = |conduit| .COM
     [login]
          krb4_convert = true
          krb4_get_tickets = false
@@ -149,7 +149,7 @@ http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html
 Adding Hyper-V as a Private Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a |morpheus| cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.
+The Hyper-V host is prepared for |conduit| to communicated with it via WinRM so the Hyper-V private cloud is ready to be configured. Create a group and then create a |conduit| cloud for Hyper-V. Populated the information as show in Figure 1: specific for the environment being configured.
 
 .. image:: /images/hyperv1_original.png
 
@@ -160,15 +160,15 @@ The Hyper-V host is prepared for |morpheus| to communicated with it via WinRM so
 Service Plans
 ^^^^^^^^^^^^^
 
-A default set of Service Plans are created in |morpheus| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These all can be easily managed from the Admin | Service Plans & Pricing section.
+A default set of Service Plans are created in |conduit| for the VMware provisioning engine. These Service Plans can be considered akin to AWS Flavors or Openstack Flavors. They provide a means to set predefined tiers on memory, storage, cores, and cpu. Price tables can also be applied to these so estimated cost per virtual machine can be tracked as well as pricing for customers. By default, these options are fixed sizes but can be configured for dynamic sizing. A service plan can be configured to allow a custom user entry for memory, storage, or cpu. To configure this, simply edit an existing Service Plan tied to Hyper-V or create a new one. These all can be easily managed from the Admin | Service Plans & Pricing section.
 
 .. image:: /images/hyperv3_original.png
 
 Docker
 ^^^^^^^
 
-So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).
+So far this document has covered how to add the Hyper-V cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |conduit| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Hyper-V (multiple are needed when dealing with horizontal scaling scenarios).
 
-To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure | Hosts section. From there click the + Container Host button to add a Hyper-V Docker Host. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
+To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure | Hosts section. From there click the + Container Host button to add a Hyper-V Docker Host. |conduit| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
 
-Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin | Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
+Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |conduit| appliance url which can be configured in Admin | Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.

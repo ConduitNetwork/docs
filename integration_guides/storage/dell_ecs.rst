@@ -4,9 +4,9 @@ Dell ECS
 Overview
 ^^^^^^^^
 
-|morpheus| integrates with DELL EMC ECS via the ECS api. This allows Morpheus to talk directly to the ECS services.
+|conduit| integrates with DELL EMC ECS via the ECS api. This allows Conduit to talk directly to the ECS services.
 
-When you add a ECS Server, |morpheus| will sync in the following.
+When you add a ECS Server, |conduit| will sync in the following.
 
 - Storage Groups
 - Buckets
@@ -20,7 +20,7 @@ Users will be able to create the following times within ECS without direct acces
 Storage Servers
 ^^^^^^^^^^^^^^^
 
-The first step in the Dell EMC ECS integration is to add a Dell EMC ECS Storage Server. Once added, Buckets, Files Shares and Storage Groups will be synced in and can be access and managed in |morpheus|.
+The first step in the Dell EMC ECS integration is to add a Dell EMC ECS Storage Server. Once added, Buckets, Files Shares and Storage Groups will be synced in and can be access and managed in |conduit|.
 
 Adding Dell EMC ECS Storage Server
 ..................................
@@ -31,7 +31,7 @@ Adding Dell EMC ECS Storage Server
 #. From the ADD STORAGE SERVER wizard input the following:
 
    NAME
-      Name of the Storage Server in |morpheus|
+      Name of the Storage Server in |conduit|
    TYPE
       Select `Dell EMC ECS`
    URL
@@ -79,7 +79,7 @@ To Add a Dell ECS Storage Bucket:
 #. From the NEW BUCKET Wizard input the following:
 
    NAME
-     Name of the Bucket in |morpheus|.
+     Name of the Bucket in |conduit|.
    STORAGE SERVICE
      Select existing Dell EMC ECS Storage Server (configured in `Infrastructure - Storage - Servers`)
    BUCKET NAME
@@ -142,7 +142,7 @@ To Add a Dell EMC ECS File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    STORAGE SERVICE
      Select existing Dell EMC ECS Storage Server (configured in `Infrastructure - Storage - Servers`)
    SHARE PATH

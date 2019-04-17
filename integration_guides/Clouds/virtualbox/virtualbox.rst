@@ -10,7 +10,7 @@ Add a VirtualBox Cloud
 #. Enter the following into the Create Cloud modal:
 
    Name
-      Name of the Cloud in |morpheus|
+      Name of the Cloud in |conduit|
    Location
       Description field for adding notes on the cloud, such as location.
    Visibility
@@ -18,7 +18,7 @@ Add a VirtualBox Cloud
    VIRTUALBOX HOST
       IP or URL of the VirtualBox Host
    WORKING PATH
-      Path |morpheus| will write to. ex: ``~/virtualbox``
+      Path |conduit| will write to. ex: ``~/virtualbox``
    USERNAME
       Host Username
    PASSWORD

@@ -12,7 +12,7 @@ Add Azure Load Balancer
     CLOUD
       Select the Cloud the Load Balancer will be available for
     NAME
-      Name of the Load Balancer in |morpheus|
+      Name of the Load Balancer in |conduit|
     DESCRIPTION
       Idenetifying information displayed on the Load Balancer list page.
     VISIBILITY

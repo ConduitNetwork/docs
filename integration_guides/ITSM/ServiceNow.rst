@@ -16,7 +16,7 @@ Add Service Now Integration
 #. Add the following:
 
    NAME
-    Name of the Integration in Morpheus.
+    Name of the Integration in Conduit.
    ENABLED
     Leave checked to enable the Integration.
    HOST
@@ -93,37 +93,37 @@ Any Instance provisioned into a Cloud or Group with an Approval Policy enabled w
 Instances pending a ServiceNow approval will show "Waiting for Approval" with the Requested Item number and Request number, ex: ``Waiting for Approval [RITM0010002 - REQ0010002]``.
 
 ServiceNow Approval requests are displayed in ``Operations -> Approvals``.
-Instances pending a ServiceNow approval must be Approved in ServiceNow for provisioning to initiate. Approval requests from a ServiceNow Approval Policy cannot be approved in Morpheus, only Internal Approvals.
+Instances pending a ServiceNow approval must be Approved in ServiceNow for provisioning to initiate. Approval requests from a ServiceNow Approval Policy cannot be approved in Conduit, only Internal Approvals.
 
-ServiceNow Approval requests are displayed in Morpheus under ``Operations -> Approvals``. Pending ServiceNow Approval requests can be cancelled in Morpheus by selecting the request and then selecting ``ACTIONS -> Cancel``.
+ServiceNow Approval requests are displayed in Conduit under ``Operations -> Approvals``. Pending ServiceNow Approval requests can be cancelled in Conduit by selecting the request and then selecting ``ACTIONS -> Cancel``.
 
-Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Morpheus within 5 minutes of being approved in ServiceNow.
+Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Conduit within 5 minutes of being approved in ServiceNow.
 
 ServiceNow Service Catalog Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following is a guide to installing the Morpheus ServiceNow application.
+The following is a guide to installing the Conduit ServiceNow application.
 
-.. IMPORTANT:: A valid SSL Certificate is required on the |morpheus| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
+.. IMPORTANT:: A valid SSL Certificate is required on the |conduit| Appliance for the ServiceNow plugin to be able to communicate with the appliance.
 
 ServiceNow Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Install the Morpheus Application from the ServiceNow store
-#. Navigate to Morpheus Catalog -> Properties
+#. Install the Conduit Application from the ServiceNow store
+#. Navigate to Conduit Catalog -> Properties
 #. Set the following properties:
 
-   Morpheus Appliance Endpoint
-    The full url to your Morpheus appliance
+   Conduit Appliance Endpoint
+    The full url to your Conduit appliance
    Password
-    Password of the Morpheus Administrator
+    Password of the Conduit Administrator
    Username
-    Username of the Morpheus Administrator
+    Username of the Conduit Administrator
 
 #. Create a new User
 #. Assign the following roles to the user:
 
-   - x_moda_morpheus_ca.integration
+   - x_moda_conduit_ca.integration
    - catalog_admin
    - itil
    - rest_service
@@ -131,7 +131,7 @@ ServiceNow Configuration
 
   .. IMPORTANT:: When using ServiceNow version London, the following steps must also be performed.  An administrator needs to modify the access permissions on the 'catalog_script_client' and 'io_set_item' tables.  This is performed by ensuring the 'Can create', 'Can update', and 'Can Delete' are checked under Application Access for 'All application scopes' for these tables.
 
-Morpheus Configuration
+Conduit Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Navigate to ``Administration -> Integrations``
@@ -152,16 +152,16 @@ Enabled
 Integration
   Select from a ServiceNow Integration added in `Administration -> Integrations`
 New Incident Action
-  The Service Now action to take when a Morpheus incident is created.
+  The Service Now action to take when a Conduit incident is created.
 Close Incident Action
-  The Service Now action to take when a Morpheus incident is closed.
+  The Service Now action to take when a Conduit incident is closed.
 
 Incident Severity Mapping
 
 .. [width="40%",frame="topbot",options="header"]
 
 =================== =================
-|morpheus| Severity ServiceNow Impact
+|conduit| Severity ServiceNow Impact
 ------------------- -----------------
 Info                Low/Medium/High
 Warning             Low/Medium/High

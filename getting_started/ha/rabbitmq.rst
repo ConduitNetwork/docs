@@ -7,7 +7,7 @@ Install RabbitMQ on the 3 nodes and create a cluster.
 
 .. NOTE:: For the most up to date RPM package we recommend using this link: https://www.rabbitmq.com/install-rpm.html#downloads
 
-.. IMPORTANT:: Morpheus connects to AMQP over 5672 or 5671(SSL) and 61613 or 61614(SSL)
+.. IMPORTANT:: Conduit connects to AMQP over 5672 or 5671(SSL) and 61613 or 61614(SSL)
 
 On All Nodes:
 .............
@@ -21,5 +21,5 @@ Recommended Rabbitmq Policies:
 
 .. code-block:: bash
 
-   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 1 statCommands "statCommands.*" '{expires:1800000}'
-   rabbitmqctl set_policy -p morpheus --apply-to queues --priority 1 morpheusAgentActions "morpheusAgentActions.*" '{expires:1800000}'
+   rabbitmqctl set_policy -p conduit --apply-to queues --priority 1 statCommands "statCommands.*" '{expires:1800000}'
+   rabbitmqctl set_policy -p conduit --apply-to queues --priority 1 conduitAgentActions "conduitAgentActions.*" '{expires:1800000}'

@@ -172,22 +172,22 @@
   <p>[[upgrading]]</p>
 <div class="section" id="upgrading">
 <h1>Upgrading<a class="headerlink" href="#upgrading" title="Permalink to this headline">¶</a></h1>
-<p>|morpheus| provides a very simple and convenient upgrade process. In
+<p>|conduit| provides a very simple and convenient upgrade process. In
 most cases it is simply a matter of installing the new package on top of
 itself and reconfiguring the services.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">All services except the morpheus-ui must be running during a reconfigure. The morpheus-ui also must be restarted or stopped and started during an upgrade. Failure to do so will result in errors.</p>
+<p class="last">All services except the conduit-ui must be running during a reconfigure. The conduit-ui also must be restarted or stopped and started during an upgrade. Failure to do so will result in errors.</p>
 </div>
 <div class="section" id="debian-ubuntu">
 <h2>Debian / Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permalink to this headline">¶</a></h2>
 <p>Simply download the latest package or request the latest package from
 your account service representative.</p>
 <p>Then run the install process as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo dpkg -i morpheus-appliance<span class="se">\_</span>x.x.x-1.amd64.deb
-sudo morpheus-ctl stop morpheus-ui
-sudo morpheus-ctl reconfigure
-sudo morpheus-ctl start morpheus-ui
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo dpkg -i conduit-appliance<span class="se">\_</span>x.x.x-1.amd64.deb
+sudo conduit-ctl stop conduit-ui
+sudo conduit-ctl reconfigure
+sudo conduit-ctl start conduit-ui
 </pre></div>
 </div>
 <p>This typically is enough to complete a full upgrade. Databases will
@@ -199,15 +199,15 @@ version upgrades will automatically be applied.</p>
 <p>Yum based package upgrades are a little different. In this case we want
 to run a <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-U</span></code> command as the package manager is slightly
 different.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rpm -U morpheus-appliance-x.x.x-1.x86<span class="se">\_</span><span class="m">64</span>.rpm
-sudo morpheus-ctl stop morpheus-ui
-sudo morpheus-ctl reconfigure
-sudo morpheus-ctl start morpheus-ui
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rpm -U conduit-appliance-x.x.x-1.x86<span class="se">\_</span><span class="m">64</span>.rpm
+sudo conduit-ctl stop conduit-ui
+sudo conduit-ctl reconfigure
+sudo conduit-ctl start conduit-ui
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">morpheus-ctl</span> <span class="pre">restart</span></code>. This will restart ALL services.</p>
+<p class="last">Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">conduit-ctl</span> <span class="pre">restart</span></code>. This will restart ALL services.</p>
 </div>
 </div>
 </div>

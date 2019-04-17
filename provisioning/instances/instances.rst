@@ -1,12 +1,12 @@
 Instances
 =========
 
-Instances is a great starting point for taking advantage of self service features and spinning up both VM's and containers. In |morpheus| it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion.
+Instances is a great starting point for taking advantage of self service features and spinning up both VM's and containers. In |conduit| it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion.
 
 Instance
   A set of containers or virtual machines that can correlate to a single horizontally scalable entity or a service suite like a database. (It is important to note that an instance can contain one or more containers/vms depending on the instance type and configuration).
 Container
-  Typically a docker container provisioned via a |morpheus| Docker host.
+  Typically a docker container provisioned via a |conduit| Docker host.
 Virtual Machine
   A virtualized compute server provisioned onto various hypervisor hosts.
 

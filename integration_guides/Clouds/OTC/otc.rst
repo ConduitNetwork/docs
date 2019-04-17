@@ -6,7 +6,7 @@ Add an Open Telekom Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 NAME
-  Name of the Cloud in |morpheus|
+  Name of the Cloud in |conduit|
 
 CODE
 

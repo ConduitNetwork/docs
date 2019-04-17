@@ -14,7 +14,7 @@ New Features
 * Infoblox: Variable support for ext attributes added
 * Instances: Metadata fields added to Edit Instance modal
 * Instances: Post-Provision Metadata and Tags editing
-* Morpheus Agent: Ubuntu 17.10 support added
+* Conduit Agent: Ubuntu 17.10 support added
 * Openstack: Additional support for versioned endpoints added
 * Openstack: Octavia Load Balancer Support added
 * Openstack: Queens support added

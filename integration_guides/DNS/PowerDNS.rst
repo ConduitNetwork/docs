@@ -4,7 +4,7 @@ Power DNS
 Overview
 ^^^^^^^^
 
-|morpheus| integrates directly with Power DNS to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |morpheus| also syncs in Power DNS Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
+|conduit| integrates directly with Power DNS to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |conduit| also syncs in Power DNS Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
 
 Add Power DNS Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,7 +18,7 @@ Power DNS can be added in the `Administration` or `Infrastructure` sections:
    TYPE
     Power DNS
    NAME
-    Name for the Integration in |morpheus|
+    Name for the Integration in |conduit|
    API HOST
     URL of Power DNS API. Example: ``http://10.30.20.10:8081``
    Token
@@ -42,7 +42,7 @@ Configuring Power DNS with Clouds and Groups
 
 DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings.
 
-|morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
+|conduit| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
 
 Add DNS Integration to a Cloud
 ..............................

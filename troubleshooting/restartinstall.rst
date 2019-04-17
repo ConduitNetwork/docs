@@ -1,39 +1,39 @@
-Restart a |morpheus| Installation
+Restart a |conduit| Installation
 =================================
 
 If the initial reconfigure is stopped or your installation is damaged beyond reconfiguring again, it may be necessary to start over.
 
-On the |morpheus| appliance:
+On the |conduit| appliance:
 
-#. Run ``morpheus-ctl cleanse``
+#. Run ``conduit-ctl cleanse``
 
-#. Remove the |morpheus| package
+#. Remove the |conduit| package
 
-   - deb: ``dpkg --purge morpheus-appliance...`` using the appropriate package name.
-   - rpm: ``rpm -e (morpheus-appliance...)`` using the appropriate package name.
+   - deb: ``dpkg --purge conduit-appliance...`` using the appropriate package name.
+   - rpm: ``rpm -e (conduit-appliance...)`` using the appropriate package name.
 
 #. Then Run
 
    .. code-block:: bash
 
-    rm -rf /etc/morpheus
-    rm -rf /var/opt/morpheus
-    rm -rf /var/run/morpheus
-    rm -rf /var/log/morpheus
-    rm -rf /opt/morpheus
+    rm -rf /etc/conduit
+    rm -rf /var/opt/conduit
+    rm -rf /var/run/conduit
+    rm -rf /var/log/conduit
+    rm -rf /opt/conduit
 
-#. Re-install |morpheus|
+#. Re-install |conduit|
 
   If the elasticsearch cluster is unhealthy and needs purged, run:
 
   .. code-block:: bash
 
-    sudo morpheus-ctl stop elasticsearch
-    sudo rm -rf /var/opt/morpheus/elasticsearch/data/morpheus
-    sudo morpheus-ctl reconfigure
+    sudo conduit-ctl stop elasticsearch
+    sudo rm -rf /var/opt/conduit/elasticsearch/data/conduit
+    sudo conduit-ctl reconfigure
 
   If eleasticsearch does not restart during reconfigure:
 
   .. code-block:: bash
 
-    sudo morpheus-ctl start elasticsearch
+    sudo conduit-ctl start elasticsearch

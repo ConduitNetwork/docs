@@ -1,5 +1,5 @@
-# morpheus-docs
-This is the document repository for [Morpheus Data](https://www.morpheusdata.com "Morpheus Homepage").  All content is automatically published to the [Morpheus Docs Site](https://docs.morpheusdata.com "Morpheus Docs").
+# conduit-docs
+This is the document repository for [Conduit Data](https://www.conduitdata.com "Conduit Homepage").  All content is automatically published to the [Conduit Docs Site](https://docs.conduitdata.com "Conduit Docs").
 
 The content of these docs is open source.  This means you are free to contribute to them by issuing pull requests from a fork.
 
@@ -12,17 +12,17 @@ Firstly you need a local fork of the the project, so go ahead and press the “f
 
 Now you need a copy locally, so find the “SSH clone URL” in the right hand column and use that to clone locally using a terminal:
 ```
-$ git@github.com:tadamhicks/morpheus-docs.git
+$ git@github.com:tadamhicks/conduit-docs.git
 ```
 
 Change into the new project’s directory:
 ```
-$ cd morpheus-docs
+$ cd conduit-docs
 ```
 
 Finally, in this stage, you need to set up a new remote that points to the original project so that you can grab any changes and bring them into your local copy. Firstly clock on the link to the original repository – it’s labeled “Forked from” at the top of the GitHub page. This takes you back to the projects main GitHub page, so you can find the “SSH clone URL” and use it to create the new remote, which we’ll call upstream.
 ```
-$ git remote add upstream git@github.com:gomorpheus/morpheus-docs.git
+$ git remote add upstream git@github.com:goconduit/conduit-docs.git
 ```
 
 You now have two remotes for this project on disk:
@@ -35,7 +35,7 @@ This is the fun bit where you get to contribute to the project. It’s usually b
 #### BRANCH!
 **The number one rule is to put each piece of work on its own branch.** The general rule is that if you are bug fixing, then branch from master and if you are adding a new feature then branch from develop. If the project only has a master branch, the branch from that.
 
-For this example, we’ll assume we’re fixing a bug in morpheus-docs, so we branch from master:
+For this example, we’ll assume we’re fixing a bug in conduit-docs, so we branch from master:
 ```
 $ git checkout master
 $ git pull upstream master && git push origin master
@@ -60,7 +60,7 @@ $ git push -u origin hotfix/readme-update
 
 This will create the branch on your GitHub project. The -u flag links this branch with the remote one, so that in the future, you can simply type git push origin.
 
-Swap back to the browser and navigate to your fork of the project (https://github.com/tadamhicks/morpheus-docs in my case) and you’ll see that your new branch is listed at the top with a handy “Compare & pull request” button:
+Swap back to the browser and navigate to your fork of the project (https://github.com/tadamhicks/conduit-docs in my case) and you’ll see that your new branch is listed at the top with a handy “Compare & pull request” button:
 ![alt text](/images/pullrequest.png?raw=true "Pull Request")
 
 Go ahead and press the button!

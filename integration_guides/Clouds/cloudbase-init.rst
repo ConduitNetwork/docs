@@ -1,7 +1,7 @@
 Windows Image with Cloudbase-Init
 -----------------------------------
 
-|morpheus| supports provisioning Windows images with Cloudbase-init to set user data, network setting and other data at boot time. The following is an example of how to prepare a Windows image with cloudbase-init and optionally sysprep it.
+|conduit| supports provisioning Windows images with Cloudbase-init to set user data, network setting and other data at boot time. The following is an example of how to prepare a Windows image with cloudbase-init and optionally sysprep it.
 
 Setup
 ^^^^^
@@ -135,9 +135,9 @@ Setup
                       <PlainText>true</PlainText>
                     </Password>
                     <Group>administrators</Group>
-                    <DisplayName>morpheus</DisplayName>
-                    <Name>morpheus</Name>
-                    <Description>Morpheus User</Description>
+                    <DisplayName>conduit</DisplayName>
+                    <Name>conduit</Name>
+                    <Description>Conduit User</Description>
                   </LocalAccount>
                 </LocalAccounts>
               </UserAccounts>
@@ -148,7 +148,7 @@ Setup
 
 #. Save and changes to cloudbase-init.conf, cloudbase-init-unattend.conf, and unattend.xml files.
 
-   .. NOTE:: The Administrator password is being set in the unattend.xml file to be set upon boot after sysprep. This is not required if sysprep is not being used, and may not be preferred. Other mechanisms such as requiring the Administrator password to be reset or randomly generated can be used. |morpheus| can also securely via the user_data file at provision time.
+   .. NOTE:: The Administrator password is being set in the unattend.xml file to be set upon boot after sysprep. This is not required if sysprep is not being used, and may not be preferred. Other mechanisms such as requiring the Administrator password to be reset or randomly generated can be used. |conduit| can also securely via the user_data file at provision time.
 
 
 #. To run a sysprep using the cloudbase-init configuraiton, run the following in a command prompt:
@@ -159,6 +159,6 @@ Setup
 
     C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /unattend:Unattend.xml
 
-#. Sysprep will run and Windows will be powered down. The VM can now be converted to an Image/Blueprint and synced or uploaded to Morpheus and used for Provisioning.
+#. Sysprep will run and Windows will be powered down. The VM can now be converted to an Image/Blueprint and synced or uploaded to Conduit and used for Provisioning.
 
 .. IMPORTANT:: Upon upload or sync of the Virtual Image, ensure ``cloudbase enable`` is checked in the Virtual Image config, and the existing or unattend.xml credentials when using sysprep are populated.

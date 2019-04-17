@@ -10,7 +10,7 @@ New Features
 - Cloud Foundry: Space deletion added
 - Cloud Foundry: Synced services provisioning added
 - Deployments: Services section added
- Instances: Ubuntu 16.04 Added to Morpheus OpenStack, Google, Nutanix and Azure Instance Types
+ Instances: Ubuntu 16.04 Added to Conduit OpenStack, Google, Nutanix and Azure Instance Types
 - Load Balancers: LoadFortiADC Load Balancer Integration
 - Policies: "Remove Expiration" Action added to Instances for Users with Full Policies Role access
 - UI: Column Sorting added to multiple sections
@@ -41,7 +41,7 @@ Fixes
 - Instances: Fix for error on Actions -> Backup from main instances list on converted to managed Instances
 - Instances: Fix for inability to select a service plan when deploying HAProxy Instance Type in some environments
 - Instances: Fix for Virtual Machine link on Instance with Pending or Denied Approval status
-- Instances: Multiple regional Morpheus Virtual Image seed fixes
+- Instances: Multiple regional Conduit Virtual Image seed fixes
 - Library: Fix for Option Type variables not parsing when exported as Environment Variables
 - Monitoring: Fix for Incident re-open button
 - OracleVM: Fix for issue with multi-disk Virtual Images

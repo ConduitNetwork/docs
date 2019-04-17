@@ -12,6 +12,6 @@ Getting Started
   advanced/advanced_configuration.rst
   ha/ha_setup.rst
   cli/cli_master.rst
-  agent/morpheus_agent.rst
-  discovery/morpheus_discovery.rst
-  morpheus-ctl/morpheus-ctl.rst
+  agent/conduit_agent.rst
+  discovery/conduit_discovery.rst
+  conduit-ctl/conduit-ctl.rst

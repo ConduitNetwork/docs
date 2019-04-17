@@ -11,7 +11,7 @@ Add Puppet Integration
   #. Select Integration type "Puppet"
   #. Populate the following fields
 
-    * Name: Name of the Puppet Integration in |morpheus|
+    * Name: Name of the Puppet Integration in |conduit|
     * Puppet Master: Hostname
     * Allow Immediate Execution: Yes or No
 

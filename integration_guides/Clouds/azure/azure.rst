@@ -29,9 +29,9 @@ Features
 * Pricing Sync with markup options
 * Cost Estimator
 
-Combine these features with on premise solutions like Azure-Stack and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.
+Combine these features with on premise solutions like Azure-Stack and |conduit| can provide a single pane of glass and self service portal for managing instances scattered across both public Azure and private Azure Stack offerings.
 
-.. NOTE:: |morpheus| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
+.. NOTE:: |conduit| even supports integrating with CSP based accounts in Azure (typically used by managed service providers).
 
 Requirements
 ^^^^^^^^^^^^^
@@ -47,27 +47,27 @@ Requirements
 * Existing Azure Resources
 
   * Network Security Group(s)
-    * Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
+    * Typical Inbound ports open from |conduit| Appliance: 22, 5985, 3389
 
-    * Typical Outbound to |morpheus| Appliance: 80, 443
+    * Typical Outbound to |conduit| Appliance: 80, 443
 
-      * These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
+      * These are required for |conduit| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well.
 
   * Virtual Network(s)
 
-    * Public IP assignment required for instances if |morpheus| Appliance is not able to communicate with Azure instances private ip's.
+    * Public IP assignment required for instances if |conduit| Appliance is not able to communicate with Azure instances private ip's.
 
   * Resource Group(s)
   * Storage Account(s)
 
-.. NOTE:: |morpheus| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |morpheus| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |morpheus| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
+.. NOTE:: |conduit| v2.10.3 added support for multiple Resource Groups and Storage Accounts per cloud, making our Azure integration more capable and easier to configure. Prior versions of |conduit| supported one resource group and one storage account per cloud, with the security group and network selection limited to the scoped Resource Group. If you are on an earlier version of |conduit| , please note you will need to add an Azure cloud integration for each Resource Group and Storage Account you would like to use.
 
 Azure Active Directory Credentials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |morpheus| , use the steps below to obtain them.
+If you do not already have the Azure Active Directory credentials required to add an Azure cloud to |conduit| , use the steps below to obtain them.
 
-.. IMPORTANT:: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |morpheus| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
+.. IMPORTANT:: Microsoft recently added support for Active Directory application configuration in the new Azure portal. Previously, users had to use the old portal to get the required credentials to integrate Azure with |conduit| . The instructions below are updated for the new portal. Microsoft also changed the naming conventions of the credentials:
 
 
 .. csv-table:: Old and New Portal Naming Conventions:
@@ -80,7 +80,7 @@ If you do not already have the Azure Active Directory credentials required to ad
 Creating an Azure Active Directory Application
 '''''''''''''''''''''''''''''''''''''''''''''''
 
-If you do not have an existing Azure Active Directory application for |morpheus| , you will need to create a new on by:
+If you do not have an existing Azure Active Directory application for |conduit| , you will need to create a new on by:
 
 #. Log into the Azure portal
 #. Select "Azure Active Directory"
@@ -97,7 +97,7 @@ If you do not have an existing Azure Active Directory application for |morpheus|
 
    .. image:: /images/azure/newazure-f4e2d.png
 
-Now that we have (or already had) our AD app, we will gather the credentials required for the |morpheus| Azure integration.
+Now that we have (or already had) our AD app, we will gather the credentials required for the |conduit| Azure integration.
 
 Tenant ID/Directory ID
 '''''''''''''''''''''''
@@ -106,7 +106,7 @@ While still in the Active Directory Section:
 
 #. Select Properties
 #. Copy the Directory ID
-#. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |morpheus|
+#. Store/Paste for use as the Tenant ID when Adding your Azure cloud in |conduit|
 
    .. image:: /images/azure/newazure-044cf.png
 
@@ -116,7 +116,7 @@ Client ID/Application ID
 #. Select App Registrations
 #. Select your Active Directory Application
 #. Copy the Application ID
-#. Store/Paste for use as the Client ID when Adding your Azure cloud in |morpheus|
+#. Store/Paste for use as the Client ID when Adding your Azure cloud in |conduit|
 
    .. image:: /images/azure/newazure-3c6fa.png
 
@@ -130,30 +130,30 @@ While still in your Active Directory Application:
 #. Select a duration
 #. Select save
 #. Copy the Key Value
-#. Store/Paste for use as the Client Secret when Adding your Azure cloud in |morpheus|
+#. Store/Paste for use as the Client Secret when Adding your Azure cloud in |conduit|
 
    .. IMPORTANT:: Copy the key value. You won't be able to retrieve after you leave this blade.
 
    .. image:: /images/azure/newazure-7b82b.png
 
-You now have the 3 Active directory credentials required for |morpheus| Azure cloud integration.
+You now have the 3 Active directory credentials required for |conduit| Azure cloud integration.
 
 Subscription ID
 ''''''''''''''''
 
-The last credential required for the |morpheus| Azure cloud integration is the Azure Subscription ID
+The last credential required for the |conduit| Azure cloud integration is the Azure Subscription ID
 
 #. Select Resource Groups
 #. Select a Resource Group (instruction below if you do not have an existing resource group)
 #. Copy the Subscription ID
-#. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |morpheus|
+#. Store/Paste for use as the Subscription ID when Adding your Azure cloud in |conduit|
 
    .. image:: /images/azure/newazure-e446f.png
 
 Make Azure Active Directory Application owner of Subscription
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-The Active Directory Application used needs to be an owner of the subscription used for the Azure |morpheus| cloud integration.
+The Active Directory Application used needs to be an owner of the subscription used for the Azure |conduit| cloud integration.
 
 #. In the Subscription pane, select "Access Control (IAM)"
 
@@ -175,14 +175,14 @@ The Active Directory Application used needs to be an owner of the subscription u
 
    .. image:: /images/azure/newazure-560be.png
 
-You now have the required Credentials to add an Azure cloud integration into |morpheus| .
+You now have the required Credentials to add an Azure cloud integration into |conduit| .
 
 .. IMPORTANT:: You will also need to have existing Network Security Group(s), Virtual Networks(s) and Storage Accounts(s). Instructions for creating these can be found later in this article.
 
-Add Azure cloud in |morpheus|
+Add Azure cloud in |conduit|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Azure is now ready to be added into |morpheus| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
+Azure is now ready to be added into |conduit| . Ensure you have the noted Subscription ID, Tenant ID, Client ID, and Client Secret accessible.
 
 #. In Infrastructure - Clouds, select :guilabel:`+ CREATE CLOUD` and select Azure from the cloud widget.
 
@@ -205,7 +205,7 @@ Azure is now ready to be added into |morpheus| . Ensure you have the noted Subsc
 
 #. Select the Location/Region to scope the cloud to (additional Clouds can be added for multiple regions)
 #. Select All or specify a Resource Group to scope this cloud to
-#. Optionally select "Inventory Existing Instances" (This will inventory your existing vm's in Azure and list them in |morpheus| as unmanaged instances.)
+#. Optionally select "Inventory Existing Instances" (This will inventory your existing vm's in Azure and list them in |conduit| as unmanaged instances.)
 #. Click :guilabel:`+ Save Changes`
 
    .. image:: /images/azure/newazure-5f512.png
@@ -234,7 +234,7 @@ Create a Network Security Group
 
    .. image:: /images/azure/newazure-7c098.png
 
-#. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |morpheus| appliance.
+#. Configure inbound and outbound rules for the security group. Ports 80 (http), 443 (https) 22 (ssh) and 5985 (winrm) need to be open to and from the |conduit| appliance.
 
 Create a Virtual Network
 '''''''''''''''''''''''''
@@ -269,13 +269,13 @@ Create a Storage Account
 Docker
 ^^^^^^
 
-So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |morpheus| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).
+So far this document has covered how to add the Azure cloud integration and has enabled users the ability to provision virtual machine based instances via the Add Instance catalog in Provisioning. Another great feature provided by |conduit| out of the box is the ability to use Docker containers and even support multiple containers per Docker host. To do this a Docker Host must first be provisioned into Azure (multiple are needed when dealing with horizontal scaling scenarios).
 
 .. image:: /images/azure/newazure-7971d.png
 
-To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure?Hosts section. From there click the + Container Host button to add a Azure Docker Host. This host will show up in the Hosts tab. |morpheus| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
+To provision a Docker Host simply navigate to the Cloud detail page or Infrastructure?Hosts section. From there click the + Container Host button to add a Azure Docker Host. This host will show up in the Hosts tab. |conduit| views a Docker host just like any other Hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
 
-Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
+Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |conduit| appliance url which can be configured in Admin|Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
 
 Multi-tenancy
 ^^^^^^^^^^^^^

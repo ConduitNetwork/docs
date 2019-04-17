@@ -10,7 +10,7 @@ Adding Commvault Integration
 #. Fill in the following:
 
    Name
-      Name of the Integration in |morpheus|
+      Name of the Integration in |conduit|
    Enabled
       Enable the Commvault integration
    Host
@@ -20,7 +20,7 @@ Adding Commvault Integration
    Username
       Admin Username for Commvault
    Password
-      Password for Username provided (encrypted in |morpheus|).
+      Password for Username provided (encrypted in |conduit|).
    Visibility
       Sets Multi-Tenant Visibility
         Private

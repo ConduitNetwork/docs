@@ -4,11 +4,11 @@ Ansible
 Overview
 ^^^^^^^^
 
-Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML.  |morpheus| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
+Ansible is a configuration management engine that is rapidly growing in popularity in the IT and DevOPS community. While it lacks some of the benefits at scale that solutions such as Salt, Chef, or Puppet offer. It is very easy to get started and allows engineers to develop tasks in a simplistic markup language known as YAML.  |conduit| integrates with an existing repository of playbooks as the master in a master-slave Ansible architecture.
 
-|morpheus| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the |morpheus| agent communication bus. This allows playbooks to be ran against instances where ssh/winrm access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the |morpheus| Agent which only requires port 443 access back to the |morpheus| appliance URL.
+|conduit| not only supports Ansible but greatly enhances Ansible to do things that it could not do in its native form. For example, Ansible can now be configured to run over the |conduit| agent communication bus. This allows playbooks to be ran against instances where ssh/winrm access may not be feasible due to networking restrictions or other firewall constraints. Instead it can run over the |conduit| Agent which only requires port 443 access back to the |conduit| appliance URL.
 
-This integration supports both Linux based and Windows platforms for playbook execution and can also be configured to query secrets from the |morpheus| Cypher services (similar to Vault).
+This integration supports both Linux based and Windows platforms for playbook execution and can also be configured to query secrets from the |conduit| Cypher services (similar to Vault).
 
 Requirements
 ^^^^^^^^^^^^^^^
@@ -25,13 +25,13 @@ Add Ansible Integration
 #. Populate the following fields:
 
    Name
-    Name of the Ansible Integration in |morpheus|
+    Name of the Ansible Integration in |conduit|
    Enabled
     Enabled by default
    Ansible Git URL
     https or git url format of the Ansible Git repo to use
    Keypair
-    For private Git repos, a keypair must be added to |morpheus| and the public key added to the git account.
+    For private Git repos, a keypair must be added to |conduit| and the public key added to the git account.
    Playbooks Path
     Path of the Playbooks relative to the Git url.
    Roles Path
@@ -42,8 +42,8 @@ Add Ansible Integration
     Path of the Host Variables relative to the Git url.
    Enable Verbose Logging
     Enable to output verbose logging for Ansible task history
-   Use Morpheus Agent Command Bus
-    Enable for Ansible Playbooks to be executed via Morpheus Agent Command Bus instead of SSH
+   Use Conduit Agent Command Bus
+    Enable for Ansible Playbooks to be executed via Conduit Agent Command Bus instead of SSH
 
 #. Save Changes
 
@@ -54,9 +54,9 @@ Ansible on Windows
 
 When executing Ansible playbooks on Windows platforms, a few requirements must be met:
 
-* ``pywinrm`` may need to be installed on the |morpheus| Appliance via ``pip install pywinrm``
+* ``pywinrm`` may need to be installed on the |conduit| Appliance via ``pip install pywinrm``
 
-* An Ansible Integration must be scoped to a Group or Cloud for Ansible to execute on Windows, as |morpheus| assumes Ansible local when no group or cloud is scoped to Ansible. The playbooks do not need to be executed solely in the Group or Cloud, one just needs to be scoped to an Ansible Integration for Ansible Windows to run properly.
+* An Ansible Integration must be scoped to a Group or Cloud for Ansible to execute on Windows, as |conduit| assumes Ansible local when no group or cloud is scoped to Ansible. The playbooks do not need to be executed solely in the Group or Cloud, one just needs to be scoped to an Ansible Integration for Ansible Windows to run properly.
 
 Scope Ansible Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,7 +102,7 @@ Running Playbooks
 
 Playbooks can also be ran on all inventory groups, individual groups, or added as a task and ran with workflows.
 
-To run Ansible on all or a single inventory group, in the Ansible tab of the |morpheus| Group page, select the `Actions` dropdown and click `Run`.
+To run Ansible on all or a single inventory group, in the Ansible tab of the |conduit| Group page, select the `Actions` dropdown and click `Run`.
 
 In the `Run Ansible` modal, you can then select all or an individual group, and then all or a single Playbook, as well as add custom tags.
 
@@ -111,7 +111,7 @@ Playbook's can also be added as tasks to workflows in the `Provisioning -> Autom
 Using variables
 ^^^^^^^^^^^^^^^^^
 
-|morpheus| variables can be used in playbooks.
+|conduit| variables can be used in playbooks.
 
 Use Case:
    Create a user as instance hostname during provisioning.
@@ -125,10 +125,10 @@ Use Case:
             tasks:
               - name: Add User
                 win_user:
-                  name: "{{ morpheus['instance']['hostname'] }}"
+                  name: "{{ conduit['instance']['hostname'] }}"
                   password: "xxxxxxx"
                   state: present
-    .. NOTE:: ``{{ morpheus['instance']['hostname'] }}`` is the format of using |morpheus| Variables
+    .. NOTE:: ``{{ conduit['instance']['hostname'] }}`` is the format of using |conduit| Variables
    Create a user with a name which you enter during provisioning using a custom Instance type.
     This instance type has a `Text` Option type that provides a text box to enter a username. The fieldName of the option type in this case would be `username`. Below is the playbook.
      .. code-block:: bash
@@ -140,15 +140,15 @@ Use Case:
           tasks:
             - name: Add User
               win_user:
-                name: "{{ morpheus['customOptions']['username'] }}"
+                name: "{{ conduit['customOptions']['username'] }}"
                 password: "xxxxxxx"
                 state: present
-    .. NOTE:: ``{{ morpheus['customOptions']['username'] }}`` will be the format.
+    .. NOTE:: ``{{ conduit['customOptions']['username'] }}`` will be the format.
 
 Using Secrets
 ^^^^^^^^^^^^^^^
 
-Another great feature with using Ansible and |morpheus| together is the built in support for utilizing some of the services that |morpheus| exposes for automation. One of these great services is known as Cypher (please see documentation on :ref:`Cypher` for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
+Another great feature with using Ansible and |conduit| together is the built in support for utilizing some of the services that |conduit| exposes for automation. One of these great services is known as Cypher (please see documentation on :ref:`Cypher` for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
 
 .. code-block:: bash
 
@@ -172,29 +172,29 @@ This would grab the `value` property off the nested json data stored within the 
 Cypher is very powerful for storing these temporary or permanent secrets that one may need to orchestrate various tasks and workflows within Ansible.
 
 
-Using Ansible over the |morpheus| Agent Command Bus
+Using Ansible over the |conduit| Agent Command Bus
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In many environments, there may be security restrictions on utilizing SSH or WinRM to run playbooks from an Ansible server on the appliance to a target machine. This could be due to being a customer network (in the environment of an MSP ), or various security restrictions put in place by tighter industries (i.e. Government, Medical, Finance).
 
-Ansible can get one in trouble in a hurry. It is limited in scalability due to its fundamental design decisions that seem to bypass concepts core to all other configuration management frameworks (i.e. SaltStack, Chef, and Puppet). Because of its lack of an agent, the Ansible execution binary itself has to handle all the load and logic of executing playbooks on all the machines in the inventory of an Ansible project. This differs from other tools where the workload is distributed across the agents of each vm. Because of this (reaching out) approach, Ansible is very easy to get started with, but can be quite a bit slower as well as harder to scale up. However, |morpheus| offers some solutions to help mitigate these issues and increase scalability while, at the same time improving security.
+Ansible can get one in trouble in a hurry. It is limited in scalability due to its fundamental design decisions that seem to bypass concepts core to all other configuration management frameworks (i.e. SaltStack, Chef, and Puppet). Because of its lack of an agent, the Ansible execution binary itself has to handle all the load and logic of executing playbooks on all the machines in the inventory of an Ansible project. This differs from other tools where the workload is distributed across the agents of each vm. Because of this (reaching out) approach, Ansible is very easy to get started with, but can be quite a bit slower as well as harder to scale up. However, |conduit| offers some solutions to help mitigate these issues and increase scalability while, at the same time improving security.
 
-How does the |morpheus| Agent Command Bus Work?
+How does the |conduit| Agent Command Bus Work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-One of the great things about |morpheus| is it's Agent Optional approach. This means that this functionality can work without the Agent, however the agent is what adds the security benefits being represented here. When an instance is provisioned (or converted to managed) within |morpheus|, an agent can be installed. This agent opens a secure websocket back to the |morpheus| appliance (over port 443). This agent is responsible for sending back logs, guest statistics, and a command bus for automation. Since it is a WebSocket, bidirectional communication is possible over a STOMP communication bus.
+One of the great things about |conduit| is it's Agent Optional approach. This means that this functionality can work without the Agent, however the agent is what adds the security benefits being represented here. When an instance is provisioned (or converted to managed) within |conduit|, an agent can be installed. This agent opens a secure websocket back to the |conduit| appliance (over port 443). This agent is responsible for sending back logs, guest statistics, and a command bus for automation. Since it is a WebSocket, bidirectional communication is possible over a STOMP communication bus.
 
-When this functionality is enabled on an Ansible integration, a `connection_plugin` is registered with Ansible of type `morpheus` and `morpheus_win`. These direct bash or powershell commands, in their raw form, from Ansible to run over a |morpheus| api. The Ansible binary sends commands to be executed as an https request over the API utilizing a one time execution lease token that is sent to the Ansible binary. File transfers can also be enacted by this API interface. When |morpheus| receives these commands, they are sent to the target instances agent to be executed. Once they have completed a response is sent back and updated on the `ExecutionRequest` within |morpheus|. Ansible polls for the state and output on these requests and uses those as the response of the execution. This means Ansible needs zero knowledge of a machines target ip address, nor its credentials. These are all stored and safely encrypted within |morpheus|.
+When this functionality is enabled on an Ansible integration, a `connection_plugin` is registered with Ansible of type `conduit` and `conduit_win`. These direct bash or powershell commands, in their raw form, from Ansible to run over a |conduit| api. The Ansible binary sends commands to be executed as an https request over the API utilizing a one time execution lease token that is sent to the Ansible binary. File transfers can also be enacted by this API interface. When |conduit| receives these commands, they are sent to the target instances agent to be executed. Once they have completed a response is sent back and updated on the `ExecutionRequest` within |conduit|. Ansible polls for the state and output on these requests and uses those as the response of the execution. This means Ansible needs zero knowledge of a machines target ip address, nor its credentials. These are all stored and safely encrypted within |conduit|.
 
 It has also been pointed out that this execution bus is dramatically simpler than utilizing `pywinrm` when it comes to orchestrating Windows  as the winrm configurations can be cumbersome to properly setup, especially in tightly secured Enterprise environments.
 
 Troubleshooting Ansible
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-* When a workflow is executed manually, the Ansible run output is available in the Instance History tab. Select the ``i`` bubble next to the Ansible task to see the output.  You can also see the run output in the ui logs in /var/log/morpheus/morpheus-ui/current​ which can be tailed by running ``morpheus-ctl tail morpheus-ui``.
+* When a workflow is executed manually, the Ansible run output is available in the Instance History tab. Select the ``i`` bubble next to the Ansible task to see the output.  You can also see the run output in the ui logs in /var/log/conduit/conduit-ui/current​ which can be tailed by running ``conduit-ctl tail conduit-ui``.
 
-* Verify Ansible is installed on the |morpheus| Appliance.
+* Verify Ansible is installed on the |conduit| Appliance.
 
-  Ansible should be automatically but certain os's or network conditions can prevent automated install. You can run ``ansible --version`` in the |morpheus| Appliance, or in the Ansible integration details page (Administration -> Integrations -> Select Ansible Integration, or in the Ansible tab of a group or cloud scoped to Ansible) just run ``--version`` as ansible is already included in the command.
+  Ansible should be automatically but certain os's or network conditions can prevent automated install. You can run ``ansible --version`` in the |conduit| Appliance, or in the Ansible integration details page (Administration -> Integrations -> Select Ansible Integration, or in the Ansible tab of a group or cloud scoped to Ansible) just run ``--version`` as ansible is already included in the command.
 
   If Ansible is not installed, follow these instructions to install, or use your preferred installation method:
 
@@ -214,17 +214,17 @@ Troubleshooting Ansible
       sudo yum install epel-release
       sudo yum install ansible
 
-  Then create the working Ansible directory for |morpheus|:
+  Then create the working Ansible directory for |conduit|:
 
   .. code-block:: bash
 
-      sudo mkdir /opt/morpheus/.ansible
-      sudo chown morpheus-local.morpheus-local /opt/morpheus/.ansible
+      sudo mkdir /opt/conduit/.ansible
+      sudo chown conduit-local.conduit-local /opt/conduit/.ansible
 
 
 * Validate the git repo is authorizing and the paths are configured correctly.
 
-  The public and private ssh keys need to be added to the |morpheus| appliance via "Infrastructure -> Keys & Certs" and the public key needs to be added to the git repo via user settings. If both are set up right, you will see the playbooks and roles populate in the Ansible Integration details page.
+  The public and private ssh keys need to be added to the |conduit| appliance via "Infrastructure -> Keys & Certs" and the public key needs to be added to the git repo via user settings. If both are set up right, you will see the playbooks and roles populate in the Ansible Integration details page.
 
 * The Git Ref field on playbook tasks is to specify a different git branch than default. It can be left to use the default branch. If your playbooks are in a different branch you can add the brach name in the Git Ref field.
 

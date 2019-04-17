@@ -15,10 +15,10 @@ Enable stomp module in rabbit queue cluster
 
 TCP load balanced on port 5672 as well as port 61613 for STOMP
 
-Confirm in `/opt/morpheus/conf/application.yml`
+Confirm in `/opt/conduit/conf/application.yml`
 
 ----
-morpheus:
+conduit:
   stomp:
     host: IP_ADDRESS_HERE
     port: 61613

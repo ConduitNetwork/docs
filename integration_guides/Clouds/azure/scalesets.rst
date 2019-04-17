@@ -1,7 +1,7 @@
 Azure Scale Sets
 ^^^^^^^^^^^^^^^^
 
-Auto-scaling Azure instances can be done with the native Morpheus scaling service or Azure Scale Sets. When using Azure Scale Sets, Morpheus will configure the scale sets and thresholds, but Azure will be responsible for scaling the instances. The Instances nodes that are added and removed by Azure will be synced in by Morpheus as the instance scales up and down.
+Auto-scaling Azure instances can be done with the native Conduit scaling service or Azure Scale Sets. When using Azure Scale Sets, Conduit will configure the scale sets and thresholds, but Azure will be responsible for scaling the instances. The Instances nodes that are added and removed by Azure will be synced in by Conduit as the instance scales up and down.
 
 .. NOTE:: Instances can only be added to Azure Scale Sets at provision time.
 
@@ -48,4 +48,4 @@ Edit Thresholds on an Instance
 #. Update the threshold settings.
 #. Select :guilabel:`APPLY`
 
-   .. NOTE:: Morpheus will sync in changes to a scale sets threshold settings if the settings are edited in Azure.
+   .. NOTE:: Conduit will sync in changes to a scale sets threshold settings if the settings are edited in Azure.

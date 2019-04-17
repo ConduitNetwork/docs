@@ -1,5 +1,5 @@
-= |morpheus| Users Guide
-:homepage: https://morpheusdata.com
+= |conduit| Users Guide
+:homepage: https://conduitdata.com
 :toclevels: 1
 
 {project-version}

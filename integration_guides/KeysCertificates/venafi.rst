@@ -4,7 +4,7 @@ Venafi
 Overview
 ^^^^^^^^^
 
-Morpheus integrates with Venafi to sync and request SSL certificates 
+Conduit integrates with Venafi to sync and request SSL certificates 
 
 Add Venafi
 ^^^^^^^^^^

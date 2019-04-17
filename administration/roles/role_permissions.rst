@@ -4,7 +4,7 @@ Role Permissions
 .. NOTE:: Permission options for sub-tenant user roles will only list options permitted by the Tenant role applied to the sub-tenant. Sub-Tenant user roles permissions cannot exceed permissions set by the overriding Tenant Role.
 
 FEATURE ACCESS
-  Controls Tenant and User access level for sections and features in |morpheus|.
+  Controls Tenant and User access level for sections and features in |conduit|.
 GROUP ACCESS
   Controls User access level for Groups. (Groups are not Multi-Tenant.)
 CLOUD ACCESS
@@ -14,7 +14,7 @@ INSTANCE TYPE ACCESS
 
 Feature Access Permissions
 ``````````````````````````
-Feature Access settings control permissions for sections and features in |morpheus|. Permission options include:
+Feature Access settings control permissions for sections and features in |conduit|. Permission options include:
 
 None
   Hidden or inaccessible for user

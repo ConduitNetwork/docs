@@ -18,7 +18,7 @@ To add a F5 Load Balancer Integration:
    CLOUD
     Select the Cloud the Load Balancer will be available for
    NAME
-    Name of the Load Balancer in |morpheus|
+    Name of the Load Balancer in |conduit|
    DESCRIPTION
     Identifying information displayed on the Load Balancer list page.
    VISIBILITY
@@ -55,11 +55,11 @@ Add Virtual Server
 #. Fill in the following:
 
    * NAME
-      Name of the Virtual Server in |morpheus|
+      Name of the Virtual Server in |conduit|
    * DESCRIPTION
-      Description of the Virtual Server in |morpheus|
+      Description of the Virtual Server in |conduit|
    * Enabled
-      Uncheck to keep the configuration but disable F5 availability in |morpheus|
+      Uncheck to keep the configuration but disable F5 availability in |conduit|
    * VIP TYPE
       * Standard
       * Forwarding (Layer 2)
@@ -114,9 +114,9 @@ Create Pool
 ...........
 
 NAME
-  Name of the POOL in |morpheus|
+  Name of the POOL in |conduit|
 DESCRIPTION
-  Description of the POOL in |morpheus|
+  Description of the POOL in |conduit|
 BALANCE MODE
     * Round Robin
     * Least Connections
@@ -139,9 +139,9 @@ Create Monitor
 ..............
 
 NAME
- Name of the MONITOR in |morpheus|
+ Name of the MONITOR in |conduit|
 DESCRIPTION
- Description of the MONITOR in |morpheus|
+ Description of the MONITOR in |conduit|
 PARENT MONITOR
  Select from available MONITORS
 DESTINATION
@@ -160,9 +160,9 @@ Create Node
 ...........
 
 NAME
- Name of the NODE in |morpheus|
+ Name of the NODE in |conduit|
 DESCRIPTION
- Description of the NODE in |morpheus|
+ Description of the NODE in |conduit|
 ADDRESS
  Enter node address
 MONITOR

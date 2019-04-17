@@ -24,7 +24,7 @@ After installation, log into the appliance at the URL presented upon completion.
 
    * The Appliance Name is used for white labeling and as a reference for multi-appliance installations.
 
-   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.morpheusdata.com. The Appliance URL can be changed later, and also set to different url per cloud integration.
+   * The Appliance URL is the URL all provisioned instances will report back to. Example: https://example.conduitdata.com. The Appliance URL can be changed later, and also set to different url per cloud integration.
 
 #. Optionally Enable or Disable Backups, Monitoring, or Logs from this screen.
 
@@ -67,9 +67,9 @@ When using cloud-init, cloudbase-init, VMware Tools customizations, or Nutanix S
 Add a License Key
 -----------------
 
-In order to provision anything in |morpheus| , a |morpheus| License Key must be applied.
+In order to provision anything in |conduit| , a |conduit| License Key must be applied.
 
-If you do not already have a license key, one may be requested from https://www.morpheushub.com or from your |morpheus| representative.
+If you do not already have a license key, one may be requested from https://www.conduithub.com or from your |conduit| representative.
 
 In the Administration -> Settings section, select the LICENSE tab, paste your License Key and click :guilabel:`UPDATE`
 
@@ -77,4 +77,4 @@ In the Administration -> Settings section, select the LICENSE tab, paste your Li
 
 When the license is accepted, your license details will populate in the Current License section.
 
-If you receive an error message and your license is not accepted, please check it was copied in full and then contact your |morpheus| representative. You can also verify the License Key and expiration at https://www.morpheushub.com.
+If you receive an error message and your license is not accepted, please check it was copied in full and then contact your |conduit| representative. You can also verify the License Key and expiration at https://www.conduithub.com.

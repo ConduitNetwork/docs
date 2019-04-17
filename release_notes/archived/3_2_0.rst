@@ -1,21 +1,21 @@
 v3.2.0
 ======
 
-.. IMPORTANT:: Morpheus v3.2.0+ introduces Global Search, which requires an Elasticsearch upgrade. Upgrading from previous versions of Morpheus to a 3.2.0 or later requires you to upgrade ElasticSerach to 5.4.1 or 5.x. We do not support ElasticSearch 6.x at this time.  This upgrade requires you to export and import your Morpheus ElasticSearch data if you want to retain logs, backup history, statistics, and check history of your instances. If you do not need to retain that data you can skip the ElasticSearch migration.  Upgrading to 3.2.0+ will create a blank ElasticSearch node with no data. Your Morpheus layout configuration will determine how to migrate your ElasticSearch data: all-in-one, distributed high availability, or Morpheus clustered appliances.
+.. IMPORTANT:: Conduit v3.2.0+ introduces Global Search, which requires an Elasticsearch upgrade. Upgrading from previous versions of Conduit to a 3.2.0 or later requires you to upgrade ElasticSerach to 5.4.1 or 5.x. We do not support ElasticSearch 6.x at this time.  This upgrade requires you to export and import your Conduit ElasticSearch data if you want to retain logs, backup history, statistics, and check history of your instances. If you do not need to retain that data you can skip the ElasticSearch migration.  Upgrading to 3.2.0+ will create a blank ElasticSearch node with no data. Your Conduit layout configuration will determine how to migrate your ElasticSearch data: all-in-one, distributed high availability, or Conduit clustered appliances.
 
 Please refer to upgrade instructions below the release notes.
 
 New Features
 ------------
 
-- New Global Search: All of Morpheus can now be searched from the header or at ``/search``.
-- UI: Updated header including Global Search, User Avatar, Morpheus Support/Documentation links
+- New Global Search: All of Conduit can now be searched from the header or at ``/search``.
+- UI: Updated header including Global Search, User Avatar, Conduit Support/Documentation links
 - Active Directory: Nested Group Support added
 - AWS: GovCloud (West) Region added
 - Bluecat: Sync and DNS Improvements
 - Domains: Workflows added
 - Domains: Guest User setting added
-- Library: Morpheus CentOS 7.3 for Azure, Softlayer, Bluemix, DigitalOcean, Xen added
+- Library: Conduit CentOS 7.3 for Azure, Softlayer, Bluemix, DigitalOcean, Xen added
 - Library: Templates renamed File Templates
 - Policies: Sequence numbers no longer reused once freed
 - Power Schedule: Total number of hours saved per month added
@@ -35,7 +35,7 @@ Fixes
 - Alibaba: Fix for Edit Cloud not populating region/vpc
 - Alibaba: Fix for Networks recreated on sync
 - Alibaba: Fix for issue deleting VM that has backups
-- Alibaba: Fix for Elastic IP not surfaced in morpheus
+- Alibaba: Fix for Elastic IP not surfaced in conduit
 - Hosts: Fix for Add host modal in sub-tenant is not respecting user role group permissions
 - Hosts: Fix for bare metal convert to managed not displayed correctly.
 - Hosts: Fix for deleting orphaned vm's

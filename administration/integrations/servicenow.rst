@@ -10,7 +10,7 @@ Add ServiceNow Integration
 #. Add the following:
 
    NAME
-    Name of the Integration in Morpheus.
+    Name of the Integration in Conduit.
    ENABLED
     Leave checked to enable the Integration.
    HOST
@@ -81,8 +81,8 @@ Any Instance provisioned into a Cloud or Group with an Approval Policy enabled w
 Instances pending a ServiceNow approval will show "Waiting for Approval" with the Requested Item number and Request number, ex: ``Waiting for Approval [RITM0010002 - REQ0010002]``.
 
 ServiceNow Approval requests are displayed in ``Operations -> Approvals``.
-Instances pending a ServiceNow approval must be Approved in ServiceNow for provisioning to initiate. Approval requests from a ServiceNow Approval Policy cannot be approved in Morpheus, only Internal Approvals.
+Instances pending a ServiceNow approval must be Approved in ServiceNow for provisioning to initiate. Approval requests from a ServiceNow Approval Policy cannot be approved in Conduit, only Internal Approvals.
 
-ServiceNow Approval requests are displayed in Morpheus under ``Operations -> Approvals``. Pending ServiceNow Approval requests can be cancelled in Morpheus by selecting the request and then selecting ``ACTIONS -> Cancel``.
+ServiceNow Approval requests are displayed in Conduit under ``Operations -> Approvals``. Pending ServiceNow Approval requests can be cancelled in Conduit by selecting the request and then selecting ``ACTIONS -> Cancel``.
 
-Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Morpheus within 5 minutes of being approved in ServiceNow.
+Once a pending ServiceNow Approval request is Approved in ServiceNow, the Instance(s) will begin to provision in Conduit within 5 minutes of being approved in ServiceNow.

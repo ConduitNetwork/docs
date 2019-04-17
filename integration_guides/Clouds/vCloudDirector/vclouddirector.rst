@@ -14,7 +14,7 @@ Add vCD Cloud From `Infrastructure -> Clouds`
 #. Populate the following:
 
    Name
-    Name of the Cloud in |morpheus|
+    Name of the Cloud in |conduit|
    Location
     Description field for adding notes on the cloud, such as location.
    Visibility
@@ -34,9 +34,9 @@ Add vCD Cloud From `Infrastructure -> Clouds`
    VDC
     Select VDC. Dropdown populates upon successful authorization.
    Inventory Existing Instances
-    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |conduit| .
 
-   NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|.
+   NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |conduit|.
 
    .. include:: /integration_guides/Clouds/advanced_options.rst
 
@@ -56,7 +56,7 @@ Add vCD Cloud From `Infrastructure -> Groups`
 #. Populate the following:
 
    Name
-    Name of the Cloud in |morpheus|
+    Name of the Cloud in |conduit|
    Location
     Description field for adding notes on the cloud, such as location.
    Visibility
@@ -76,9 +76,9 @@ Add vCD Cloud From `Infrastructure -> Groups`
    VDC
     Select VDC. Dropdown populates upon successful authorization.
    Inventory Existing Instances
-    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |conduit| .
 
-    NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |morpheus|.
+    NOTE: Multiple Organizations/VDC's can be added by creating additional Clouds in |conduit|.
 
     .. include:: /integration_guides/Clouds/advanced_options.rst
 

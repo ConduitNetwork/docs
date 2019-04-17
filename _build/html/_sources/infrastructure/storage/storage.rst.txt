@@ -4,7 +4,7 @@ Storage
 Overview
 ^^^^^^^^
 
-The default Storage path for Virtual Images, Backups, Deployment Archives, Archive Server, and Archived Snapshots is `var/opt/morpheus`. Additional Storage providers can be added and mapped for these targets in the `Infrastructure -> Storage` section. Adding Storage providers are also required for scenarios like AWS migrations.
+The default Storage path for Virtual Images, Backups, Deployment Archives, Archive Server, and Archived Snapshots is `var/opt/conduit`. Additional Storage providers can be added and mapped for these targets in the `Infrastructure -> Storage` section. Adding Storage providers are also required for scenarios like AWS migrations.
 
 === Supported Storage Provider Types
 

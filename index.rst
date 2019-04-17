@@ -1,5 +1,5 @@
 
-Morpheus Documentation
+Conduit Documentation
 ======================
 
 .. toctree::
@@ -18,4 +18,4 @@ Morpheus Documentation
    troubleshooting/troubleshooting
    release_notes/release_notes
 
-.. |morpheus| replace:: Morpheus
+.. |conduit| replace:: Conduit

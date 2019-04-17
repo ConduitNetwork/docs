@@ -7,5 +7,5 @@ Networking
   Networking/nsx.rst
   .. Networking/aci.rst
   Networking/bluecat.rst
-  .. Networking/morpheus_internal.rst
+  .. Networking/conduit_internal.rst
   .. Networking/venafi.rst

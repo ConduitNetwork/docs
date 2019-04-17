@@ -12,7 +12,7 @@ Add Dell EMC Isilon Storage Server
 #. From the ADD STORAGE SERVER wizard input the following:
 
    NAME
-      Name of the Storage Server in |morpheus|
+      Name of the Storage Server in |conduit|
    TYPE
       Select `Dell EMC Isilon`
    URL
@@ -48,7 +48,7 @@ To Add a Dell EMC Isilon File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    STORAGE SERVICE
      Select existing Dell EMC Isilon Storage Server (configured in `Infrastructure - Storage - Servers`)
    SHARE PATH

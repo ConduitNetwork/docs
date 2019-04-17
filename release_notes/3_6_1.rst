@@ -7,8 +7,8 @@ New Features
 ------------
 
 - Ansible: `Built-in Cypher lookup plugin`_ added. ``"{{lookup('cypher','secret=secret/name')}}"`` can now be used for Cypher Secrets in Ansible playbooks natively.
-- Ansible: Refresh info log added morpheus-ui current log
-- Ansible: |morpheus| Agent Command Bus mode speed enhancements
+- Ansible: Refresh info log added conduit-ui current log
+- Ansible: |conduit| Agent Command Bus mode speed enhancements
 - API/CLI: ``createdBy`` filter added for Instances, Apps and Hosts
 - API/CLI: Cypher: New Cypher ``/api/cypher/v1`` endpoint matches Vault endpoints, allowing Vault Clients to use Cypher secrets. The existing ``/api/- cypher`` endpoints remain. CLI ``cypher`` command updated for ``/api/cypher/v1`` endpoints.
 - API/CLI: Instances: Improvements to DELETE for Instances and Apps. If an Instance or App delete is called and the instance status is still ``Provisioning``, ``resizing``, ``restarting`` or ``cloning`` the delete is not attempted and an error message is returned, unless ``force=true``
@@ -19,7 +19,7 @@ New Features
 Built-in Cypher lookup plugin
 -----------------------------
 
-A great feature with using Ansible and Morpheus together is the built in support for utilizing some of the services that Morpheus exposes for automation. v3.6.1 adds native support for using Cypher secrets in Ansible (please see documentation on :ref:`Cypher` for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
+A great feature with using Ansible and Conduit together is the built in support for utilizing some of the services that Conduit exposes for automation. v3.6.1 adds native support for using Cypher secrets in Ansible (please see documentation on :ref:`Cypher` for more details). Cypher allows one to store secret data in a highly encrypted way for future retrieval. Referencing keys stored in cypher in your playbooks is a matter of using a built-in lookup plugin for ansible.
 
 .. code-block:: bash
 
@@ -46,12 +46,12 @@ Cypher is very powerful for storing these temporary or permanent secrets that on
 Fixes
 -----
 
-- Ansible: Fix for automated Ansible install when Ansible integration is added to |morpheus|.
-- Ansible: Fix for execution User when |morpheus| agent install is skipped
-- Ansible: security fixes for when |morpheus| agent is not installed
-- Ansible: Updates and fixes for |morpheus| Agent Command Bus mode
+- Ansible: Fix for automated Ansible install when Ansible integration is added to |conduit|.
+- Ansible: Fix for execution User when |conduit| agent install is skipped
+- Ansible: security fixes for when |conduit| agent is not installed
+- Ansible: Updates and fixes for |conduit| Agent Command Bus mode
 - Apps: Fix Delete App leaving instances stuck in removing status
-- Archives: Fix for downloading large files from Archives service stopping at 1GB. Nginx restart required ``sudo morpheus-ctl restart nginx``
+- Archives: Fix for downloading large files from Archives service stopping at 1GB. Nginx restart required ``sudo conduit-ctl restart nginx``
 - AWS: Cost Explorer Reservation API calls changed to Daily
 - AWS: Fix for AWS sync updates for removed vpcs
 - AWS: Fix for sync errors caused by missing permissionService

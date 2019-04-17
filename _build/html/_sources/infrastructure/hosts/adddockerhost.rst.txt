@@ -4,7 +4,7 @@ Docker Hosts
 Overview
 ^^^^^^^^
 
-Morpheus can provision Docker Hosts into any cloud, convert existing Hosts to Docker Hosts, or even make itself a Docker Host.
+Conduit can provision Docker Hosts into any cloud, convert existing Hosts to Docker Hosts, or even make itself a Docker Host.
 
 .. image:: /images/infrastructure/add_docker.gif
 

@@ -5,6 +5,6 @@ Adding Syslog Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Administration -> Logs``
-#. Expand the |morpheus| logging section
+#. Expand the |conduit| logging section
 #. Add the Syslog forwarding rules
 #. Select :guilabel:`QUICK ADD`

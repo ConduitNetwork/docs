@@ -13,7 +13,7 @@ Configure phpIPAM API
 #. Enable ``read/write/admin`` access under **App Permissions**.
 #.  Under **App Security** select ``none``.
 
-Add phpIPAM integration to |morpheus|
+Add phpIPAM integration to |conduit|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to `Infrastructure - Network - Services`

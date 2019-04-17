@@ -4,7 +4,7 @@ SAML Integration
 Overview
 ^^^^^^^^^
 
-The |morpheus| SAML identity source integration allows customers to add user SSO to |morpheus| , authenticated by external login SAML providers.
+The |conduit| SAML identity source integration allows customers to add user SSO to |conduit| , authenticated by external login SAML providers.
 
 .. image:: /images/saml-2f9c4.png
 
@@ -32,9 +32,9 @@ SAML Configuration
 ^^^^^^^^^^^^^^^^^^
 
 LOGIN REDIRECT URL
-  This is the SAML endpoint |morpheus| will redirect to when a user signs into |morpheus| via SAML.
+  This is the SAML endpoint |conduit| will redirect to when a user signs into |conduit| via SAML.
 LOGOUT POST URL
-  The url morpheus will post to when a SAML user log out of |morpheus| to log out of the SAML provider as well.
+  The url conduit will post to when a SAML user log out of |conduit| to log out of the SAML provider as well.
 SIGNING PUBLIC KEY
   Add the X.509 Certificate public key from the SAML provider.
 
@@ -44,21 +44,21 @@ Role Mappings
 DEFAULT ROLE
   Role a saml user will be assigned by default when no role is mapped
 ROLE ATTRIBUTE NAME
-  The name of the attribute filed that will map to morpheus roles, such a MemberOf
+  The name of the attribute filed that will map to conduit roles, such a MemberOf
 REQUIRED ROLE ATTRIBUTE VALUE
   Role attribute value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP.
 
-The rest of the Role Mapping Fields will be the existing Roles in morpheus with a Role Attribute Value field.
+The rest of the Role Mapping Fields will be the existing Roles in conduit with a Role Attribute Value field.
 
 User Attribute Names
 ^^^^^^^^^^^^^^^^^^^^
 
 GIVEN NAME ATTRIBUTE NAME
-  SAML SP field value to map to |morpheus| user First Name
+  SAML SP field value to map to |conduit| user First Name
 SURNAME ATTRIBUTE NAME
-  SAML SP field value to map to |morpheus| user Last Name
+  SAML SP field value to map to |conduit| user Last Name
 EMAIL ATTRIBUTE NAME
-  SAML SP field value to map to |morpheus| user email address
+  SAML SP field value to map to |conduit| user email address
 
 .. image:: /images/saml-c4576.png
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating a CentOS 7 |morpheus| Image &mdash; jwtest 1 documentation</title>
+  <title>Creating a CentOS 7 |conduit| Image &mdash; jwtest 1 documentation</title>
   
 
   
@@ -150,7 +150,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Creating a CentOS 7 |morpheus| Image</li>
+      <li>Creating a CentOS 7 |conduit| Image</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,14 +169,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-a-centos-7-morpheus-image">
-<h1>Creating a CentOS 7 |morpheus| Image<a class="headerlink" href="#creating-a-centos-7-morpheus-image" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="creating-a-centos-7-conduit-image">
+<h1>Creating a CentOS 7 |conduit| Image<a class="headerlink" href="#creating-a-centos-7-conduit-image" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>|morpheus| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |morpheus| .</p>
-<p>=== Creating a CentOS 7 |morpheus| VMware Image</p>
+<p>|conduit| comes out of the box with a default set of templates for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a base CentOS 7 Image for use within |conduit| .</p>
+<p>=== Creating a CentOS 7 |conduit| VMware Image</p>
 <p>==== VMWare</p>
-<p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |morpheus| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
+<p>When running in VMWare it is highly recommended that VMware Tools be installed. Without it, |conduit| will have difficulty assessing the host ip address and performing some additional automation tasks for the operating system.</p>
 <p>==== Cloud-Init</p>
 <p>To get started with a base CentOS image we first install cloud-init. This is a relatively simple process using yum:
 .. code-block:: bash
@@ -186,7 +186,7 @@ yum -y install git wget ntp curl cloud-init dracut-modules-growroot
 rpm -qa kernel | sed ‘s/^kernel-//’  | xargs -I {} dracut -f /boot/initramfs-{}.img {}
 —-</p>
 <p>There are two parts to this yum installation. We are first ensuring some core dependencies are installed for automation as well as cloud-init. git for example is installed for use by ansible playbook automation down the line and is therefore optional if not using ansible. The dracut-modules-growroot is responsible for resizing the root partition upon first boot to match the virtual disk size that was potentially adjusted during provisioning.</p>
-<p>A great benefit to using cloud-init is credentials don’t have to be locked into the template. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the <cite>Administration -&gt; Provisioning -&gt; Cloud-Init</cite> Settings section.</p>
+<p>A great benefit to using cloud-init is credentials don’t have to be locked into the template. It is advisable, within |conduit| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the <cite>Administration -&gt; Provisioning -&gt; Cloud-Init</cite> Settings section.</p>
 <p>==== Network Interfaces</p>
 <p>A slightly annoying change with centOS 7 is that the network interfaces have changed naming convention. You may notice when running ifconfig that the primary network interface is set to something like ens2344 or some other random number. This naming is dynamic typically by hardware id and we don’t want this to fluctuate when provisioning the template in various VMware environments. Fortunately, there is a way to turn this functionality off and restore the interface back to eth0.</p>
 <p>Firstly we need to adjust our bootloader to disable interface naming like this.
@@ -231,7 +231,7 @@ ftp_proxy=”<a class="reference external" href="http://myproxyaddress:8080">htt
 no_proxy=127.0.0.1,localhost,applianceUrl
 https_no_proxy=127.0.0.1,localhost,applianceUrl
 —-</p>
-<p>IMPORTANT: It is very important to properly set the no_proxy list (applianceUrl) should be replaced with the actual appliance url. In future releases , morpheus plans to automatically take care of this.</p>
+<p>IMPORTANT: It is very important to properly set the no_proxy list (applianceUrl) should be replaced with the actual appliance url. In future releases , conduit plans to automatically take care of this.</p>
 <p>NOTE: If using cloud-init agent install mode these settings need to be set in the custom Cloud-Init User data section of “Edit Cloud” or “Edit Virtual Image”</p>
 <p>IMPORTANT: If using this virtual machine as a docker host, proxy settings must also be configured in the docker config. See Docker guides for instructions on how to properly set this. If necessary this can be wrapped in a task automation workflow for your own use.</p>
 </div>

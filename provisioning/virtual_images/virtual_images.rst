@@ -6,16 +6,16 @@ Virtual Images
 Overview
 --------
 
-The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |morpheus| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |morpheus| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
+The Virtual Image section displays a list of all images, local and synced, that are available to deploy. |conduit| includes a rich catalog of pre-configured System Images available for every cloud type. User Images are automatically synced from Cloud Integrations and added to the Virtual Images section. Images can also be uploaded directly into |conduit| via local file or url. Amazon and Azure Marketplace images can also be added to the Virtual Images Section.
 
-.. IMPORTANT:: Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, they still need to be properly configure to ensure successful provisioning.
+.. IMPORTANT:: Invalid Image Settings cause provisioning failures. |conduit| syncs in as much meta-data as possible for synced images, they still need to be properly configure to ensure successful provisioning.
 
 .. WARNING:: Cloud-init is enabled by default for all Linux Images. If your Linux image does not have Cloud-init installed, `Cloud-init Enabled` must be unchecked before provisioning the image or it will fail immediately.
 
 Image Types
 -----------
 
-|morpheus| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |morpheus| , or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
+|conduit| provides a vast *System Image* repo with pre-configured images for every Cloud. All other images are *User Images*. User images can be added directly to |conduit| , or automatically synced from integrated clouds. It is important to configure synced User Images for metadata, including specifying the Platform and User Credentials, prior to provisioning. Provisioning a User Image that has not been configured may result in failed provisioning.
 
 .. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
 
@@ -32,7 +32,7 @@ System Images are pre-configured with metadata and have Cloud-Init or Cloudbase-
 User Images
 ^^^^^^^^^^^
 
-Typically |morpheus| does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
+Typically |conduit| does not have sufficient metatdata to successfully provision synced User Images. After integrating clouds and User Images have synced, it is highly recommended to configure the images prior to provisioning.
 
 **To edit and configure an existing Virtual Image:**
 
@@ -40,9 +40,9 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 2. Configure the following on the Image:
 
    Name
-     Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
+     Name of the Virtual Image in |conduit| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
    Operating System
-     Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the  Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
+     Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the  Virtual Image, as |conduit| will assign Linux as the Platform for all Images without Operating System specified.
    Minimum Memory
     The Minimum Memory setting will filter available Service Plans options during provisioning. Service Plans that do not meet the Minimum Memory value set on the Virtual Image will not be provided as Service Plan choices.
    Cloud Init Enabled?
@@ -50,29 +50,29 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
    Install Agent
      On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
    Username
-     Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in `Administration -> Provisioning` and `User Settings `. If credentials are defined on the Image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist n the image (aka ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+     Existing Username on the Image. This is required for authentication, unless |conduit| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in `Administration -> Provisioning` and `User Settings `. If credentials are defined on the Image and Cloud-Init is enabled, |conduit| will add that user during provisioning, so ensure that user does not already exist n the image (aka ``root``). For Windows Guest Customizations, |conduit| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |conduit| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
    Password
      Password for the Existing User on the image if Username is populated.
    Storage Provider
-    Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
+    Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/conduit/conduit-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
    Cloud-Init User Data
      Accepts what would go in runcmd and can assume bash syntax. Example use: Script to configure satellite registration at provision time.
    Create Image
     Select FILE to select or drag and drop image file, or URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
    Permissions
-    Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.
+    Set Tenant permissions in a multi-tenant |conduit| environment. No impact on single-tenant environments.
    Auto Join Domain?
     Enable to have instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configure in `Infrastructure -> Network` and the configured domain set on the provisioned to Cloud or Network).
    VirtIO Drivers Loaded?
     Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.
    VM Tools Installed?
-    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected.
+    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |conduit| will skip network wait during provisioning when deselected.
    Force Guest Customization?
     VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
    Enabled Sysprep?
-    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Conduit will inject Unattend.xml through the Nutanix API (v3+ only)
 
 3. Save Changes
 
@@ -81,20 +81,20 @@ Typically |morpheus| does not have sufficient metatdata to successfully provisio
 Provisioning Images
 -------------------
 
-When provisioning a System Image for the first time, |morpheus| will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the |morpheus| Appliance under ``/var/opt/morpheus/vm/vmcache``. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
+When provisioning a System Image for the first time, |conduit| will download and stream the image from S3 to the source Cloud if the image is not local to the Cloud. The Image will also be cached on the |conduit| Appliance under ``/var/opt/conduit/vm/vmcache``. Subsequent provisions of the image will use the created template in the Cloud or the cached local Image if the images does not exist in the selected Cloud, in which case the cached Image will be copied to the Cloud.
 
-When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the |morpheus| Appliance and destination cloud will take place.
+When using Images that already exist in the destination cloud, such as synced, marketplace, or previously copied images, no image transfer between the |conduit| Appliance and destination cloud will take place.
 
-.. NOTE:: The |morpheus| Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
+.. NOTE:: The |conduit| Appliance must be able to download from Amazon S3 when provisioning System Images for the first time.
 
-.. NOTE:: The |morpheus| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware vCenter clouds, and reach the destination ESXi host over port 443.
+.. NOTE:: The |conduit| Appliance must be able reach and resolve the destination Host when provisioning System Images or uploaded Images for the first time. This included being able to resolve ESXi host names in VMware vCenter clouds, and reach the destination ESXi host over port 443.
 
 Add Virtual Image
 -----------------
 
-Virtual Images can be upload to |morpheus| from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to |morpheus| when adding Marketplace images).
+Virtual Images can be upload to |conduit| from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Virtual Images library, enabling the creation of custom catalog Instance Type from Marketplace images (no image is transferred to |conduit| when adding Marketplace images).
 
-.. WARNING:: Be conscious of your Storage Provider selection. The default Storage Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-ui/vms``. Uploading large images to the |morpheus| Appliance when there is inadequate space will cause upload failures and impact Appliance functionality. Ensure there is adequate space on your selected Storage Provider. Additional Storage Provider can be added at `Infrastructure -> Storage`, which can be configured as the default Virtual Image Store or selected when uploading Images.
+.. WARNING:: Be conscious of your Storage Provider selection. The default Storage Provider is the |conduit| Appliance at ``/var/opt/conduit/conduit-ui/vms``. Uploading large images to the |conduit| Appliance when there is inadequate space will cause upload failures and impact Appliance functionality. Ensure there is adequate space on your selected Storage Provider. Additional Storage Provider can be added at `Infrastructure -> Storage`, which can be configured as the default Virtual Image Store or selected when uploading Images.
 
 To Add Virtual Image:
 
@@ -117,9 +117,9 @@ To Add Virtual Image:
 3. Configure the following on the Virtual Image:
 
    Name
-    Name of the Virtual Image in |morpheus| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
+    Name of the Virtual Image in |conduit| . This can be changed from the name of the Image, but editing will not change the name of the actual Image.
    Operating System
-    Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |morpheus| will assign Linux as the Platform for all Images without Operating System specified.
+    Specifies the Platform and OS of the image. All Windows images will need to have Operating System specified on the Virtual Image, as |conduit| will assign Linux as the Platform for all Images without Operating System specified.
    Minimum Memory
     The Minimum Memory setting will filter available Service Plans options during provisioning. Service Plans that do not meet the Minimum Memory value set on the Virtual Image will not be provided as Service Plan choices.
    Cloud Init Enabled?
@@ -127,31 +127,31 @@ To Add Virtual Image:
    Install Agent
     On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
    Username
-    Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in `Administration -> Provisioning` and `User Settings `. If credentials are defined on the Image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist n the image (aka ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+    Existing Username on the Image. This is required for authentication, unless |conduit| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest Customizations are used, credentials are defined in `Administration -> Provisioning` and `User Settings `. If credentials are defined on the Image and Cloud-Init is enabled, |conduit| will add that user during provisioning, so ensure that user does not already exist n the image (aka ``root``). For Windows Guest Customizations, |conduit| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |conduit| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
    Password
     Password for the Existing User on the image if Username is populated.
    Storage Provider
-    Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
+    Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/conduit/conduit-ui/vms. Additional Storage Providers can be configured in `Infrastructure -> Storage`.
    Cloud-Init User Data
     Accepts what would go in runcmd and can assume bash syntax. Example use: Script to configure satellite registration at provision time.
    Create Image
     Select FILE to select or drag and drop image file, or URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s).
    Permissions
-    Set Tenant permissions in a multi-tenant |morpheus| environment. No impact on single-tenant environments.
+    Set Tenant permissions in a multi-tenant |conduit| environment. No impact on single-tenant environments.
    Auto Join Domain?
     Enable to have instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configure in `Infrastructure -> Network` and the configured domain set on the provisioned to Cloud or Network).
    VirtIO Drivers Loaded?
     Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.
    VM Tools Installed?
-    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |morpheus| will skip network wait during provisioning when deselected.
+    On by default, uncheck if VMware Tools (including OpenVMTools) are not installed on the Virtual Image. |conduit| will skip network wait during provisioning when deselected.
    Force Guest Customization?
     VMware only, forces guest customizations to run during provisioning, typically when provisioning to a DHCP network where guest customizations would not run by default.
    Trial Version
     Enable to automatically re-arm the expiration on Windows Trial Images during provisioning.
    Enabled Sysprep?
-    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Morpheus will inject Unattend.xml through the Nutanix API (v3+ only)
+    Applicable to Nutanix Only. Enable of the Windows Image has been sys-prepped. If enabled Conduit will inject Unattend.xml through the Nutanix API (v3+ only)
 
-.. NOTE:: Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers can be configured in `Infrastructure -> Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if used.
+.. NOTE:: Default Storage location is ``/var/opt/conduit/conduit-ui/vms``. Additional Storage Providers can be configured in `Infrastructure -> Storage`. Ensure local folders are owned by conduit-app.conduit-app if used.
 
 .. WARNING:: Provisioning will fail if `Cloud init Enabled` is checked and Cloud-Init is not installed on the Image.
 

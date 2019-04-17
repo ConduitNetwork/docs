@@ -4,9 +4,9 @@ Bluecat
 Overview
 ^^^^^^^^^
 
-|morpheus| integrates with Bluecat IPAM to scope pools to networks for Static IP assignment from Infoblox to your |morpheus| instances.
+|conduit| integrates with Bluecat IPAM to scope pools to networks for Static IP assignment from Infoblox to your |conduit| instances.
 
-Adding Bluecat to |morpheus|
+Adding Bluecat to |conduit|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to ``Infrastructure > Network > Services``
@@ -15,7 +15,7 @@ Adding Bluecat to |morpheus|
 #. Enter in the following information
 
     Name
-      Name of the Bluecat Integration in |morpheus|
+      Name of the Bluecat Integration in |conduit|
     Enabled
       Uncheck to disable sync with the Bluecat endpoint
     URL
@@ -31,12 +31,12 @@ Adding Bluecat to |morpheus|
 
 The Bluecat Integration will be saved, IP pools will sync in and populate under ``Infrastructure > Network > IP Pools``, and Domain will populate in ``Infrastructure > Network > Domains``. Pools and Domains can also be found in the Bluecat Integration details page, which can be accessed by clicking on the name of the added Bluecat Integration in ``Infrastructure > Network > Services``.
 
-.. IMPORTANT:: `Quick Deployments` must be enabled in Bluecat for |morpheus| to create instantly available DNS records when using Bluecat DNS. 
+.. IMPORTANT:: `Quick Deployments` must be enabled in Bluecat for |conduit| to create instantly available DNS records when using Bluecat DNS. 
 
 Adding IP Pools to Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| can automatically assign the next available Bluecat IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Bluecat IP/Network Pool to the `Network Pool` section on a Network(s).
+|conduit| can automatically assign the next available Bluecat IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Bluecat IP/Network Pool to the `Network Pool` section on a Network(s).
 
 #. Navigate to ``Infrastructure - Network- Networks``
 #. Select a Network name and EDIT, or select `ACTIONS - Edit`

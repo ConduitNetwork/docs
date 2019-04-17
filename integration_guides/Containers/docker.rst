@@ -4,14 +4,14 @@ Docker
 Overview
 ^^^^^^^^
 
-Morpheus can provision Docker Hosts into any cloud, convert existing Hosts to Docker Hosts, or even make itself a Docker Host.
+Conduit can provision Docker Hosts into any cloud, convert existing Hosts to Docker Hosts, or even make itself a Docker Host.
 
 .. image:: /images/infrastructure/add_docker.gif
 
 Add a Docker Host to any cloud:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: As of |morpheus| v3.6.2 Ubuntu 14.04 is no longer supported for Docker Hosts OS due to Docker version upgrade to address CVE-2019-5736. Existing Morpheus Docker Hosts running on 14.04 will not be able to upgrade to latest Morpheus Agent version. All new Morpheus Docker hosts using Ubuntu require Ubuntu 16.04 or 18.04.
+.. IMPORTANT:: As of |conduit| v3.6.2 Ubuntu 14.04 is no longer supported for Docker Hosts OS due to Docker version upgrade to address CVE-2019-5736. Existing Conduit Docker Hosts running on 14.04 will not be able to upgrade to latest Conduit Agent version. All new Conduit Docker hosts using Ubuntu require Ubuntu 16.04 or 18.04.
 
 
 1. Navigate to Infrastructure -> Hosts
@@ -77,11 +77,11 @@ Your new container host will begin provisioning, and soon be running and ready f
 Add an existing Docker Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| can manage and inventory existing/brownfield Docker Hosts by using the `Manual Docker Host` option.
+|conduit| can manage and inventory existing/brownfield Docker Hosts by using the `Manual Docker Host` option.
 
-.. NOTE:: Adding a Docker Host that was previously managed by another |morpheus| Appliance will disable management of the host on that Appliance as the |morpheus| Agent settings will be reconfigured.
+.. NOTE:: Adding a Docker Host that was previously managed by another |conduit| Appliance will disable management of the host on that Appliance as the |conduit| Agent settings will be reconfigured.
 
-.. NOTE:: `Container Mode` on the Cloud settings where the Host is being added must be set to |morpheus| for non-Kubernetes/Swarm hosts.
+.. NOTE:: `Container Mode` on the Cloud settings where the Host is being added must be set to |conduit| for non-Kubernetes/Swarm hosts.
 
 1. Navigate to Infrastructure -> Hosts
 2. Select :guilabel:`+CONTAINER HOST` button
@@ -100,13 +100,13 @@ Add an existing Docker Host
    CLOUD
     Select the Cloud the Host will be assigned to
    NAME
-    Enter name for the Docker Host in |morpheus|
+    Enter name for the Docker Host in |conduit|
    DESCRIPTION
     Enter optional description for the Docker Host
    VISIBILITY
     Select Tenant Visibility
    TAGS
-    Add optional Morpheus tags (these are not meta-data tags)
+    Add optional Conduit tags (these are not meta-data tags)
 
    Select :guilabel:`NEXT`
 
@@ -123,7 +123,7 @@ Add an existing Docker Host
    PLAN
     Default Manual
    LVM ENABLED?
-    Deselect if target host is not LVM enabled (required when using |morpheus| provided docker images)
+    Deselect if target host is not LVM enabled (required when using |conduit| provided docker images)
    DATA VOLUME
     Enter path of the target data volume on the target host
    SOFTWARE RAID?

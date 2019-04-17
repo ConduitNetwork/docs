@@ -4,7 +4,7 @@ License
 Overview
 ^^^^^^^^
 
-|morpheus| requires a valid license for provisioning new Instances, Apps and Hosts, and converting existing Instances and Hosts to managed. Licenses can be applied and updated in this section, and the current license status can be checked.
+|conduit| requires a valid license for provisioning new Instances, Apps and Hosts, and converting existing Instances and Hosts to managed. Licenses can be applied and updated in this section, and the current license status can be checked.
 
 Current License
 ^^^^^^^^^^^^^^^
@@ -22,7 +22,7 @@ Space
 
 EXAMPLE: On a 1 TB License with 182 GB of RAM under management, the Space section will show `Used Space 182.9GB  Unused Space 841.0GB`
 
-.. NOTE:: Once a current License expires or has reached its Space limit, users will no longer be able to provision new Instances, Apps, Hosts, or Bare Metal, or convert existing Hosts, Virtual Machines, or Bare Metal to managed. Morpheus will otherwise continue to function.
+.. NOTE:: Once a current License expires or has reached its Space limit, users will no longer be able to provision new Instances, Apps, Hosts, or Bare Metal, or convert existing Hosts, Virtual Machines, or Bare Metal to managed. Conduit will otherwise continue to function.
 
 Upgrade License Key
 ^^^^^^^^^^^^^^^^^^^
@@ -37,4 +37,4 @@ If valid, the new License will be applied.
 Request new License
 ^^^^^^^^^^^^^^^^^^^
 
-Licenses can be requested at https://morpheushub.com, or by contacting support@ or sales@ morpheusdata.com.
+Licenses can be requested at https://conduithub.com, or by contacting support@ or sales@ conduitdata.com.

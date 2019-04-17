@@ -4,14 +4,14 @@ v3.1.4
 New Features
 ------------
 
-- Cisco ACI: Morpheus now integrates with Cisco ACI. Add ACI as a network and security integration. Inventory your existing ACI configurations, create networks, bridge domains, application profiles, tenants, endpoint groups, contexts, filters and contracts. Provision instances into new endpoint groups and define security groups that apply contracts on provision.
+- Cisco ACI: Conduit now integrates with Cisco ACI. Add ACI as a network and security integration. Inventory your existing ACI configurations, create networks, bridge domains, application profiles, tenants, endpoint groups, contexts, filters and contracts. Provision instances into new endpoint groups and define security groups that apply contracts on provision.
 - Load Balancers: F5 Improvements: Virtual Servers, Nodes and Pools can now be created, edited and deleted.
 - Openstack: Network Improvements including Multi-network, Static IP and IP Pool support
 - Hyper-V: Network Improvements including Multi-network, Static IP and IP Pool support
 - VMware Performance Improvements- 4x increase in VMware sync and performance
 - Clouds: New Alibaba Cloud Integration
 - UI- Localization support expanded
-- Morpheus Windows Agent 1.4.1 with script execution via agent command bus
+- Conduit Windows Agent 1.4.1 with script execution via agent command bus
 - Infrastructure: Instance Node Type added to VM detail pages
 - Library: New Search Filters
 - Library: Option Types can now be re-ordered
@@ -22,7 +22,7 @@ New Features
 - Instance Details: App associations added
 - Amazon: Improved provisioning error details
 - XEN: XVA Import added
-- Containerized CLI: https://hub.docker.com/r/morpheusdata/morpheus-cli/
+- Containerized CLI: https://hub.docker.com/r/conduitdata/conduit-cli/
 
 Fixes
 -----
@@ -32,7 +32,7 @@ Fixes
 - AWS: Fix for AWS Docker Host service plan assignment
 - Networks: Fix for Assign Pool dropdown timeouts
 - Network Services: Consul - fix for name requirement not enforced
-- Virtual Images: Fix for Morpheus VMware Ubuntu 16.04 image
+- Virtual Images: Fix for Conduit VMware Ubuntu 16.04 image
 - Tenancy: Assign to Tenant bulk action listing removed
 - Openstack: Keypairs are now removed on zone delete
 - vCloud Director: Fix for Provisioning - Datastore selection

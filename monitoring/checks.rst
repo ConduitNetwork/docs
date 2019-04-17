@@ -1,7 +1,7 @@
 Checks
 ======
 
-The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through |morpheus| . One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.
+The Monitoring system is composed of individual checks. A check is created for every container or vm that is provisioned through |conduit| . One interesting thing about these checks is they are type aware. There are several different built in check types that are selected based on the service or instance type that is being provisioned. These range from database type checks to web checks and message checks. They are highly configurable and also feature fallback check types for those more generic use cases.
 
 Checks can be customized to run custom queries, check queue sizes, or even adjust severity levels and check intervals. All of these things can be controlled from the Checks sub tab within Monitoring.
 
@@ -23,12 +23,12 @@ All check types have several core options and some of these default options can 
 SSH Tunneling
 -------------
 
-In many cases when it comes to monitoring databases, and services they may not be fronted on the public ip's for external monitoring. To reach these safely, and securely |morpheus| provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.
+In many cases when it comes to monitoring databases, and services they may not be fronted on the public ip's for external monitoring. To reach these safely, and securely |conduit| provides an SSH Tunneling mechanism for its check servers. This allows the check to be confirmed via an ssh port tunnel securely using a keypair.
 
 Check Servers
 -------------
 
-On a base installation of |morpheus| a single `check server` is installed on the appliance. This is used for running any custom user checks. This service connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.
+On a base installation of |conduit| a single `check server` is installed on the appliance. This is used for running any custom user checks. This service connects to the provided rabbitmq services and can be moved off or even scaled horizontally onto sets of check servers. All other checks that are related to provisioned containers or VMs are executed by the installed agent on the guest OS or Docker host.
 
 Check types
 -----------
@@ -39,25 +39,25 @@ Web Check
 A web check is useful to identify if a url is reachable and the text to match check criteria confirms if the website is loading with the expected values. The text to match character should be within the first few lines of the page source.
 
   Use case:
-    Adding a check to make sure morpheus demo environment is functioning. The below check will login to the morpheus UI and look for a text Morpheus on the dashboard page.
+    Adding a check to make sure conduit demo environment is functioning. The below check will login to the conduit UI and look for a text Conduit on the dashboard page.
       Values to be added in Check:
         * Name: "<enter name>"
         * Type: Web Check
         * Interval: 5 mins (Select an interval)
         * Max severity: Critical
         * Check the box for affects availability
-        * Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this page will load only if my login is successful. Enter the login details in Username and password fields)
+        * Web Url: https://demo.conduitdata.com/operations/dashboard (Note: this page will load only if my login is successful. Enter the login details in Username and password fields)
         * Request Method: GET
         * Basic Authentication:
           * User: <username>
           * Password: <password>
-        * Text to Match: "Morpheus" (Login to the url and on the page of dashboard, right click and select view page source. In the forst few lines, look for a text that you want this check to verify)
+        * Text to Match: "Conduit" (Login to the url and on the page of dashboard, right click and select view page source. In the forst few lines, look for a text that you want this check to verify)
         * Save Changes
 
 Push API Check
 ^^^^^^^^^^^^^^^
 
-This check can be used to send an API call to morpheus from a platform to check if the push api is working.
+This check can be used to send an API call to conduit from a platform to check if the push api is working.
 A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates.
 
 .. NOTE:: If a check is not heard from within the check intervals, It's status will be updated to error and an incident will be raised as if it failed.
@@ -87,7 +87,7 @@ This check is used to run a query on a host running mysql.
         * Check the box for affects availability
         * Host: 127.0.0.1
         * Port: 3306
-        * DB Name: morpheus
+        * DB Name: conduit
         * User: <db user name>
         * Password: <password>
         * Query: "select count(*) as count from request_reference where status = 'requested';"

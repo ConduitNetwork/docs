@@ -21,7 +21,7 @@ Uploaded or synced images from the virtual images section are added to nodes, a 
 Instance Types
 --------------
 
-.. image:: /images/provisioning/library/Types_Library_Morpheus_salt_library_item.png
+.. image:: /images/provisioning/library/Types_Library_Conduit_salt_library_item.png
 
 Adding an Instance Type creates a new Library Item category. Multiple layouts can be added to an instance type, and these layout can have different nodes attached. The instance wizard will present the layout options compatible with the selected cloud. If cloud selection is turned off, all layouts will be presented for all cloud types accessible by the user.
 
@@ -95,7 +95,7 @@ The following fields are for all node technology types:
 
 The Options fields will change depending on the Technology option selected.
 
-For VM provisioning technology options, select an image from the VM Image dropdown, which is populated from the Virtual Images Section and will include images uploaded into |morpheus|, and synced images from added clouds.
+For VM provisioning technology options, select an image from the VM Image dropdown, which is populated from the Virtual Images Section and will include images uploaded into |conduit|, and synced images from added clouds.
 
 .. NOTE:: Amazon and Azure Marketplace Images can be added in the Virtual Images section for use as node types in custom library items.
 
@@ -132,7 +132,7 @@ Layouts are added to Instance types, and will be presented under the Configurati
 Instance Type
   Select the Instance Type to add the new Layout to. Custom Instance Types must already be created and one layout cannot be added to multiple instance types, or change Instance Types after creation.
 
-.. NOTE:: Layouts cannot be added to |morpheus| provided library items at this time.
+.. NOTE:: Layouts cannot be added to |conduit| provided library items at this time.
 
 Name
   The name the layout will present as in the Configuration Options dropdown in the provisioning wizard

@@ -9,7 +9,7 @@ Add a VMware Fusion Cloud
 #. Enter the following into the Create Cloud modal:
 
    Name
-      Name of the Cloud in |morpheus|
+      Name of the Cloud in |conduit|
    Location
       Description field for adding notes on the cloud, such as location.
    Visibility
@@ -17,7 +17,7 @@ Add a VMware Fusion Cloud
    VMWARE FUSION HOST
       IP or URL of VMware Fusion Host
    WORKING PATH
-      Existing folder |morpheus| will write to on Host
+      Existing folder |conduit| will write to on Host
    USERNAME
       Host Username
    PASSWORD

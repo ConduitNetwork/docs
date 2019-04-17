@@ -1,9 +1,9 @@
 Supported Integration Versions
 ===============================
 
-Morpheus supports an extensive range of software integrations and versions past and present. Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
+Conduit supports an extensive range of software integrations and versions past and present. Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, HPE OneView, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
 
-In addition, |morpheus| is verified to work with, but not limited to:
+In addition, |conduit| is verified to work with, but not limited to:
 
 .. [width="40%",frame="topbot",options="header"]
 
@@ -41,4 +41,4 @@ ServiceNow              Istanbul, Jakarta, Kingston, London
 Splunk                  7.10
 =====================   =================
 
-If you have any specific requirements please contact support@morpheusdata.com
+If you have any specific requirements please contact support@conduitdata.com

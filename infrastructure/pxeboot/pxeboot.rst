@@ -6,7 +6,7 @@ PXE Boot
 Overview
 --------
 
-|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning.
+|conduit| includes a built in PXE Server to enable easy and rapid bare metal provisioning.
 
 Prerequisites
 -------------
@@ -19,16 +19,16 @@ Prerequisites
     allow bootp;
     option option-128 code 128 = string;
     option option-129 code 129 = text;
-    next-server morpheus-appliance-ip;
+    next-server conduit-appliance-ip;
     filename "pxelinux.0";
 
-.. NOTE:: Replace ``morpheus-appliance-ip`` in the dhcpd.conf file with your |morpheus| appliance IP address.
+.. NOTE:: Replace ``conduit-appliance-ip`` in the dhcpd.conf file with your |conduit| appliance IP address.
 
 * ``Internal Appliance URL (PXE)`` set in `Administration - Settings`. For PXE-Boot your appliance needs to be routable directly with minimal NAT masquerading. This allows one to override the default appliance url endpoint for use by the PXE Server. If this is unset, the default appliance url will be used instead.
-* Mac or IP addresses of PXE target mapped in {morpheus} `Infrastructure -> Boot - Mapping`
+* Mac or IP addresses of PXE target mapped in {conduit} `Infrastructure -> Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
-.. NOTE:: On the |Morpheus| Appliance, PXE is enabled by default and port 69 is forwarded to the Internal PXE port 6969. These settings are configurable in in the ``pxe:`` section of ``/opt/morpheus/conf/application.yml``.
+.. NOTE:: On the |Conduit| Appliance, PXE is enabled by default and port 69 is forwarded to the Internal PXE port 6969. These settings are configurable in in the ``pxe:`` section of ``/opt/conduit/conf/application.yml``.
 
 
 Mapping
@@ -59,7 +59,7 @@ Add Mapping
 
 #. Save
 
-Once the mapping is added, and the target host is powered on, the {morpheus} PXE menu will load and PXE boot will start.
+Once the mapping is added, and the target host is powered on, the {conduit} PXE menu will load and PXE boot will start.
 
 Edit Mapping
 ^^^^^^^^^^^^
@@ -75,7 +75,7 @@ Delete Mapping
 Answer Files
 ------------
 
-Answer files are like lists of answers for questions that you know the setup program is going to ask but the user is not prepared to answer. They contain one or more sections, and each section contains one or more properties in the form name=value. Morpheus provides Answer Files for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.
+Answer files are like lists of answers for questions that you know the setup program is going to ask but the user is not prepared to answer. They contain one or more sections, and each section contains one or more properties in the form name=value. Conduit provides Answer Files for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.
 
 Add Answer Files
 ^^^^^^^^^^^^^^^^
@@ -121,7 +121,7 @@ Delete Answer File
 Images
 ------
 
-Morpheus provides Images for ESXi, CentOS, Ubuntu and XenServer, and user can add their own Images.
+Conduit provides Images for ESXi, CentOS, Ubuntu and XenServer, and user can add their own Images.
 
 Add Images
 ^^^^^^^^^^

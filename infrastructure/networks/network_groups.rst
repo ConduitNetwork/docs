@@ -13,5 +13,5 @@ Adding Network Groups
 2. Click :guilabel:`ADD`
 3. Enter the following:
    Group info:
-     * *Name*: Name of the Network Group in |morpheus|
-     * *Description*: Details of the Network Group in |morpheus|
+     * *Name*: Name of the Network Group in |conduit|
+     * *Description*: Details of the Network Group in |conduit|

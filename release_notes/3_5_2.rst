@@ -29,7 +29,7 @@ New Features
 - Network: External ID added to Network detail view
 - Nutanix: Hypervisor Console added
 - Openstack: Hypervisor Console added
-- Operations: Morpheus Health section added with Health, Alerts and Appliance Logs
+- Operations: Conduit Health section added with Health, Alerts and Appliance Logs
 - Provisioning: Add timezone option to Provisioning wizard
 - Roles: Operations: Health, Provisioning: Blueprints - CloudFormation Feature Access permissions added
 - SCVMM: Multi host and datastore support added

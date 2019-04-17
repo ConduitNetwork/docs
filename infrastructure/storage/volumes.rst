@@ -1,7 +1,7 @@
 Volumes
 -------
 
-Volumes sync or created in |morpheus| can be viewed in `Infrastructure- Storage - Volumes`. Volumes can be added for Storage Servers integrated with |morpheus| in the `Infrastructure- Storage - Servers` section.
+Volumes sync or created in |conduit| can be viewed in `Infrastructure- Storage - Volumes`. Volumes can be added for Storage Servers integrated with |conduit| in the `Infrastructure- Storage - Servers` section.
 
 Volumes Types
 ^^^^^^^^^^^^^

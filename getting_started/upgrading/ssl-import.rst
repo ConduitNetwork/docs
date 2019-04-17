@@ -1,21 +1,21 @@
-Import Trusted Certificates to Morpheus
+Import Trusted Certificates to Conduit
 ------------------------------------------
 
 #. Obtain the full SSL certificate chain in PEM format. How you get this just depends on how your organization distributes the internal CA certificate and if it has an intermediate CA or not. I can help you figure out how to get the right format or you can Google the ways to convert what you have into a PEM formatted certificate chain.
 
-#. Once you have the certificates, copy them to each appliance and place them in the /etc/morpheus/ssl/trusted_certificates directory.
+#. Once you have the certificates, copy them to each appliance and place them in the /etc/conduit/ssl/trusted_certificates directory.
 
-#. Run morpheus-ctl reconfigure on each appliance, note you don’t need to stop Morpheus before you run this.
+#. Run conduit-ctl reconfigure on each appliance, note you don’t need to stop Conduit before you run this.
 
 #. Run the following commands as root:
 
 .. code-block:: bash
 
-    export PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+    export PATH=/opt/conduit/sbin:/opt/conduit/sbin:/opt/conduit/embedded/sbin:/opt/conduit/embedded/bin:$PATH
 
 .. code-block:: bash
 
-   /opt/morpheus/embedded/java/bin/keytool -import -keystore /opt/morpheus/embedded/java/lib/security/cacerts -trustcacerts -file /etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -keypass changeit
+   /opt/conduit/embedded/java/bin/keytool -import -keystore /opt/conduit/embedded/java/lib/security/cacerts -trustcacerts -file /etc/conduit/ssl/trusted_certs/root_ca.pem -alias some_alias -keypass changeit
 
 Do this command for each certificate in the chain adjust the file and alias name as needed. Answer yes for the root certificate when asked it you want to trust it.
 

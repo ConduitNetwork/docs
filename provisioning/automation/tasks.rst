@@ -27,7 +27,7 @@ Role Permissions
 
 The User Role Permission 'Provisioning: Tasks  FULL' is required to create, edit and delete tasks.
 
-Tasks Types that can execute locally against the |morpheus| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
+Tasks Types that can execute locally against the |conduit| Appliance have an additional Role Permission: ``Tasks - Script Engines``. Script Engine Task Types will be hidden for users without ``Tasks - Script Engines`` role permissions.
 
 Task Types
 ^^^^^^^^^^
@@ -55,7 +55,7 @@ Task Types
      - Provisioning: Tasks
    * - |groovy|
      - Groovy script
-     - Executes Groovy Script locally (on |morpheus| app node)
+     - Executes Groovy Script locally (on |conduit| app node)
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
@@ -67,13 +67,13 @@ Task Types
      - Provisioning: Tasks
    * - |javascript|
      - Javascript
-     - Executes Javascript locally (on |morpheus| app node)
+     - Executes Javascript locally (on |conduit| app node)
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
    * - |jruby|
      - jRuby Scirpt
-     - Executes Ruby script locally (on |morpheus| app node)
+     - Executes Ruby script locally (on |conduit| app node)
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
@@ -91,7 +91,7 @@ Task Types
      - Provisioning: Tasks
    * - |localscript|
      - Local Shell Script
-     - Executes Bash script locally (on |morpheus| app node)
+     - Executes Bash script locally (on |conduit| app node)
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
@@ -103,7 +103,7 @@ Task Types
      - Provisioning: Tasks
    * - |jython|
      - Python Script (jython)
-     - Executes Python script locally (on |morpheus| app node)
+     - Executes Python script locally (on |conduit| app node)
      - Local
      - None
      - Provisioning: Tasks, Tasks - Script Engines
@@ -330,7 +330,7 @@ Task Types
 |localscript| Local Shell Script
 `````````````````````````````````
 :Description:
-  Executes Bash script locally (on |morpheus| app node)
+  Executes Bash script locally (on |conduit| app node)
 :Target:
   Local App Node
 :Role Permissions:
@@ -417,7 +417,7 @@ Task Types
 |restart| Restart
 ``````````````````````
 :Description:
-  Specifically for use in Workflows after a task that requires a restart, the Restart task executes a restart on the target Instance or Host. Morpheus will wait until the restart is complete to execute the next task in the workflow phase.
+  Specifically for use in Workflows after a task that requires a restart, the Restart task executes a restart on the target Instance or Host. Conduit will wait until the restart is complete to execute the next task in the workflow phase.
 :Target:
   Instance or Host
 :Role Permissions:

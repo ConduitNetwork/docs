@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Morpheus Documentation build configuration file, created by
+# Conduit Documentation build configuration file, created by
 # sphinx-quickstart on Thu Sep 21 23:13:23 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Morpheus Docs'
-copyright = u'2019, Morpheus Data'
-author = u'Morpheus'
+project = u'Conduit Docs'
+copyright = u'2019, Conduit Data'
+author = u'Conduit'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -135,12 +135,12 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "_static/morpheus_fav_64.ico"
+html_favicon = "_static/conduit_fav_64.ico"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'morpheusdocs'
+htmlhelp_basename = 'conduitdocs'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -167,8 +167,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'morpheus301.tex', u'Morpheus Documentation',
-     u'Morpheus', 'manual'),
+    (master_doc, 'conduit301.tex', u'Conduit Documentation',
+     u'Conduit', 'manual'),
 ]
 
 
@@ -177,7 +177,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
+    (master_doc, 'conduitdocs', u'Conduit Documentation',
      [author], 1)
 ]
 
@@ -188,8 +188,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'morpheusdocs', u'Morpheus Documentation',
-     author, 'Morpheus', 'Morpheus Documentation',
+    (master_doc, 'conduitdocs', u'Conduit Documentation',
+     author, 'Conduit', 'Conduit Documentation',
      'UI Docs'),
 ]
 import sphinx_rtd_theme
@@ -200,5 +200,5 @@ def setup(app):
     app.add_stylesheet('my_theme.css')
 
 rst_epilog = """
-.. |morpheus| replace:: Morpheus
+.. |conduit| replace:: Conduit
 """

@@ -39,7 +39,7 @@ Fixes
 - Load Balancers: F5: Fix for adding F5 Load balancer with SSL configured from instance scale tab
 - Infoblox: Fix for issues with pool and domain records
 - Nutanix: Windows Computer Name now set in sysprep unattend.xml
-- Instances: ``/morpheus`` directory perms created by Agent Install now set to drwxrwxr-x
+- Instances: ``/conduit`` directory perms created by Agent Install now set to drwxrwxr-x
 - Users: Fix for deleting a user with Archives history records
 - Instance details: Fix for Price data refreshing to inaccurate value
 - Provisioning: Fix for overzealous enforcement of min ram setting on custom Plans
@@ -48,7 +48,7 @@ Fixes
 - Blueprints: Fix for incorrect price data displayed for custom plans
 - OracleVM: Fix for provisioning using deprecated CPU value rather than Cores value
 - Instances: Clone: Fix for Cloud selection when cloning
-- VCD: Fix for provisioning when using a synced Image from non-morpheus generated vCD catalogue.
+- VCD: Fix for provisioning when using a synced Image from non-conduit generated vCD catalogue.
 - Config Management: Fix for Config Management scoping sometimes not visible when editing a Group or Cloud
 - UCS Cloud: Fix for credentials not saving and add cloud
 - VMware: Fix for duplicate storage controllers on reconfigure

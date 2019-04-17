@@ -1,4 +1,4 @@
-Morpheus CLI
+Conduit CLI
 ======================================
 
 .. include:: installing_on_linux.rst

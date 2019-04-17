@@ -4,7 +4,7 @@ UCS Manager
 Overview
 ^^^^^^^^
 
-The |morpheus| UCS Manager Integration enables UCS M B and C Chassis Inventory, VM and Container Host Bare Metal Provisioning, PXE boot with IPMI, Storage Profile, SAN Connection Profile, Server Pool, BIOS Profile, Boot Profile, Maintenance Profile, UUID Pool and Disk Group Profile sync.
+The |conduit| UCS Manager Integration enables UCS M B and C Chassis Inventory, VM and Container Host Bare Metal Provisioning, PXE boot with IPMI, Storage Profile, SAN Connection Profile, Server Pool, BIOS Profile, Boot Profile, Maintenance Profile, UUID Pool and Disk Group Profile sync.
 
 Adding UCS Manager Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -15,7 +15,7 @@ Adding UCS Manager Cloud
 #. Populate the following:
 
    Name
-    Name of the Cloud in |morpheus|
+    Name of the Cloud in |conduit|
    Code
     Cloud Code for variables
 

@@ -1,27 +1,27 @@
-morpheus-ctl tips
+conduit-ctl tips
 =====================
 
-``morpheus-ctl`` is useful beyond reconfigures and starting the ui, and many commands can be run across all services, or scoped to a singe service.
+``conduit-ctl`` is useful beyond reconfigures and starting the ui, and many commands can be run across all services, or scoped to a singe service.
 
 Some common commands include:
 
-morpheus-ctl status
+conduit-ctl status
   This list all the installed services and their current Status
-morpheus-ctl start (service)
+conduit-ctl start (service)
   This starts all services if no service is specified, or starts the specified service. For example,
 
-  - ``morpheus-ctl start/stop/restart/kill`` on an all-in-one appliance will start, stop, restart or kill mysql, elasticsearch, rabbitmq, check-server, redis, guacd and the morpheus-ui, one by one.
-  - ``morpheus-ctl start/stop/restart/kill morpheus-ui`` will only start, stop, restart or kill the morpheus-ui service, leaving the other service in their current state.  Same goes for ``morpheus-ctl start/stop/restart/kill mysql``, ``morpheus-ctl start/stop/restart/kill elasticsearch`` etc.
+  - ``conduit-ctl start/stop/restart/kill`` on an all-in-one appliance will start, stop, restart or kill mysql, elasticsearch, rabbitmq, check-server, redis, guacd and the conduit-ui, one by one.
+  - ``conduit-ctl start/stop/restart/kill conduit-ui`` will only start, stop, restart or kill the conduit-ui service, leaving the other service in their current state.  Same goes for ``conduit-ctl start/stop/restart/kill mysql``, ``conduit-ctl start/stop/restart/kill elasticsearch`` etc.
 
 
-``morpheus-ctl`` commands:
+``conduit-ctl`` commands:
 
 .. code-block:: bash
 
      General Commands:
 
        cleanse
-         Delete *all* morpheus data, and start from scratch.
+         Delete *all* conduit data, and start from scratch.
        help
          Print this help message.
        reconfigure

@@ -7,7 +7,7 @@ Add a Digital Ocean Cloud
 DigitalOcean Cloud Integration Detail fields:
 
 Name
-  Name of the Cloud in |morpheus|
+  Name of the Cloud in |conduit|
 Location
   Description field for adding notes on the cloud, such as location.
 Visibility

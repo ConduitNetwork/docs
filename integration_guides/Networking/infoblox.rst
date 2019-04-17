@@ -22,7 +22,7 @@ Adding Infoblox Integration
    .. image:: /images/infrastructure/network/infoblox/infoblox_settings.png
 
    NAME
-    Name of the Integration in |morpheus|
+    Name of the Integration in |conduit|
    Enabled
     Deselect to disable the Integration
    URL
@@ -37,9 +37,9 @@ Adding Infoblox Integration
    Disable SSL SNI Verification
     Leave selected to disable SSL SNI Verification
    NETWORK FILTER
-    Filter which networks are synced into |morpheus|. Example: Network Filter: ``[ network_view=default&*Building=work ]``
+    Filter which networks are synced into |conduit|. Example: Network Filter: ``[ network_view=default&*Building=work ]``
    TENANT MATCH ATTRIBUTE
-     This can be set to the name of the extended attribute in Infoblox where |morpheus| will check for the id of a morpheus tenant.  This allows for setting the tenant’s |morpheus| id to an extended attribute field on a network view or network in Infoblox, and when the network or view is discovered by morpheus, it will be auto assigned to the right tenant.
+     This can be set to the name of the extended attribute in Infoblox where |conduit| will check for the id of a conduit tenant.  This allows for setting the tenant’s |conduit| id to an extended attribute field on a network view or network in Infoblox, and when the network or view is discovered by conduit, it will be auto assigned to the right tenant.
    IP MODE
     Static IPs or DHCP Reservations
 
@@ -61,7 +61,7 @@ Upon save the Infoblox IPAM integration will be created and the following will s
 Adding IP Pools to Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| can automatically assign the next available Infoblox IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Infoblox IP/Network Pool to the `Network Pool` section on a Network(s).
+|conduit| can automatically assign the next available Infoblox IP in an IP/Network Pool and create the corresponding DNS records, as well as remove the records upon teardown. To enable this, add an Infoblox IP/Network Pool to the `Network Pool` section on a Network(s).
 
 #. Navigate to `Infrastructure - Network- Networks`
 #. Select a Network name and EDIT, or select `ACTIONS - Edit`

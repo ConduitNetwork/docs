@@ -49,8 +49,8 @@ To View Groups:
 
 .. API
 ---
-  View all groups: ``curl https://api.gomorpheus.com/api/groups -H "Authorization: BEARER access_token"``
-  View a specific group: ``curl https://api.gomorpheus.com/api/groups/:id -H "Authorization: BEARER access_token"``
+  View all groups: ``curl https://api.goconduit.com/api/groups -H "Authorization: BEARER access_token"``
+  View a specific group: ``curl https://api.goconduit.com/api/groups/:id -H "Authorization: BEARER access_token"``
 
 Adding Groups
 -------------
@@ -80,12 +80,12 @@ Minimal values: ``groups add CLITest`` There would be prompt to provide optional
 ---
 
 .. HTTP Request
-  ``POST https://api.gomorpheus.com/api/groups``
+  ``POST https://api.goconduit.com/api/groups``
 
 .. shell
 
 .. .. code-block:: bash
-    curl -XPOST "https://api.gomorpheus.com/api/groups" \
+    curl -XPOST "https://api.goconduit.com/api/groups" \
       -H "Authorization: BEARER access_token" \
       -H "Content-Type: application/json" \
       -d '{"group":{

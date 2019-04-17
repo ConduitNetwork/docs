@@ -14,9 +14,9 @@ DATACENTER ID
 NETWORK MODE
   Unmanaged or Managed
 SECURITY MODE
-  Defines if Morpheus will control local firewall of provisioned servers and hosts.
+  Defines if Conduit will control local firewall of provisioned servers and hosts.
 
-  .. IMPORTANT:: When local firewall management is enabled, Morpheus will automatically set an IP table rule to allow incoming connections on tcp port 22 from the Morpheus Appliance.
+  .. IMPORTANT:: When local firewall management is enabled, Conduit will automatically set an IP table rule to allow incoming connections on tcp port 22 from the Conduit Appliance.
 
 STORAGE MODE
   Single Disk, LVM or Clustered
@@ -31,16 +31,16 @@ CONFIG MANAGEMENT
 CMDB
   Select CMDB Integration to automatically update selected CMDB.
 AGENT INSTALL MODE
-  * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
-  * Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
+  * SSH / WINRM: |conduit| will use SSH or WINRM for Agent install.
+  * Cloud-Init (when available): |conduit| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |conduit| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
 API PROXY
-  Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Required when a Proxy Server blocks communication between the |conduit| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 
 Provisioning Options
 ^^^^^^^^^^^^^^^^^^^^
 
 PROXY
-  Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+  Required when a Proxy Server blocks communication between an Instance and the |conduit| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 Bypass Proxy for Appliance URL
   Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
 USER DATA (LINUX)

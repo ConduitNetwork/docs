@@ -5,7 +5,7 @@ Release date: 12/13/18
 
 .. note:: yum and msi agent installs are now over port 443
 
-.. important:: Ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx``
+.. important:: Ngnix needs to be restarted after 3.5.3 upgrade with ``conduit-ctl restart nginx``
 
 New Features
 ------------
@@ -24,7 +24,7 @@ New Features
 - Appliance: RabbitMQ: STOMP SSL support added
 - Apps: Added App execution aborting
 - Apps: Added review tab to app wizard
-- Automation: Ansible: Morpheus Variables support added. containerScriptConfig map now sent to an extraVars.yml for Ansible use
+- Automation: Ansible: Conduit Variables support added. containerScriptConfig map now sent to an extraVars.yml for Ansible use
 - Backups: Commvault: Refactored Commvault integration
 - Backups: Rubrik integration added with SLA Domain sync, Backup creation and restore.
 - Backups: Rubrik Integration added.
@@ -55,14 +55,14 @@ New Features
 - Operations: Health: Added info message for single node Elasticsearch health
 - Operations: Usage: Added Type Filter with Container, Host and Discovered options
 - Provisioning: Auto-truncation of Windows hostnames if specified hostname is over 15 character limit. If truncated name matches existing hostname sequence added.
-- Provisioning: Morpheus Agent msi and yum packages now transferred over 443. 80 still required for deb agents
+- Provisioning: Conduit Agent msi and yum packages now transferred over 443. 80 still required for deb agents
 - Provisioning: Support Deployments enabled on System MySQL Instance Type
 - Provisioning: Windows: Agent install optimizations, speed improvements
 - Storage: Dell EMC Isilon: Create exports to allow access from ip addresses
 - Storage: Dell EMC Isilon: Create new NFS shares
 - Storage: Dell EMC Isilon: Create storage providers from an Isilon volume
 - Storage: Dell EMC Isilon: Manage existing NFS shares
-- Storage: Dell EMC Isilon: Sync NFS volume shares to Morpheus
+- Storage: Dell EMC Isilon: Sync NFS volume shares to Conduit
 - Virtual Images: Prevent form autofill for username/password
 
 Fixes
@@ -112,7 +112,7 @@ Fixes
 - Pricing: Fix for OracleVM plans issue with incorrect cores
 - Pricing: Fix for price comparison missing some expected cloud prices
 - Pricing: Fix for tenant Plan visibility
-- Provisioning: /morpheus directory perms created by Agent Install now set to drwxrwxr-x
+- Provisioning: /conduit directory perms created by Agent Install now set to drwxrwxr-x
 - Provisioning: Fix for Load Balancer not retaining settings in instance wizard
 - Provisioning: Fix for overzealous enforcement of min ram setting on custom Plans
 - Provisioning: Fix for scaling down not cleaning up environment variables
@@ -124,7 +124,7 @@ Fixes
 - UCS: Fix for UCS cloud credentials not working on add, only edit
 - User Settings: Fix for Default Cloud selection displaying clouds in groups not accessible to user
 - Users: Fix for Bearer token expiration
-- VCD: Fix for provisioning when using a synced Image from non-morpheus generated vCD catalogue.
+- VCD: Fix for provisioning when using a synced Image from non-conduit generated vCD catalogue.
 - VCD: Fix for uploading Images over 1 GB
 - VCD: Network DNS settings now updated upon cloud sync
 - VCD: Removed Hostname value in discovered vm's detail view. This was set to machine name previously as Hostname is not avilable via vcd cloud sync.

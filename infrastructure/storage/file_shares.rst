@@ -24,7 +24,7 @@ To Add a CIFS File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    HOST
      Enter host IP or resolvable hostname
       Example: ``192.168.200.210``
@@ -85,7 +85,7 @@ To Add a Dell EMC ECS File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    STORAGE SERVICE
      Select existing Dell EMC ECS Storage Server (configured in `Infrastructure - Storage - Servers`)
    SHARE PATH
@@ -155,7 +155,7 @@ To Add a Dell EMC Isilon File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    STORAGE SERVICE
      Select existing Dell EMC Isilon Storage Server (configured in `Infrastructure - Storage - Servers`)
    SHARE PATH
@@ -212,11 +212,11 @@ The File Share will be created and displayed in the File Shares tab.
 Local Storage File Shares
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. IMPORTANT:: Local Storage refers to local to the |morpheus| Appliance and the path must be owned by `morpheus-app`. Please be conscious of storage space. High Availability configurations require Local Storage File Shares paths to be shared storage paths between the font end |morpheus| Appliances.
+.. IMPORTANT:: Local Storage refers to local to the |conduit| Appliance and the path must be owned by `conduit-app`. Please be conscious of storage space. High Availability configurations require Local Storage File Shares paths to be shared storage paths between the font end |conduit| Appliances.
 
-.. NOTE:: To change the owner of a file path to be used as a Local Storage File Share, run ``chown morpheus-app.morpheus-app /path`` on the |morpheus| Appliance.
+.. NOTE:: To change the owner of a file path to be used as a Local Storage File Share, run ``chown conduit-app.conduit-app /path`` on the |conduit| Appliance.
 
-.. NOTE:: |morpheus| will validate path and ownership of the File Share Path.
+.. NOTE:: |conduit| will validate path and ownership of the File Share Path.
 
 To Add a Local Storage File Share:
 
@@ -227,12 +227,12 @@ To Add a Local Storage File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    STORAGE PATH
-     Enter the File Share path on the local |morpheus| Appliance.
-      Example: ``/var/opt/morpheus/morpheus-ui/vms/virtual-images``
+     Enter the File Share path on the local |conduit| Appliance.
+      Example: ``/var/opt/conduit/conduit-ui/vms/virtual-images``
 
-      .. IMPORTANT:: High Availability configurations require Local Storage File Shares paths to be shared storage paths between the font end |morpheus| Appliances.
+      .. IMPORTANT:: High Availability configurations require Local Storage File Shares paths to be shared storage paths between the font end |conduit| Appliances.
    Default Backup Target
     Sets this File Share as the default backup target when creating Backups. If selected the option to update existing Backup configuration to use this File Share will be presented.
    Archive Snapshots
@@ -275,7 +275,7 @@ NFSv3 File Shares
 
 .. NOTE:: Configure access to the NFS folder on the NFS Provider prior to adding the NFSv3 File Share.
 
-.. NOTE:: Upon save |morpheus| will create a persistent mount owned by ``morpheus-app.morpheus-app`` on the |morpheus| Appliance for the NFSv3 File Share.
+.. NOTE:: Upon save |conduit| will create a persistent mount owned by ``conduit-app.conduit-app`` on the |conduit| Appliance for the NFSv3 File Share.
 
 To Add a NFSv3 File Share:
 
@@ -286,9 +286,9 @@ To Add a NFSv3 File Share:
 #. From the NEW FILE SHARE Wizard input the following:
 
    NAME
-     Name of the File Share in |morpheus|.
+     Name of the File Share in |conduit|.
    HOST
-     Enter the File Share path on the local |morpheus| Appliance.
+     Enter the File Share path on the local |conduit| Appliance.
    EXPORT FOLDER
      Enter the NFSv3 Folder
    Default Backup Target

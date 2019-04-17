@@ -1,27 +1,27 @@
 Application Tier
 ----------------
 
-|morpheus| configuration is controlled by a configuration file located
-at ``/etc/morpheus/morpheus.rb``. This file is read when you run
-``morpheus-ctl reconfigure`` after installing the appliance package. Each
+|conduit| configuration is controlled by a configuration file located
+at ``/etc/conduit/conduit.rb``. This file is read when you run
+``conduit-ctl reconfigure`` after installing the appliance package. Each
 section is tied to a deployment tier: database is mysql, message queue
 is rabbitmq, search index is elasticsearch. There are no entries for the
 web and application tiers since those are part of the core application
 server where the configuration file resides.
 
-#. Download and install the Morpheus Appliance Package
+#. Download and install the Conduit Appliance Package
 
-#. Next we must install the package onto the machine and configure the morpheus services:
-
-   .. code-block:: bash
-
-      sudo sudo rpm -i morpheus-appliance-x.x.x-1.x86_64.rpm
-
-#. After installing and prior to reconfiguring, edit the ``morpheus.rb`` file
+#. Next we must install the package onto the machine and configure the conduit services:
 
    .. code-block:: bash
 
-      sudo vi /etc/morpheus/morpheus.rb
+      sudo sudo rpm -i conduit-appliance-x.x.x-1.x86_64.rpm
+
+#. After installing and prior to reconfiguring, edit the ``conduit.rb`` file
+
+   .. code-block:: bash
+
+      sudo vi /etc/conduit/conduit.rb
 
 Change the values to match your configured services:
 
@@ -32,11 +32,11 @@ Change the values to match your configured services:
 
     mysql['enable'] = false
     mysql['host'] = {'10.30.20.139' => 3306,  '10.30.20.153' => 3306,  '10.30.20.196' => 3306}
-    mysql['morpheus_db'] = 'morpheusdb'
-    mysql['morpheus_db_user'] = 'dbuser'
-    mysql['morpheus_password'] = 'dbuserpassword'
+    mysql['conduit_db'] = 'conduitdb'
+    mysql['conduit_db_user'] = 'dbuser'
+    mysql['conduit_password'] = 'dbuserpassword'
     rabbitmq['enable'] = false
-    rabbitmq['vhost'] = 'morpheus'
+    rabbitmq['vhost'] = 'conduit'
     rabbitmq['queue_user'] = 'lbuser'
     rabbitmq['queue_user_password'] = 'lbuserpassword'
     rabbitmq['host'] = 'rabbitvip'
@@ -48,8 +48,8 @@ Change the values to match your configured services:
     elasticsearch['es_hosts'] = {'10.30.20.91' => 9200, '10.30.20.149' => 9200, '10.30.20.165' => 9200}
 
 
-#. Reconfigure Morpheus
+#. Reconfigure Conduit
 
 .. code-block:: bash
 
-        sudo morpheus-ctl reconfigure
+        sudo conduit-ctl reconfigure

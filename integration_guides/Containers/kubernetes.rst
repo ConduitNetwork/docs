@@ -14,7 +14,7 @@ Add Kubernetes Cloud
 #. Enter the following into the Create Cloud modal:
 
    Name
-    Name of the Cloud in |morpheus|
+    Name of the Cloud in |conduit|
    Location
     Description field for adding notes on the cloud, such as location.
    Visibility

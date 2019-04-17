@@ -24,7 +24,7 @@ Azure Stack is Microsoft's Azure Cloud for on-premises environments. Azure Stack
 * Pricing Sync with markup options
 * Cost Estimator
 
-Combine these features with public Azure and |morpheus| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.
+Combine these features with public Azure and |conduit| can provide a single pane of glass and self service portal for managing instances scattered across both Azure offerings.
 
 Requirements
 ^^^^^^^^^^^^^
@@ -32,11 +32,11 @@ Requirements
 Azure Stack Accessibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, the Azure Stack management url's are not accessible from an external network. Port mappings and DNS must be configured for communication between the |morpheus| Appliance and Azure Stack.
+By default, the Azure Stack management url's are not accessible from an external network. Port mappings and DNS must be configured for communication between the |conduit| Appliance and Azure Stack.
 
-.. IMPORTANT:: In order to communicate with Azure Stack, |morpheus| must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the |morpheus| Appliances' network with corresponding entries added to DNS.
+.. IMPORTANT:: In order to communicate with Azure Stack, |conduit| must be able to reach the internal Azure Stack network. The Azure Stack Portal needs to be exposed to the |conduit| Appliances' network with corresponding entries added to DNS.
 
-One option to expose the Internal Azure Stack network to the |morpheus| Appliances' network is to use the 'Expose-AzureStackPortal.ps1' powershell script from https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19. An Azure Stack Port Mapping Tool is also available.
+One option to expose the Internal Azure Stack network to the |conduit| Appliances' network is to use the 'Expose-AzureStackPortal.ps1' powershell script from https://gallery.technet.microsoft.com/scriptcenter/Expose-the-Azure-Stack-7ef68b19. An Azure Stack Port Mapping Tool is also available.
 
 Below is a sample output from the script for reference:
 
@@ -81,15 +81,15 @@ The following resources need to be created and configured inside Azure Stack for
 * Storage Account(s)
 * Network Security Group(s)
 
-  * Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
-  * Outbound ports open to |morpheus| Appliance: 80, 443
+  * Inbound ports open from |conduit| Appliance: 22, 5985, 3389
+  * Outbound ports open to |conduit| Appliance: 80, 443
 
-.. NOTE:: Proper Network and Network Security Group configuration is required for |morpheus| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.
+.. NOTE:: Proper Network and Network Security Group configuration is required for |conduit| agent install, communication, and remote console access. Other configurations, such as docker instances, will need the appropriate ports opened as well.
 
 Required Credentials & Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Credentials to integrate |morpheus| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.
+Credentials to integrate |conduit| with Azure Stack are located in both the public Azure Portal and the Private Azure Stack Portal. The Azure Active Directory Application used must be an owner of the Azure Stack subscription.
 
 Azure Portal:
   * Azure Active Directory Application Credentials
@@ -110,12 +110,12 @@ Adding an Azure Stack Cloud
 Configure
 ~~~~~~~~~~
 
-#. In the |morpheus| UI, navigate to ``Infrastructure -> Clouds`` and Select :guilabel:`+ CREATE CLOUD`
+#. In the |conduit| UI, navigate to ``Infrastructure -> Clouds`` and Select :guilabel:`+ CREATE CLOUD`
 #. Select *AZURE STACK (PRIVATE)* from the Clouds list and select :guilabel:`NEXT`
 #. In the Configure section, enter:
 
    NAME
-    Internal name for the Cloud in |morpheus|
+    Internal name for the Cloud in |conduit|
    LOCATION
     (Optional) Can be used to specify the location of the Cloud or add a description.
    VISIBILITY
@@ -147,7 +147,7 @@ Configure
    Resource Group
     Select All or a single Resource Group to scope the cloud to. Selecting a single Resource Group will only sync resources in that Resource Group and disable Resource Group selection during provisioning. All will sync all resources and allow specifying the Resource Group during provisioning.
    Inventory Existing Instances
-    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+    If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |conduit| .
 
 #. The Azure Stack cloud is ready to be added to a group and saved. Additional configuration options available:
 
@@ -173,15 +173,15 @@ Advanced Options
    CONFIG MANAGEMENT
     Select a Chef, Salt, Ansible or Puppet integration to be used with this Cloud.
    AGENT INSTALL MODE
-    * SSH / WINRM: |morpheus| will use SSH or WINRM for Agent install.
-    * Cloud-Init (when available): |morpheus| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
+    * SSH / WINRM: |conduit| will use SSH or WINRM for Agent install.
+    * Cloud-Init (when available): |conduit| will utilize Cloud-Init or Cloudbase-Init for agent install when provisioning images with Cloud-Init/Cloudbase-Init installed. |conduit| will fall back on SSH or WINRM if cloud-init is not installed on the provisioned image.
 
    API PROXY
-    Required when a Proxy Server blocks communication between the |morpheus| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+    Required when a Proxy Server blocks communication between the |conduit| Appliance and the Cloud. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
 
 Provisioning Options
   API PROXY
-    Required when a Proxy Server blocks communication between an Instance and the |morpheus| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
+    Required when a Proxy Server blocks communication between an Instance and the |conduit| Appliance. Proxies can be added in the `Infrastructure -> Networks -> Proxies` tab.
   Bypass Proxy for Appliance URL
     Enable to bypass proxy settings (if added) for Instance Agent communication to the Appliance URL.
   USER DATA (LINUX)
@@ -195,14 +195,14 @@ Group
 A Group must be specified or created for the new Cloud to be added to. Clouds can be added to additional Groups or removed from Groups after being created.
 
 USE EXISTING
-  Add the new Cloud to an exiting Group in |morpheus| .
+  Add the new Cloud to an exiting Group in |conduit| .
 CREATE NEW
-  Creates a new Group in |morpheus| and adds the Cloud to the Group.
+  Creates a new Group in |conduit| and adds the Cloud to the Group.
 
 Review
 ~~~~~~~
 
-Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |morpheus| will perform the initial cloud sync of:
+Confirm all settings are correct and select COMPLETE. The Azure Stack Cloud will be added, and |conduit| will perform the initial cloud sync of:
 
 * Virtual Machines (if Inventory Existing Instances is enabled)
 * Networks

@@ -10,7 +10,7 @@ Instances are managed resources that may have one or multiple Virtual Machines a
 There are scenarios where deleting, or attempting to delete the associated Virtual Machines is not desired:
 
 - The Instance needs to be deleted, but the actual Virtual Machines need to remain.
-- The actual Virtual Machines have already been deleted outside of |morpheus|, so only the records in |morpheus| need to be removed.
+- The actual Virtual Machines have already been deleted outside of |conduit|, so only the records in |conduit| need to be removed.
 
 Deleting an Instance without deleting Infrastructure
 ----------------------------------------------------
@@ -40,9 +40,9 @@ This will delete the Virtual Machine record as well as the Instance record, but 
 Deleting an Instance/VM that does not exist anymore
 ----------------------------------------------------
 
-Deleting a managed resource outside of |morpheus| is not recommended as it will leave stranded record in |morpheus| and cause deleting the records in |morpheus| to get stuck on delete when |morpheus| tries to remove infrastructure that is no longer there.
+Deleting a managed resource outside of |conduit| is not recommended as it will leave stranded record in |conduit| and cause deleting the records in |conduit| to get stuck on delete when |conduit| tries to remove infrastructure that is no longer there.
 
-To select an Instance and/or VM record in |morpheus| for a Virtual Machine that no longer exists:
+To select an Instance and/or VM record in |conduit| for a Virtual Machine that no longer exists:
 
 1. Navigate to the Virtual Machine record by clicking on the VM's name in the Virtual Machines section in the Instances details section, or by navigating to `Infrastructure - Hosts - Virtual Machines` and selecting the VM.
 
@@ -57,10 +57,10 @@ To select an Instance and/or VM record in |morpheus| for a Virtual Machine that 
 
    .. image:: /images/provisioning/deleteOnlyInstance.png
 
-   .. IMPORTANT:: Ensure "Remove Infrastructure" is NOT checked. If it is checked, |morpheus| will try to delete the actual VM, and since it is not there anymore, the delete will not complete successfully since |morpheus| will not be able to verify successful deletion of the Infrastructure.
+   .. IMPORTANT:: Ensure "Remove Infrastructure" is NOT checked. If it is checked, |conduit| will try to delete the actual VM, and since it is not there anymore, the delete will not complete successfully since |conduit| will not be able to verify successful deletion of the Infrastructure.
 
 4. Select DELETE
 
-The key point is when deleting an Instance, or when selecting "Remove Infrastructure" when deleting a VM record, |morpheus| will always try to remove the Infrastructure. If the Infrastructure/VM no longer exists, or you do not want to remove it, simply delete from the Infrastructure section and uncheck "Remove Infrastructure".
+The key point is when deleting an Instance, or when selecting "Remove Infrastructure" when deleting a VM record, |conduit| will always try to remove the Infrastructure. If the Infrastructure/VM no longer exists, or you do not want to remove it, simply delete from the Infrastructure section and uncheck "Remove Infrastructure".
 
 .. NOTE:: When deleting a managed VM, if that VM is the only VM inside the associated Instance, the Associated Instance must also be removed.  

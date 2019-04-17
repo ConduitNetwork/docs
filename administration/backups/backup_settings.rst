@@ -6,9 +6,9 @@ Backup Settings
 Overview
 --------
 
-The Backups Settings page allows you enable or disableScheduled Backups, and select a Default Backup Storage Provider Backups within |morpheus| can always be run manually. However the scheduled backups toggle must be enabled to run jobs automatically. Configure the default storage provider to select the target location for all new backups. (This does not affect existing backups.)
+The Backups Settings page allows you enable or disableScheduled Backups, and select a Default Backup Storage Provider Backups within |conduit| can always be run manually. However the scheduled backups toggle must be enabled to run jobs automatically. Configure the default storage provider to select the target location for all new backups. (This does not affect existing backups.)
 
-|morpheus| Backup Settings
+|conduit| Backup Settings
 --------------------------
 
 Options:
@@ -17,17 +17,17 @@ Scheduled Backups
   Enable automatic scheduled backups for provisioned instances.
 
 Create Backups
-  When enabled, |morpheus| will automatically configure instances for manual or scheduled backups.
+  When enabled, |conduit| will automatically configure instances for manual or scheduled backups.
 
 Copy Snapshots to Store
   Copy VMware snapshots to selected Backup
 Storage Provider
   Default Backups Storage Provider
 Backup Appliance
-  When enabled, a Backup will be created to backup the |morpheus| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
+  When enabled, a Backup will be created to backup the |conduit| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
 
 Default Backup Provider
-  Enable/Disable |morpheus| as the default backup provider.
+  Enable/Disable |conduit| as the default backup provider.
 
 Default Backup Storage Provider
   Storage Providers can be configured and managed in the Infrastructure Storage section.

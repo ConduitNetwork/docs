@@ -4,7 +4,7 @@ Microsoft DNS
 Overview
 ^^^^^^^^
 
-|morpheus| integrates directly with  Microsoft DNS to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |morpheus| also syncs in Microsoft DNS Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
+|conduit| integrates directly with  Microsoft DNS to automatically create DNS entries for Instances provisioned to a configured Cloud or Group. |conduit| also syncs in Microsoft DNS Domains for easy selection while provisioning, or setting as the default Domain on a Cloud or Network.
 
 Add Microsoft DNS Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,7 +18,7 @@ Microsoft DNS can be added in the `Administration` or `Infrastructure` sections:
    TYPE
     Microsoft DNS
    NAME
-    Name for the Integration in |morpheus|
+    Name for the Integration in |conduit|
    DNS SERVER
     IP or resolvable hostname of DNS server
    USERNAME
@@ -46,7 +46,7 @@ Configuring Microsoft DNS with Clouds and Groups
 
 DNS Integrations are available in the `DNS Integration` dropdown in Cloud and Group settings.
 
-|morpheus| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
+|conduit| will register Instances with the DNS provider when provisioned into a Cloud or Group with a DNS Integration added.
 
 Add DNS Integration to a Cloud
 ..............................

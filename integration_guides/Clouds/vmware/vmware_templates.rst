@@ -1,10 +1,10 @@
-Creating a |morpheus| VMware Image
+Creating a |conduit| VMware Image
 -------------------------------------
 
 Overview
 ^^^^^^^^^
 
-|morpheus| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a VMware Images for use within |morpheus|.
+|conduit| comes out of the box with a default set of blueprints for use in many modern deployment scenarios. These consist mostly of base operating system images with a few additional adjustments. These adjustments typically include the addition of cloud-init (which is highly recommended to be used in most environments, but not mandatory). However, in many on-premise deployments there are custom image requirements as well as networking requirements. This guide will go over how to create a VMware Images for use within |conduit|.
 
 Creating a Windows Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -17,11 +17,11 @@ Supported
 Steps
 ^^^^^^^^^
 
-Create a new machine in VMware vCenter and install a base version of your preferred Windows build.  The smaller the VMDK drive, typically the faster you can clone and deploy.  Utilizing |morpheus|, provisioning and post deploy scripts can expand drives to desired sizing.
+Create a new machine in VMware vCenter and install a base version of your preferred Windows build.  The smaller the VMDK drive, typically the faster you can clone and deploy.  Utilizing |conduit|, provisioning and post deploy scripts can expand drives to desired sizing.
 
 1.  Ensure VMtools is installed on the operating system.
 2.  Apply any service packs / updates to the operating system.
-3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMtools RPC mode for agent install and Morpheus Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run 
+3.  Configure WinRM to allow remote management and open the firewall. This is optional if using VMtools RPC mode for agent install and Conduit Agent for guest exec.  To enable this, under local computer Administrator, open a command prompt and run 
     
     .. code-block:: PowerShell
 
@@ -31,7 +31,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 5.	Ensure Windows Firewall will allow WinRM connections.
 6.  Shutdown the virtual machine and convert to a template.
 
-.. NOTE:: Morpheus will sysprep images based on the "Enabled Sysprep?" flag under the Virtual Image's settings. Ensure a sysprep has not been performed on the template if this flag is enabled.
+.. NOTE:: Conduit will sysprep images based on the "Enabled Sysprep?" flag under the Virtual Image's settings. Ensure a sysprep has not been performed on the template if this flag is enabled.
 
 
 
@@ -66,7 +66,7 @@ To get started with a base CentOS image we first install cloud-init. This is a r
 
 There are two parts to this yum installation. We are first ensuring some core dependencies are installed for automation as well as cloud-init. git for example is installed for use by ansible playbook automation down the line and is therefore optional if not using ansible. The dracut-modules-growroot is responsible for resizing the root partition upon first boot to match the virtual disk size that was potentially adjusted during provisioning.
 
-A great benefit to using cloud-init is credentials don't have to be locked into the blueprint. It is advisable, within |morpheus| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
+A great benefit to using cloud-init is credentials don't have to be locked into the blueprint. It is advisable, within |conduit| , to configure the default cloud-init user that gets created when the vm boots automatically by cloud-init. This is located in the `Administration -> Provisioning -> Cloud-Init` Settings section.
 
 Network Interfaces
 ^^^^^^^^^^^^^^^^^^
@@ -132,7 +132,7 @@ Proxy configurations are known to vary in some organizations and makes building 
   https_no_proxy=127.0.0.1,localhost,applianceUrl
 
 
-.. IMPORTANT:: It is very important to properly set the no_proxy list (applianceUrl) should be replaced with the actual appliance url. In future releases, morpheus plans to automatically take care of this.
+.. IMPORTANT:: It is very important to properly set the no_proxy list (applianceUrl) should be replaced with the actual appliance url. In future releases, conduit plans to automatically take care of this.
 
 .. NOTE:: If using cloud-init agent install mode these settings need to be set in the custom Cloud-Init User data section of “Edit Cloud” or “Edit Virtual Image”
 

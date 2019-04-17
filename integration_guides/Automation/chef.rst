@@ -4,7 +4,7 @@ Chef
 Overview
 ^^^^^^^^
 
-|morpheus| integrates with one or multiple Chef servers to be used for bootstrapping while provisioning or as tasks in workflows in the Automation section. These workflows can then be run during provisioning in the provisioning wizard Automation pane, or on an existing instance by selecting Actions->Run Workflow. Workflows can also be added to instances in the blueprint and app sections.
+|conduit| integrates with one or multiple Chef servers to be used for bootstrapping while provisioning or as tasks in workflows in the Automation section. These workflows can then be run during provisioning in the provisioning wizard Automation pane, or on an existing instance by selecting Actions->Run Workflow. Workflows can also be added to instances in the blueprint and app sections.
  
 
 Add Chef Integration
@@ -14,7 +14,7 @@ Add Chef Integration
 #. Select Integration Type "Chef"
 #. Populate the following fields:
 
-   * Name: Name of the Chef Integration in |morpheus|
+   * Name: Name of the Chef Integration in |conduit|
    * Chef Endpoint: url of chef server api endpoint in https://api.example.com format. Do not add /organization/xxxx here, which is populated in the Chef Organization field
    * Chef Version: 12.3.0 by default, can be changed to use a different/more recent version of chef
    * Chef Organization: Chef Server Organization
@@ -24,7 +24,7 @@ Add Chef Integration
 
 #. Save Changes
 
-The added Chef Integration is now available for use in |morpheus| . The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.
+The added Chef Integration is now available for use in |conduit| . The Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes and specify Environment, Node ID, Runlist, Attributes and Tags when creating instances. The Chef integration can also be selected in the Chef Server dropdown when creating a Chef Bootstrap type task.
 
 Scope Chef Integration to a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -13,7 +13,7 @@ New Features
 * Infoblox: Script variable support added for extended attributes
 * Instances: Custom exposed ports are now globally available
 * KVM: VM Actions, MultiDisk, Reconfigure, Apps & Blueprints. Backups/Restore added
-* Morpheus Agent: Ubuntu 17.10 support added
+* Conduit Agent: Ubuntu 17.10 support added
 * PXE: Now force webHost to http for answer files
 * Xen: CUSTOM PORT option added to Xen Cloud Config
 
@@ -25,7 +25,7 @@ Fixes
 * Active Directory: Fix for removing Required Group after one is added
 * Approvals: VM status now moves from pending to cancelled/rejected on cancelled/rejected action from approval screen
 * AVI: multiple fixes and improvements
-* Azure: Fix for discrepancy in the prices shown in Morpheus for Azure prices
+* Azure: Fix for discrepancy in the prices shown in Conduit for Azure prices
 * Evars: Fix for environment variables/deployment option values longer than 255 result in 500 error
 * Guidance: Fix for resize action on recommendations
 * Image builder: fix for config issue with plans when custom cpu is enabled

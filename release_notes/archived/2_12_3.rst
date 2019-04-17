@@ -7,13 +7,13 @@ New Features
 ------------
 
 32-bit Agent Support
-  Morpheus Agent now supports 32-bit images
+  Conduit Agent now supports 32-bit images
 
 Cypher User Permission
   New Roles Permission `CYPHER -> USER` allows user level decrypt permissions.
 
 Improved VMware vCenter Session Management.
-  Connections pools significantly reduce vCenter API sessions from Morpheus.
+  Connections pools significantly reduce vCenter API sessions from Conduit.
 
 Other Improvements
   - Parallel Instance Delete Improvements
@@ -29,4 +29,4 @@ Fixes
 - Approval and Workflow inputs restored on shutdown policy form.
 
 
-Morpheus v2.12.3 is available in the Downloads section of `morpheushub.com<https://morpheushub.com/>`_.
+Conduit v2.12.3 is available in the Downloads section of `conduithub.com<https://conduithub.com/>`_.

@@ -12,7 +12,7 @@ Adding Rubrik Integration
 #. Fill in the following:
 
    Name
-      Name of the Integration in |morpheus|
+      Name of the Integration in |conduit|
    Enabled
       Enable the Integration
    Host
@@ -20,7 +20,7 @@ Adding Rubrik Integration
    Username
       Admin Username for Rubrik
    Password
-      Password for Username provided (encrypted in |morpheus|).
+      Password for Username provided (encrypted in |conduit|).
    Visibility
       Sets Multi-Tenant Visibility
         Private

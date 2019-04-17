@@ -14,4 +14,4 @@ Operations
   usage.rst
   activity.rst
   health.rst
-  exportmorpheuslogs.rst
+  exportconduitlogs.rst

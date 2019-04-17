@@ -8,7 +8,7 @@ Storage
 Overview
 --------
 
-`Infrastructure -> Storage` is for adding and managing Storage Buckets, File Shares, Volumes, Data Stores and Storage Servers for use with other Services in |morpheus|.
+`Infrastructure -> Storage` is for adding and managing Storage Buckets, File Shares, Volumes, Data Stores and Storage Servers for use with other Services in |conduit|.
 
 Role Requirements
 ^^^^^^^^^^^^^^^^^
@@ -18,7 +18,7 @@ There are two Role permissions for the `Infrastructure -> Storage` section: `Inf
 Default Storage
 ^^^^^^^^^^^^^^^
 
-The default Storage path for Virtual Images, Backups, Deployment Archives, Archive Service, and Archived Snapshots is `var/opt/morpheus/morpheus-ui/`. Its is recommended to add Storage Buckets and File Shares for these targets in the `Infrastructure -> Storage` section to avoid running out of disk space on the |morpheus| Appliance.
+The default Storage path for Virtual Images, Backups, Deployment Archives, Archive Service, and Archived Snapshots is `var/opt/conduit/conduit-ui/`. Its is recommended to add Storage Buckets and File Shares for these targets in the `Infrastructure -> Storage` section to avoid running out of disk space on the |conduit| Appliance.
 
 .. include:: buckets.rst
 .. include:: file_shares.rst

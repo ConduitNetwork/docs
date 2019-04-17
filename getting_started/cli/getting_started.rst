@@ -1,29 +1,29 @@
 Setup
 ----------------
-The first thing that needs to be done after installing the cli is pointing the cli to the appliance. The CLI can be pointed at many appliances and uses the RESTful OAUTH public developer apis to perform tasks. To set this up simply add a remote appliance with the morpheus remote add command.
+The first thing that needs to be done after installing the cli is pointing the cli to the appliance. The CLI can be pointed at many appliances and uses the RESTful OAUTH public developer apis to perform tasks. To set this up simply add a remote appliance with the conduit remote add command.
 
   .. code-block:: text
 
-      morpheus remote add myappliance https://applianceUrl
-      morpheus remote use myappliance
-      morpheus login
+      conduit remote add myappliance https://applianceUrl
+      conduit remote use myappliance
+      conduit login
 
 There are several commands available when dealing with configuration of remote appliances. To see what commands are available just type
 
   .. code-block:: text
 
-      morpheus remote
+      conduit remote
 
 
 Getting Started
 ^^^^^^^^^^^^^^^^
-To get started with the morpheus CLI its helpful to use morpheus shell. The shell provides a handy shell with history and some autocomplete features for learning to use it. All commands mentioned prefixed with morpheus can be omitted since we are in shell mode.
+To get started with the conduit CLI its helpful to use conduit shell. The shell provides a handy shell with history and some autocomplete features for learning to use it. All commands mentioned prefixed with conduit can be omitted since we are in shell mode.
 
 To confirm that we are hooked into the appliance properly lets check our authentication information:
 
 .. code-block:: text
 
-    morpheus> whoami
+    conduit> whoami
     Current User
     ==================
 
@@ -32,24 +32,24 @@ To confirm that we are hooked into the appliance properly lets check our authent
     First Name: Demo
     Last Name: Environment
     Username: david
-    Email: david@morpheusdata.com
+    Email: david@conduitdata.com
     Role: System Admin
 
     Remote Appliance
     ==================
 
     Name: demo
-    Url: https://demo.morpheusdata.com
+    Url: https://demo.conduitdata.com
     Build Version: 2.10.0
 
-Fantastic! We are now ready to start our adventure in the Morpheus CLI. If this command fails please be sure to verify the appliance url entered previously is correct, and also verify the provided credentials are correctly entered.
+Fantastic! We are now ready to start our adventure in the Conduit CLI. If this command fails please be sure to verify the appliance url entered previously is correct, and also verify the provided credentials are correctly entered.
 
-While the CLI is relatively young there are a ton of features provided with it that can make it very convenient for working with morpheus. There are several base commands with subcommands within for example. Lets look at what happens when we simply type ``morpheus`` on the command line:
+While the CLI is relatively young there are a ton of features provided with it that can make it very convenient for working with conduit. There are several base commands with subcommands within for example. Lets look at what happens when we simply type ``conduit`` on the command line:
 
 
 .. code-block:: text
 
-    Usage: morpheus [command] [options]
+    Usage: conduit [command] [options]
 
     Commands:
     	remote
@@ -80,34 +80,34 @@ While the CLI is relatively young there are a ton of features provided with it t
     	library
     	version
 
-As you can see the cli is split into sections. Each of. these sections has subcommands available for performing certain actions. For example lets look at `morpheus instances`
+As you can see the cli is split into sections. Each of. these sections has subcommands available for performing certain actions. For example lets look at `conduit instances`
 
 .. code-block:: text
 
-    morpheus> instances
-    Usage: morpheus instances [list,add,remove,stop,start,restart,backup,run-workflow,stop-service,start-service,restart-service,resize,upgrade,clone,envs,setenv,delenv] [name]
+    conduit> instances
+    Usage: conduit instances [list,add,remove,stop,start,restart,backup,run-workflow,stop-service,start-service,restart-service,resize,upgrade,clone,envs,setenv,delenv] [name]
 
 These commands typically make it easier to figure out what command subsets are available and the CLI documentation can provide helpful information in more depth on each command option.
 
 Provisioning
 ^^^^^^^^^^^^^^^^^
 
-To get started provisioning instances from the CLI a few prerequisite commands must be setup in the CLI. First we must decide what Group we want to provision into. We can first get a list of available groups to use by running morpheus groups list
+To get started provisioning instances from the CLI a few prerequisite commands must be setup in the CLI. First we must decide what Group we want to provision into. We can first get a list of available groups to use by running conduit groups list
 
     .. code-block:: text
 
-      morpheus> groups list
+      conduit> groups list
 
-      Morpheus Groups
+      Conduit Groups
       ==================
 
 
       =  Automation - denver
       => Demo - Multi
-      =  Morpheus AWS - US-West
-      =  Morpheus Azure - US West
-      =  Morpheus Google - Auto
-      =  morpheus-approvals -
+      =  Conduit AWS - US-West
+      =  Conduit Azure - US West
+      =  Conduit Google - Auto
+      =  conduit-approvals -
       =  NIck-Demo - Chicago
       =  San Mateo Hyper-V - San Mateo, CA
       =  San Mateo Nutanix - San Mateo, CA
@@ -123,23 +123,23 @@ In the above example the currently active group is Demo as can be seen by the =>
 
     .. code-block:: text
 
-      morpheus groups use "San Mateo Xen"
+      conduit groups use "San Mateo Xen"
 
 This now becomes the active group we would like to provision into. Another thing to know before provisioning is we do have to also specify the cloud we want to provision into . This does require the cloud be in the group that is currently active. To see a list of clouds in the relevant group simply run:
 
     .. code-block:: text
 
-      morpheus clouds list -g [groupName]
+      conduit clouds list -g [groupName]
 
 This will scope the clouds command to list only clouds in the group specified.
 
-Morpheus makes it very easy to get started provisioning via the CLI. It provides a list of instance-types that can be provisioned via the ``instance-types`` list command. Lets get started by provisioning an ubuntu virtual machine.
+Conduit makes it very easy to get started provisioning via the CLI. It provides a list of instance-types that can be provisioned via the ``instance-types`` list command. Lets get started by provisioning an ubuntu virtual machine.
 
   .. code-block:: text
 
-      morpheus> instances add
+      conduit> instances add
 
-      Usage: morpheus instances add TYPE NAME
+      Usage: conduit instances add TYPE NAME
         -g, --group GROUP                Group
         -c, --cloud CLOUD                Cloud
         -O, --option OPTION              Option
@@ -157,9 +157,9 @@ Morpheus makes it very easy to get started provisioning via the CLI. It provides
 
   .. code-block:: text
 
-      morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"
+      conduit> instances add ubuntu MyInstanceName -c "San Mateo Vmware"
 
-      morpheus> instances add ubuntu -c "San Mateo Vmware" dre-test
+      conduit> instances add ubuntu -c "San Mateo Vmware" dre-test
       Layout ['?' for options]: ?
       * Layout [-O layout=] - Select which configuration of the instance type to be provisioned.
 
@@ -235,12 +235,12 @@ As can be seen in the example above, the CLI nicely prompts the user for input o
 
   .. code-block:: text
 
-       morpheus> instances add ubuntu MyInstanceName -c "San Mateo Vmware"  -O layout=105 -O servicePlan=10 -O rootVolume.datastoreId=autoCluster
+       conduit> instances add ubuntu MyInstanceName -c "San Mateo Vmware"  -O layout=105 -O servicePlan=10 -O rootVolume.datastoreId=autoCluster
 
-This will cause morpheus cli to skip prompting for input on these prompts. All inputs have an equivalent -O option that can be passed. To see what that option argument is simply enter ? on the input prompt to get specifics.
+This will cause conduit cli to skip prompting for input on these prompts. All inputs have an equivalent -O option that can be passed. To see what that option argument is simply enter ? on the input prompt to get specifics.
 
 
-Now your VM should be provisioning and status can be checked by simply typing ``morpheus instances list``.
+Now your VM should be provisioning and status can be checked by simply typing ``conduit instances list``.
 
 
 
@@ -251,8 +251,8 @@ Most of the list command types can be queried or paged via the cli. To do this s
 
 .. code-block:: text
 
-    morpheus> instances list -h
-    Usage: morpheus [options]
+    conduit> instances list -h
+    Usage: conduit [options]
     -g, --group GROUP                Group Name
     -m, --max MAX                    Max Results
     -o, --offset OFFSET              Offset Results

@@ -40,31 +40,31 @@
             
   <p>[[additional_options]] === Additional Options</p>
 <p>There are several additional configuration options during installation
-that may be performed. For example, |morpheus| provides convenient
+that may be performed. For example, |conduit| provides convenient
 options for uploading your own SSL certificates as well as externalizing
 several dependent services.</p>
 <p>==== System Defaults</p>
-<p>|morpheus| follows several install location conventions. Below is a list
+<p>|conduit| follows several install location conventions. Below is a list
 of system defaults for convenient management:</p>
-<p>Installation Location: <code class="docutils literal"><span class="pre">/opt/morpheus</span></code></p>
+<p>Installation Location: <code class="docutils literal"><span class="pre">/opt/conduit</span></code></p>
 <ul class="simple">
-<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus</span></code> ** <em>|morpheus| -UI:</em>
-<code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui</span></code> ** <em>MySQL:</em>
-<code class="docutils literal"><span class="pre">/var/log/morpheus/mysql</span></code> ** <em>NginX:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/nginx</span></code>
-** <em>Check Server:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/check-server</span></code> ** <em>Elastic
-Search:</em> <code class="docutils literal"><span class="pre">/var/log/morpheus/elsticsearch</span></code> ** <em>RabbitMQ:</em>
-<code class="docutils literal"><span class="pre">/var/log/morpheus/rabbitmq</span></code> ** <em>Redis:</em>
-<code class="docutils literal"><span class="pre">/var/log/morpheus/redis</span></code></li>
-<li><em>User-defined install/config:</em> <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code></li>
+<li><em>Log Location:</em> <code class="docutils literal"><span class="pre">/var/log/conduit</span></code> ** <em>|conduit| -UI:</em>
+<code class="docutils literal"><span class="pre">/var/log/conduit/conduit-ui</span></code> ** <em>MySQL:</em>
+<code class="docutils literal"><span class="pre">/var/log/conduit/mysql</span></code> ** <em>NginX:</em> <code class="docutils literal"><span class="pre">/var/log/conduit/nginx</span></code>
+** <em>Check Server:</em> <code class="docutils literal"><span class="pre">/var/log/conduit/check-server</span></code> ** <em>Elastic
+Search:</em> <code class="docutils literal"><span class="pre">/var/log/conduit/elsticsearch</span></code> ** <em>RabbitMQ:</em>
+<code class="docutils literal"><span class="pre">/var/log/conduit/rabbitmq</span></code> ** <em>Redis:</em>
+<code class="docutils literal"><span class="pre">/var/log/conduit/redis</span></code></li>
+<li><em>User-defined install/config:</em> <code class="docutils literal"><span class="pre">/etc/conduit/conduit.rb</span></code></li>
 </ul>
 <p>==== SSL Certificates</p>
 <p>The default installation generates a self-signed SSL certificate. To
 implement a third-party certificate:</p>
 <ol class="arabic simple">
 <li>Copy the private key and certificate to
-<code class="docutils literal"><span class="pre">/etc/morpheus/ssl/your_fqdn_name.key</span></code> and
-<code class="docutils literal"><span class="pre">/etc/morpheus/ssl/your_fqdn_name.crt</span></code> respectively.</li>
-<li>Edit the configuration file <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> and add the
+<code class="docutils literal"><span class="pre">/etc/conduit/ssl/your_fqdn_name.key</span></code> and
+<code class="docutils literal"><span class="pre">/etc/conduit/ssl/your_fqdn_name.crt</span></code> respectively.</li>
+<li>Edit the configuration file <code class="docutils literal"><span class="pre">/etc/conduit/conduit.rb</span></code> and add the
 following entries:</li>
 </ol>
 <div class="section" id="source-bash">
@@ -78,17 +78,17 @@ include the signing chain inside the certificate file.</p>
 </div>
 <div class="section" id="id1">
 <h1>.. code-block:: bash<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>sudo morpheus-ctl reconfigure sudo morpheus-ctl restart nginx —-</p>
+<p>sudo conduit-ctl reconfigure sudo conduit-ctl restart nginx —-</p>
 <p>==== Additional Configuration Options</p>
 <p>There are several other options available to the
-<code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> file that can be useful when setting up
+<code class="docutils literal"><span class="pre">/etc/conduit/conduit.rb</span></code> file that can be useful when setting up
 external service integrations or high availability:</p>
 </div>
 <div class="section" id="source-ruby">
 <h1>[source,ruby]<a class="headerlink" href="#source-ruby" title="Permalink to this headline">¶</a></h1>
 <p>mysql[‘enable’] = false mysql[‘host’] = ‘52.53.240.28’ mysql[‘port’] =
-10004 mysql[‘morpheus_db’] = ‘morpheusdb01’ mysql[‘morpheus_db_user’]
-= ‘merovingian’ mysql[‘morpheus_password’] = ‘Wm5n5gXqXCe9v52’
+10004 mysql[‘conduit_db’] = ‘conduitdb01’ mysql[‘conduit_db_user’]
+= ‘merovingian’ mysql[‘conduit_password’] = ‘Wm5n5gXqXCe9v52’
 rabbitmq[‘enable’] = false rabbitmq[‘vhost’] = ‘zion’
 rabbitmq[‘queue_user’] = ‘dujour’ rabbitmq[‘queue_user_password’] =
 ‘5tfg9n2iBifzW5c’ rabbitmq[‘host’] = ‘54.183.196.152’ rabbitmq[‘port’] =

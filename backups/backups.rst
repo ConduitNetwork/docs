@@ -2,9 +2,9 @@
 Backups
 *******
 
-|morpheus| built-in Backup solution provides VM, Container, Host, Database, File, Directory, Volume and Storage Provider Backup, Snapshot and Replication capabilities. Backups can be automatically configured during provisioning or manually created at any time. Backup Jobs with custom Execution Schedules and retention counts can be created and used across all environments in conjunction with configured Storage Providers. Backups can be  restored over current Instances or as new Instances, and downloaded or deleted from |morpheus|.
+|conduit| built-in Backup solution provides VM, Container, Host, Database, File, Directory, Volume and Storage Provider Backup, Snapshot and Replication capabilities. Backups can be automatically configured during provisioning or manually created at any time. Backup Jobs with custom Execution Schedules and retention counts can be created and used across all environments in conjunction with configured Storage Providers. Backups can be  restored over current Instances or as new Instances, and downloaded or deleted from |conduit|.
 
-|morpheus| also integrates with external services to automate availability with other providers.
+|conduit| also integrates with external services to automate availability with other providers.
 
 
 Initial Backups Setup
@@ -15,14 +15,14 @@ Global Backup settings, Storage Providers and Execution Schedules should be conf
 Global Backups Settings
 -----------------------
 
-|morpheus| Backups can be enabled under `Administration -> Backups`.
+|conduit| Backups can be enabled under `Administration -> Backups`.
 
 Scheduled Backups
   When enabled, configured Backups will automatically run on the set Schedule. If disabled, backups need to be manually ran.
 Create Backups
-  When enabled, |morpheus| will automatically configure backup jobs for Instances.
+  When enabled, |conduit| will automatically configure backup jobs for Instances.
 Backup Appliance
-  When enabled, a Backup will be created to backup the |morpheus| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
+  When enabled, a Backup will be created to backup the |conduit| appliance database. Select the ``Backup`` text link to edit Appliance Backup Settings and view existing Appliance Backups.
 Default Backup Storage Provider
   Storage Providers can be configured and managed in the `Infrastructure -> Storage` section.
 Default Backup Schedule
@@ -80,7 +80,7 @@ Backup Types displayed will be filtered by available options per selected Instan
 * Google VM Snapshot
 * Commvault File/Directory Backup
 * Azure VM Snapshot
-* Morpheus Appliance
+* Conduit Appliance
 * Openstack VM Snapshot
 * DigitalOcean VM Snapshot
 * Nutanix VM Snapshot

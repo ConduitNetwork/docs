@@ -20,7 +20,7 @@ Other Improvements and Fixes
 - Fix for Oracle VM Virtual Image list displaying unsupported Images
 - Oracle VM Multi-Disk fixes
 - Fix for Removing Azure Load Balancers
-- Morpheus Library CentOS AMI regional seed fixes
+- Conduit Library CentOS AMI regional seed fixes
 - Updated vCloud Director artwork
 - VMware Hypervisor Console Improvements
 - Security improvements

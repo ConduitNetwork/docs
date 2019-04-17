@@ -5,19 +5,19 @@ PXE Boot
 Overview
 ^^^^^^^^
 
-|morpheus| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |morpheus| sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.
+|conduit| includes a built in PXE Server to enable easy and rapid bare metal provisioning. Simply map your TFTP server port to the |conduit| sevrer port 6969 and you are ready to PXE boot from the provided images and answer files, or add your own to bring up Bare metal Hosts with ease.
 
 === Prerequisites
 
-Your network must be configured for PXE boot, and the TFTP server port need to mapped to the |morpheus| TFT server port, UDP 6969.
+Your network must be configured for PXE boot, and the TFTP server port need to mapped to the |conduit| TFT server port, UDP 6969.
 
 * Network configured for network boot
-* Router UDP 69 mapped to |morpheus| server UDP port 6969
-* Router TFT Server set to |morpheus| server IP or resolvable Hostname.
-* Mac or IP addresses of PXE target mapped in |morpheus| `Infrastructure -> Boot - Mapping`
+* Router UDP 69 mapped to |conduit| server UDP port 6969
+* Router TFT Server set to |conduit| server IP or resolvable Hostname.
+* Mac or IP addresses of PXE target mapped in |conduit| `Infrastructure -> Boot - Mapping`
 * Target host configured for Network boot in BIOS
 
-NOTE: The |morpheus| PXE port is set in `opt/morpheus/conf/application.yml`
+NOTE: The |conduit| PXE port is set in `opt/conduit/conf/application.yml`
 
 === To PXE Boot
 
@@ -38,7 +38,7 @@ Cloud:: Lists the available clouds.
 Server Mode: List of server modes:: unmanaged, Managed, Bare metal host, Container host, VM host, and Container & VM host.
 Click the Save Changes button to save.
 
-Once the mapping is added, and the target host is powered on, the |morpheus| PXE menu will load and PXE boot will start.
+Once the mapping is added, and the target host is powered on, the |conduit| PXE menu will load and PXE boot will start.
 
 ==== Edit Mapping
 
@@ -56,7 +56,7 @@ Once the mapping is added, and the target host is powered on, the |morpheus| PXE
 
 === Answer Files
 
-Answer files are like lists of answers for questions that you know the setup program is going to ask but the user is not prepared to answer. They contain one or more sections, and each section contains one or more properties in the form name=value. Morpheus provides Answer Files for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.
+Answer files are like lists of answers for questions that you know the setup program is going to ask but the user is not prepared to answer. They contain one or more sections, and each section contains one or more properties in the form name=value. Conduit provides Answer Files for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.
 
 ==== Add Answer Files
 
@@ -90,7 +90,7 @@ Script:: The script for the new answer file.
 
 === Images
 
-Morpheus provides Images for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.
+Conduit provides Images for ESXi, CentOS, Ubuntu and XenServer, and user can add their own.
 
 ==== Add Images
 

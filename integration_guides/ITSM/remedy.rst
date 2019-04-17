@@ -96,7 +96,7 @@ Add Remedy Integration
 #. Add the following:
 
     NAME
-     Name of the Integration in Morpheus.
+     Name of the Integration in Conduit.
     ENABLE
      Leave checked to enable the Integration.
     REMEDY HOST

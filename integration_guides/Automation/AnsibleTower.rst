@@ -4,9 +4,9 @@ Ansible Tower
 Overview
 ^^^^^^^^
 
-|morpheus| supports Ansible Tower for configuration management.  |morpheus| accomplishes this by integrating with an existing instance running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password required for integration can be a user with admin access or a user with project admin access.
-|morpheus| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from Morpheus.
-Note: It will not import data of the jobs which are not executed from Morpheus.
+|conduit| supports Ansible Tower for configuration management.  |conduit| accomplishes this by integrating with an existing instance running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password required for integration can be a user with admin access or a user with project admin access.
+|conduit| will import the current Inventory, Templates, Hosts, Groups and Projects. In the integration view it will add a Job tab which will have information of all the jobs executed from Conduit.
+Note: It will not import data of the jobs which are not executed from Conduit.
 
 Add Ansible Tower Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -15,10 +15,10 @@ Add Ansible Tower Integration
 #. Select Integration Type "Ansible Tower"
 #. Populate the following fields:
 
-   * Name: Name of the Ansible Tower Integration in |morpheus|
+   * Name: Name of the Ansible Tower Integration in |conduit|
    * Enabled: Enabled by default it is enabled. To disable the integration, uncheck this option and save.
    * Ansible Tower URL: This would be an https or http Ansible tower url.
-   * Username: The user morpheus would use to communicate with Ansible Tower.
+   * Username: The user conduit would use to communicate with Ansible Tower.
    * Password: Enter the password. Password is encrypted and saved in DB.
    * API Version: This drop down has one option v2 for now but may have others in future.
 
@@ -67,7 +67,7 @@ Template
     Project
       Select an existing project from the drop down options
     Playbook
-      Select a playbook from the dropdown to be associated with the template. Note: |morpheus| doesn't store a local copy of the playbooks visible in Ansible Tower. SCM or local path for playbooks should be maintained in Ansible Tower.
+      Select a playbook from the dropdown to be associated with the template. Note: |conduit| doesn't store a local copy of the playbooks visible in Ansible Tower. SCM or local path for playbooks should be maintained in Ansible Tower.
 Execute Mode
   Select one of the options from the dropdown
     Limit to instance
@@ -84,8 +84,8 @@ Use Case
 
 You have Job template(s) in Ansible Tower to do post build config after the OS is deployed. The playbook with roles and tasks to do post build will add specific users and groups, install required packages, remove packages, disable services, change config for ntp, resolv, hosts etc. You want to add the instance to an existing Group/Inventory in Tower.
 
-You can achieve this by adding the Ansible Tower Integration and then scope it to a Cloud or Group. While provisioning an instance, in the config stage you have the Ansible Tower section with option to select the post build job template, select the Inventory and provide an existing Group Name or if the Group doesn't exist Morpheus will create it and submit for provisioning. 
+You can achieve this by adding the Ansible Tower Integration and then scope it to a Cloud or Group. While provisioning an instance, in the config stage you have the Ansible Tower section with option to select the post build job template, select the Inventory and provide an existing Group Name or if the Group doesn't exist Conduit will create it and submit for provisioning. 
 
-Morpheus will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then Morpheus will add the instance to the inventory and Group and run the Template which will do all the post build of the server. 
+Conduit will provision the instance, once it is in the finalize state where the instance has an ip and has completed domain join if required, added user(s) or User Groups if specified then Conduit will add the instance to the inventory and Group and run the Template which will do all the post build of the server. 
 
 The output of the post build template execution can be see under Instance history.

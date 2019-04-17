@@ -9,6 +9,6 @@ In the Edit Virtual Image pane:
 
 #. Enter the username and password that are set on the Virtual Image.
 
-.. NOTE:: When using Static IP's or IP Pools in VMware, VMware tools must also be installed on the template in order for |morpheus| to set the static IP address when provisioning.
+.. NOTE:: When using Static IP's or IP Pools in VMware, VMware tools must also be installed on the template in order for |conduit| to set the static IP address when provisioning.
 
-.. NOTE:: |morpheus| agents only support 64-bit vm's prior to versions 2.12.3 and 3.0.2
+.. NOTE:: |conduit| agents only support 64-bit vm's prior to versions 2.12.3 and 3.0.2

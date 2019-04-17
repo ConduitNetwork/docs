@@ -12,7 +12,7 @@ Adding Avamar Integration
 #. Fill in the following:
 
    Name
-      Name of the Integration in |morpheus|
+      Name of the Integration in |conduit|
    Enabled
       Enable the Integration
    Host
@@ -22,7 +22,7 @@ Adding Avamar Integration
    Username
       Admin Username for Avamar
    Password
-      Password for Username provided (encrypted in |morpheus|).
+      Password for Username provided (encrypted in |conduit|).
    Tenant
      Avamar Tenant/Domain to scope Integration to
    Hypervisor

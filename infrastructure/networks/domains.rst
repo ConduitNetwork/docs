@@ -6,7 +6,7 @@ Domains
 Overview
 ^^^^^^^^
 
-The Domains section is for creating and managing domains for use in |morpheus| . Domains are used for setting FQDNs, joining Windows Instances to Domains, and creating A Records with DNS Integrations. The Domains section is also a multi-tenant endpoint for managing domain settings across multiple accounts
+The Domains section is for creating and managing domains for use in |conduit| . Domains are used for setting FQDNs, joining Windows Instances to Domains, and creating A Records with DNS Integrations. The Domains section is also a multi-tenant endpoint for managing domain settings across multiple accounts
 
 * Added and synced Domains are available for selection in the Domain dropdown when provisioning an Instance.
 * Default domains can be set for Clouds and Networks in their Advanced Options sections.
@@ -24,7 +24,7 @@ Adding Domains
    Domain Name
     Example demo.example.com
    Description
-    Descriptive meta-data for use in |morpheus|
+    Descriptive meta-data for use in |conduit|
    Public Zone
     Check for Public Zones, leave uncheck for Private Zones.
    Join Domain Controller
@@ -38,7 +38,7 @@ Adding Domains
    OU Path
     (optional) Enter the OU Path for the connection string.
    Permissions
-    Configure Tenant permissions in |morpheus| for the Domain (only applicable in Multi-tenant |morpheus| setups)
+    Configure Tenant permissions in |conduit| for the Domain (only applicable in Multi-tenant |conduit| setups)
    Tenant
     Select the Tenant to set permissions to for the Domain.
    Visibility
@@ -54,7 +54,7 @@ The Domain has been added and will be selectable in Domain dropdown during provi
 Editing and Removing Domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Domains can be edited by selecting the `Actions` dropdown for the Domain and selecting `Edit`.
-* Added Domains can be removed from |morpheus| by selecting the `Actions` dropdown for the Domain and selecting `Remove`.
+* Added Domains can be removed from |conduit| by selecting the `Actions` dropdown for the Domain and selecting `Remove`.
 
 Setting the default domain on a Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

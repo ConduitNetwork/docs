@@ -7,7 +7,7 @@ Task Results allow Tasks to use the output from preceding Tasks in the same Work
 
 Configure Tasks
 ```````````````
-In script type tasks, if ``RESULT TYPE`` is set, |morpheus| will store the Task's output as a variable.
+In script type tasks, if ``RESULT TYPE`` is set, |conduit| will store the Task's output as a variable.
 
 Results Types
 `````````````

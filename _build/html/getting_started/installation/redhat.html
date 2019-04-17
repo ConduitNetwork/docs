@@ -171,7 +171,7 @@
             
   <div class="section" id="rhel">
 <h1>RHEL<a class="headerlink" href="#rhel" title="Permalink to this headline">¶</a></h1>
-<p>To get started installing |morpheus| on RHEL 7 a few prerequisite items
+<p>To get started installing |conduit| on RHEL 7 a few prerequisite items
 are required.</p>
 <p>The RedHat Enterprise Linux 7 server needs to be registered and
 activated with Redhat subscription. The server optional rpms repo needs
@@ -230,26 +230,26 @@ system.” will appear after enabling the repo. This will confirm that the
 repo has been enabled.</p>
 <p>Next simply download the relevant <code class="docutils literal"><span class="pre">.rpm</span></code> package for installation.
 This package can be acquired from your account rep or via a free trial
-request from <a class="reference external" href="https://www.morpheusdata.com[morheusdata.com">https://www.morpheusdata.com[morheusdata.com</a>].</p>
+request from <a class="reference external" href="https://www.conduitdata.com[morheusdata.com">https://www.conduitdata.com[morheusdata.com</a>].</p>
 <p>TIP: Use the <code class="docutils literal"><span class="pre">wget</span></code> command to directly download the package to your
 appliance server. i.e.
-<code class="docutils literal"><span class="pre">wget</span> <span class="pre">https://downloads.gomorpheus.com/path/to/package.rpm</span></code></p>
+<code class="docutils literal"><span class="pre">wget</span> <span class="pre">https://downloads.goconduit.com/path/to/package.rpm</span></code></p>
 <p>Next we must install the package onto the machine and configure the
-morpheus services:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rpm -i morpheus-appliance<span class="se">\_</span>x.x.x-1.amd64.rpm
-sudo morpheus-ctl reconfigure
+conduit services:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rpm -i conduit-appliance<span class="se">\_</span>x.x.x-1.amd64.rpm
+sudo conduit-ctl reconfigure
 </pre></div>
 </div>
 <p>Once the installation is complete the web interface will automatically
 start up. By default it will be resolvable at <code class="docutils literal"><span class="pre">https://your_machine_name</span></code> and in many cases this may not be
-resolvable from your browser. The url can be changed by editing <code class="docutils literal"><span class="pre">/etc/morpheus/morpheus.rb</span></code> and changing the value of
+resolvable from your browser. The url can be changed by editing <code class="docutils literal"><span class="pre">/etc/conduit/conduit.rb</span></code> and changing the value of
 <code class="docutils literal"><span class="pre">appliance_url</span></code>. After this has been changed simply run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo morpheus-ctl reconfigure
-sudo morpheus-ctl stop morpheus-ui
-sudo morpheus-ctl start morpheus-ui
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo conduit-ctl reconfigure
+sudo conduit-ctl stop conduit-ui
+sudo conduit-ctl start conduit-ui
 </pre></div>
 </div>
-<p>NOTE: The <code class="docutils literal"><span class="pre">morpheus-ui</span></code> can take 2-3 minutes to startup before it
+<p>NOTE: The <code class="docutils literal"><span class="pre">conduit-ui</span></code> can take 2-3 minutes to startup before it
 becomes available.</p>
 <p>There are additional post install settings that can be viewed in the
 Advanced section of the guide.</p>
@@ -261,8 +261,8 @@ required you may request one or purchase one by contacting your sales
 representative).</p>
 <p>More details on setting up infrastructure can be found throughout this
 guide.</p>
-<p>TIP: If any issues occur it may be prudent to check the morpheus log for
-details at <code class="docutils literal"><span class="pre">/var/log/morpheus/morpheus-ui/current</span></code>.</p>
+<p>TIP: If any issues occur it may be prudent to check the conduit log for
+details at <code class="docutils literal"><span class="pre">/var/log/conduit/conduit-ui/current</span></code>.</p>
 </div>
 
 

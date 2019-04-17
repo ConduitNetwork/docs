@@ -10,7 +10,7 @@ Adding 3Par Storage Server
 #. From the ADD STORAGE SERVER wizard input the following:
 
    NAME
-      Name of the Storage Server in |morpheus|
+      Name of the Storage Server in |conduit|
    TYPE
       Select `3Par`
    URL

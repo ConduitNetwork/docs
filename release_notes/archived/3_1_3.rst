@@ -10,7 +10,7 @@ New Features
 - Cloud Foundry: Ability to create a space and add/remove users from a space
 - Google Cloud: Network Tagging support added
 - Instances: “Open Console” Action added
-- Instance Types: Morpheus Ubuntu 16.04 added for AWS, Hyper-V, Xen, ESXi and SCVMM
+- Instance Types: Conduit Ubuntu 16.04 added for AWS, Hyper-V, Xen, ESXi and SCVMM
 - Library: Workflows added to Layouts
 
 Fixes

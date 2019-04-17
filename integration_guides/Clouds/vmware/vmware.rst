@@ -4,7 +4,7 @@ VMware vCenter
 Overview
 ^^^^^^^^^
 
-VMware is a very common cloud integration choice supported by |morpheus| . They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so |morpheus| covers a broad feature set in vCenter.
+VMware is a very common cloud integration choice supported by |conduit| . They have provided a top notch virtualization solution and one might argue pioneered the virtualization space altogether. As such, many companies utilize this technology and all the features that come with it, so |conduit| covers a broad feature set in vCenter.
 
 Features
 ^^^^^^^^^
@@ -23,7 +23,7 @@ Features
 * Veeam Backup Integration
 * Lifecycle Management and Resize
 
-On top of all these features, |morpheus| also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:
+On top of all these features, |conduit| also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:
 
 * Cloud-Init Support
 * VHD to VMDK Image Conversion

@@ -22,20 +22,20 @@ The following chart is useful for troubleshooting Agent install, Static IP assig
    | Cloud-init settings populated in User Settings or in `Admin –> Provisioning`
    | Agent install mode set to Cloud-Init in Cloud Settings"
    " ",VMtools,All, , , ,"| VMtools installed on template
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning` when using Static IP’s
+   | Cloud-init settings populated in Conduit user settings or in `Administration –> Provisioning` when using Static IP’s
    | Existing User credentials entered on Virtual Image when using DHCP
    | RPC mode set to VMtools in VMware cloud settings."
-   "Static IP Assignment & IP Pools",Cloud-Init,All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
+   "Static IP Assignment & IP Pools",Cloud-Init,All, , , ,"| Network configured in Conduit (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | Cloud-init/Cloudbase-init installed on template/image
-   | Cloud-init settings populated in Morpheus user settings or in `Administration –> Provisioning`"
-   " ", "VMware Tools",All, , , ,"| Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
+   | Cloud-init settings populated in Conduit user settings or in `Administration –> Provisioning`"
+   " ", "VMware Tools",All, , , ,"| Network configured in Conduit (Gateway, Primary and Secondary DNS, CIDR populated, DHCP disabled)
    | VMtools installed on Template/Virtual Image"
    Remote Console,SSH,Linux,Applaince,Node,22,"| ssh enabled on node
-   | user/password set on VM or Host in Morpheus "
+   | user/password set on VM or Host in Conduit "
    " ",RDP,Windows,Appliance,Node,3389,"| RDP Enabled on node
-   | user/password set on VM or Host in Morpheus"
+   | user/password set on VM or Host in Conduit"
    " ",Hypervisor Console,All,Appliance,ESXi Host,5900-6000+,"| GBB server opened on all ESXii host firewalls
    | *Port range req's vary per env
-   | ESXi host names resolvable by morpheus appliance"
-   "Morpheus Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/morpheus/``"
-   "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Morpheus Appliance"
+   | ESXi host names resolvable by conduit appliance"
+   "Conduit Catalog Image Download", ,All,Appliance,AWS S3,443,"Available space at ``/var/opt/conduit/``"
+   "Image Transfer",Stream,All,Appliance,Datastore,443,"Hypervisor Host Names resolvable by Conduit Appliance"

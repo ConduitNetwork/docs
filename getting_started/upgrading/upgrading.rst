@@ -1,11 +1,11 @@
 Upgrading
 ==========
 
-|morpheus| provides a very simple and convenient upgrade process. In
+|conduit| provides a very simple and convenient upgrade process. In
 most cases it is simply a matter of installing the new package on top of
 itself and reconfiguring the services.
 
-.. IMPORTANT:: All services except the morpheus-ui must be running during a reconfigure. The morpheus-ui also must be restarted or stopped and started during an upgrade. Failure to do so will result in errors.
+.. IMPORTANT:: All services except the conduit-ui must be running during a reconfigure. The conduit-ui also must be restarted or stopped and started during an upgrade. Failure to do so will result in errors.
 
 Debian / Ubuntu
 ---------------
@@ -17,10 +17,10 @@ Then run the install process as follows:
 
 .. code-block:: bash
 
-  sudo dpkg -i morpheus-appliance_x.x.x-1.amd64.deb
-  sudo morpheus-ctl stop morpheus-ui
-  sudo morpheus-ctl reconfigure
-  sudo morpheus-ctl start morpheus-ui
+  sudo dpkg -i conduit-appliance_x.x.x-1.amd64.deb
+  sudo conduit-ctl stop conduit-ui
+  sudo conduit-ctl reconfigure
+  sudo conduit-ctl start conduit-ui
 
 This typically is enough to complete a full upgrade. Databases will
 automatically be migrated upon restart of the application and service
@@ -35,14 +35,14 @@ different.
 
 .. code-block:: bash
 
-  sudo rpm -U morpheus-appliance-x.x.x-1.x86_64.rpm
-  sudo morpheus-ctl stop morpheus-ui
-  sudo morpheus-ctl reconfigure
-  sudo morpheus-ctl start morpheus-ui
+  sudo rpm -U conduit-appliance-x.x.x-1.x86_64.rpm
+  sudo conduit-ctl stop conduit-ui
+  sudo conduit-ctl reconfigure
+  sudo conduit-ctl start conduit-ui
 
-.. TIP:: Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type ``sudo morpheus-ctl restart``. This will restart ALL services.
+.. TIP:: Sometimes it may be necessary to restart all appliance services on the host. In order to do this simply type ``sudo conduit-ctl restart``. This will restart ALL services.
 
-.. IMPORTANT If you are upgrading and have modified the java keystore you will have to do the following steps to import trusted certificates to |morpheus|
+.. IMPORTANT If you are upgrading and have modified the java keystore you will have to do the following steps to import trusted certificates to |conduit|
 
 .. include ssl-import.rst
 
@@ -61,19 +61,19 @@ Move the file
 
 .. code-block:: text
 
-    mv <file> /opt/morpheus/lib/morpheus/morpheus-ui.war 
+    mv <file> /opt/conduit/lib/conduit/conduit-ui.war 
 
 Change permissions
 ^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
 
-    chown morpheus-app.morpheus-app /opt/morpheus/lib/morpheus/morpheus-ui.war
+    chown conduit-app.conduit-app /opt/conduit/lib/conduit/conduit-ui.war
 
 Restart UI
 ^^^^^^^^^^
 
 .. code-block:: text
 
-    morpheus-ctl restart morpheus-ui
+    conduit-ctl restart conduit-ui
 

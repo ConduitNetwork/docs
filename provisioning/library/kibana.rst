@@ -21,7 +21,7 @@ Configure Virtual Image
 
 For our Kibana Instance we will use base OS images and install Kibana at provision time. This allows us to determine the version and configuration while using any OS. Pre-installing Kibana on the image is an option but using a base image can be more flexible and limit the number of Virtual Images required across our catalog.
 
-The first image used is a base CentOS 7.5 image synced from a Nutanix cloud. Cloud-init is installed on the image, so little configuration is necessary other than ensuring the Operating System is set properly and ``Is Cloud Init Enabled?`` is checked. If the image does not have cloud-init installed the username and password would need to be defined so |morpheus| can auth on the VM with existing credentials. Defining ```Minimum Memory`` ensures only Plans meeting the minimum memory requirement will be options when provisioning.
+The first image used is a base CentOS 7.5 image synced from a Nutanix cloud. Cloud-init is installed on the image, so little configuration is necessary other than ensuring the Operating System is set properly and ``Is Cloud Init Enabled?`` is checked. If the image does not have cloud-init installed the username and password would need to be defined so |conduit| can auth on the VM with existing credentials. Defining ```Minimum Memory`` ensures only Plans meeting the minimum memory requirement will be options when provisioning.
 
 .. image:: /images/provisioning/library/kibana_image.png
 
@@ -104,7 +104,7 @@ LABEL
 PLACEHOLDER
     Added ``5.4.1`` so users know the proper format for entering the Elasticsearch URL at provision time.
 DEFAULT VALUE
-  Defined as ``5.4.1`` as this is the default version of Elasticsearch installed by |morpheus|
+  Defined as ``5.4.1`` as this is the default version of Elasticsearch installed by |conduit|
 Required
   Enabled to ensure user defines the Kibana version to be installed
 

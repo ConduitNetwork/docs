@@ -4,7 +4,7 @@ AWS
 Overview
 ^^^^^^^^
 
-AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters. AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |morpheus| and AWS connected to utilize the features below:
+AWS is the Amazon public cloud, offering a full range of services and features across the globe in various datacenters. AWS provides businesses with a flexible, highly scalable, and low-cost way to deliver a variety of services using open standard technologies as well as proprietary solutions. This section of documentation will help you get |conduit| and AWS connected to utilize the features below:
 
 Features
 ^^^^^^^^
@@ -35,7 +35,7 @@ Features
 * Network Pools
 * MetaData Tag creation
 
-|morpheus| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
+|conduit| can provide a single pane of glass and self-service portal for managing instances scattered across both AWS and private cloud offerings like VMWare and Hyper-V.
 
 Requirements
 ^^^^^^^^^^^^
@@ -45,14 +45,14 @@ AWS IAM Security Credentials
   Secret Key
   Sufficient User Privileges (see MinimumIAMPolicies_ section for more info)
 Security Group Configuration for Agent Install, Script Execution, and Remote Console Access
-  Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389
-  Typical Outbound to |morpheus| Appliance: 80, 443
+  Typical Inbound ports open from |conduit| Appliance: 22, 5985, 3389
+  Typical Outbound to |conduit| Appliance: 80, 443
 
-  .. NOTE:: These are required for |morpheus| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. Cloud-init Agent Install mode does not require incoming access for port 22.
+  .. NOTE:: These are required for |conduit| agent install, communication, and remote console access for windows and linux. Other configurations, such as docker instances, will need the appropriate ports opened as well. Cloud-init Agent Install mode does not require incoming access for port 22.
 Network(s)
-  IP assignment required for Agent install, Script Execution, and Console if the |morpheus| Appliance is not able to communicate with AWS instances private ip's.
+  IP assignment required for Agent install, Script Execution, and Console if the |conduit| Appliance is not able to communicate with AWS instances private ip's.
 
-.. NOTE:: Each AWS Cloud in |morpheus| is scoped to an AWS Region and VPC Multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |morpheus| will scope to.
+.. NOTE:: Each AWS Cloud in |conduit| is scoped to an AWS Region and VPC Multiple AWS Clouds can be added and even Grouped. Verify Security groups are properly configured in all Regions |conduit| will scope to.
 
 Adding an AWS Cloud
 ^^^^^^^^^^^^^^^^^^^
@@ -63,7 +63,7 @@ Adding an AWS Cloud
 #. Enter the following:
 
    Name
-     Name of the Cloud in |morpheus|
+     Name of the Cloud in |conduit|
    Location
      Description field for adding notes on the cloud, such as location.
    Visibility
@@ -76,13 +76,13 @@ Adding an AWS Cloud
      Secret Access Key associate with the Access Key ID.
    Inventory
      Basic
-      |morpheus| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
+      |conduit| will sync information on all EC2 Instances in the selected VPC the IAM user has access to, including Name, IP Addresses, Platform Type, Power Status, and overall resources sizing for Storage, CPU and RAM, every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's.
      Full
-      In addition to the information synced from Basic Inventory level, |morpheus| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
+      In addition to the information synced from Basic Inventory level, |conduit| will gather Resource Utilization metrics for Memory, Storage and CPU utilization per VM.
      Off
       Existing EC2 Instances will not be inventoried
 
-     .. NOTE:: Cloud Watch must be configured in AWS for |morpheus| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
+     .. NOTE:: Cloud Watch must be configured in AWS for |conduit| to collect Memory and Storage utilization metrics on inventoried EC2 instances.
 
 #. The AWS cloud is ready to be added to a group and saved. Additional configuration options available:
 

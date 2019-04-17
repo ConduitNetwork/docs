@@ -10,7 +10,7 @@ Add NSX Integration
 #. Enter the following:
 
    NAME
-    Name for the NSX Integration in |morpheus|
+    Name for the NSX Integration in |conduit|
    API HOST
     URL of NSX Manager
    USERNAME
@@ -22,7 +22,7 @@ Add NSX Integration
 
 #. Select :guilabel:`ADD NETWORK INTEGRATION`
 
-Once the NSX Integration is added |morpheus| will sync in existing Transport Zones, Logical Switches, and Edge Gateways. New Transport Zones, Logical Switches, and Edge Gateways can be now be created.
+Once the NSX Integration is added |conduit| will sync in existing Transport Zones, Logical Switches, and Edge Gateways. New Transport Zones, Logical Switches, and Edge Gateways can be now be created.
 
 Create NSX Transport Zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,7 @@ Create NSX Transport Zone
 
 Create NSX Logical Switch and Edge Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. IMPORTANT:: Prior to creating a Logical Switch and Edge Gateway, associated External VMware Networks must be configured in |morpheus|. Navigate to `INFRASTRUCTURE -> NETWORK` and edit any Distributed Switch Groups that will be used and populate the Gateway, DNS and CIDR
+.. IMPORTANT:: Prior to creating a Logical Switch and Edge Gateway, associated External VMware Networks must be configured in |conduit|. Navigate to `INFRASTRUCTURE -> NETWORK` and edit any Distributed Switch Groups that will be used and populate the Gateway, DNS and CIDR
 
 #. Navigate to `INFRASTRUCTURE -> NETWORK`
 #. Select the  `SERVICES` tab

@@ -1,4 +1,4 @@
-How to create vCloud Director templates for Morpheus
+How to create vCloud Director templates for Conduit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a Windows Template
@@ -70,7 +70,7 @@ Create a new machine in VMware vCenter and install a base version of your prefer
 
 
 
-We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name. https://support.morpheusdata.com/hc/en-us/articles/115002881228-Creating-a-CentOS-7-Morpheus-VMware-Image
+We also recommend disabling network manager and setting the network adapter to eth0 rather than the automatically assigned name. https://support.conduitdata.com/hc/en-us/articles/115002881228-Creating-a-CentOS-7-Conduit-VMware-Image
 
 To import your template into vCloud director you will need to login as either an administrator or organisation administrator.
 
@@ -79,11 +79,11 @@ Once logged into vCloud director you will then need select ``Manage Organization
 From within the organisation click on ``Catalogues`` > select an existing catalogue or create a new catalogue.
 
 .. note::
-  Please note once you connect |morpheus| to your vCD environment, it will create a catalogue called Auto |morpheus|. This is a working catalogue and is ignored by |morpheus| when searching for images, so any images in the catalogue will not be synced into |morpheus|
+  Please note once you connect |conduit| to your vCD environment, it will create a catalogue called Auto |conduit|. This is a working catalogue and is ignored by |conduit| when searching for images, so any images in the catalogue will not be synced into |conduit|
 
 Open the catalogue and select the import template from vCenter and then browse the data stores for your templates. Select your template and the type in a new name and description then check the copy template into vCloud director.
 
-Once you click ok the import process will begin. When the import has completed the template will appear in |morpheus| within ``Provisioning > Virtual Images``
+Once you click ok the import process will begin. When the import has completed the template will appear in |conduit| within ``Provisioning > Virtual Images``
 
 If the image does not appear within the virtual images you may need to use the filters to filter the virtual images by the vmware ( vmdk / ovf / ova) type.
 

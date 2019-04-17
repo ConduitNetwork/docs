@@ -17,21 +17,21 @@ Delete the record from the ``Infrastructure - Hosts`` (! not from Provisioning -
 
 The most important items to be aware of when "un-managing" an Instance/VM/Host are:
 
-#. The "Remove from Infrastructure" flag when deleting a VM or Host in |morpheus| determines if the actual VM is deleted from the target Infrastructure.
+#. The "Remove from Infrastructure" flag when deleting a VM or Host in |conduit| determines if the actual VM is deleted from the target Infrastructure.
 
    - Checking "Remove Infrastructure" means you WANT TO DELETE THE ACTUAL VM. Typing "DELETE" in the confirmation field is required when "Remove From Infrastructure" is enabled.
-   - Unchecking "Remove Infrastructure" means you only want to delete the record in |morpheus| but leave the actual VM untouched.
+   - Unchecking "Remove Infrastructure" means you only want to delete the record in |conduit| but leave the actual VM untouched.
 
 #. Deleting an Instance will always remove Infrastructure.
 
    .. IMPORTANT:: REPEAT: Deleting an Instance from the ``Provisioning`` section will always remove the VM aka Infrastructure.
 
-#. After removing the record from |morpheus|, the VM must be in a Cloud with Inventory enabled to automatically be re-discovered.
+#. After removing the record from |conduit|, the VM must be in a Cloud with Inventory enabled to automatically be re-discovered.
 
 Process
 -------
 
-Steps to delete a managed VM from |morpheus| and, when necessary, remove the associated Instance:
+Steps to delete a managed VM from |conduit| and, when necessary, remove the associated Instance:
 
 #. Navigate to the VM (not Instance) detail page at ``Infrastructure - Hosts - VMs``
 
@@ -51,10 +51,10 @@ Steps to delete a managed VM from |morpheus| and, when necessary, remove the ass
 
 #. Select :guilabel:`DELETE`
 
-#. The VM and associated Insatnce will be removed from |morpheus| but the actual VM will remain.
+#. The VM and associated Insatnce will be removed from |conduit| but the actual VM will remain.
 
 #. Wait up to 5 min or click :guilabel:`REFRESH` on the associated Clouds details page to force a cloud sync.
 
-   .. NOTE:: ``Inventory`` must be enabled on the associated cloud for the VM to automatically be re-discovered by |morpheus|.
+   .. NOTE:: ``Inventory`` must be enabled on the associated cloud for the VM to automatically be re-discovered by |conduit|.
 
-#. The VM is now back in |morpheus| as discovered/unmanaged. To managed and create a new Instance from the VM, select :guilabel:`ACTIONS` : Convert To Managed.
+#. The VM is now back in |conduit| as discovered/unmanaged. To managed and create a new Instance from the VM, select :guilabel:`ACTIONS` : Convert To Managed.

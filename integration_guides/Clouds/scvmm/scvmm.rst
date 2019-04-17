@@ -8,10 +8,10 @@ Add a SCVMM Cloud
 #. Select :guilabel:`+ CREATE CLOUD`, select SCVMM, and then click :guilabel:`Next`.
 #. Enter the following into the Create Cloud modal:
 
-.. NOTE::  You will need to open is 5985 in order for |morpheus| to communicate to SCVMM. You will also want to make sure SCVMM has WinRM enabled.
+.. NOTE::  You will need to open is 5985 in order for |conduit| to communicate to SCVMM. You will also want to make sure SCVMM has WinRM enabled.
 
 Name
-  Name of the Cloud in |morpheus|
+  Name of the Cloud in |conduit|
 Location
   Description field for adding notes on the cloud, such as location.
 Visibility
@@ -25,7 +25,7 @@ PASSWORD
 CLOUD
   Select a Cloud from the available Clouds in SCVMM.
 WORKING PATH
-  Path for |morpheus| to write to. ex: ``c:\Cloud``
+  Path for |conduit| to write to. ex: ``c:\Cloud``
 DISK PATH
   Path for Virtual Disks. ex: ``c:\VirtualDisks``
 

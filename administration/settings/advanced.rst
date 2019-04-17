@@ -1,13 +1,13 @@
-Advanced morpheus.rb Settings
+Advanced conduit.rb Settings
 ------------------------------
 
 Overview
 ^^^^^^^^
-Morpheus allows for additional advanced customizations to the morpheus.rb file located in ``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items availible in the morpheus.rb file.
+Conduit allows for additional advanced customizations to the conduit.rb file located in ``/etc/conduit/conduit.rb``.  Below is a list of the supported items availible in the conduit.rb file.
 
   .. code-block:: bash
 
-    ui['vm_images_cdn_url'] = 'https://morpheus-images.morpheusdata.com'
+    ui['vm_images_cdn_url'] = 'https://conduit-images.conduitdata.com'
     ui['kerberos_config'] = nil
     ui['kerberos_login_config'] = nil
     ui['max_memory_mb'] = nil
@@ -20,8 +20,8 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
     ui['http_client_connect_timeout'] = 600000
 
     mysql['enable'] = true
-    mysql['morpheus_db'] = 'morpheus'
-    mysql['morpheus_db_user'] = 'morpheus'
+    mysql['conduit_db'] = 'conduit'
+    mysql['conduit_db_user'] = 'conduit'
     mysql['max_active'] = 100
     mysql['host'] = '127.0.0.1'
     mysql['port'] = 3306
@@ -32,7 +32,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
     logging['svlogd_timeout'] = 86400 # rotate after 24 hours in seconds
 
     rabbitmq['enable'] = true
-    rabbitmq['vhost'] = 'morpheus'
+    rabbitmq['vhost'] = 'conduit'
     rabbitmq['queue_user'] = 'queue_user'
     rabbitmq['host'] = '127.0.0.1'
     rabbitmq['port'] = '5672'
@@ -58,7 +58,7 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
     nginx['ssl_country_name'] = "US"
     nginx['ssl_state_name'] = "CA"
     nginx['ssl_locality_name'] = "San Mateo"
-    nginx['ssl_company_name'] = "Morpheus, LLC"
+    nginx['ssl_company_name'] = "Conduit, LLC"
     nginx['ssl_organizational_unit_name'] = "DevOps"
     nginx['ssl_email_address'] = "personal@email.com"
     nginx['ssl_ciphers'] = "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"
@@ -68,13 +68,13 @@ Morpheus allows for additional advanced customizations to the morpheus.rb file l
     nginx['loading_pages']['max_loops'] = 60 # seconds
     nginx['loading_pages']['timeout_page'] = '/timeout.html'
     nginx['loading_pages']['iteration_time'] = 10000 # milliseconds
-    nginx['loading_pages']['loading_page_title'] = 'Morpheus Loading'
-    nginx['loading_pages']['loading_page_h1'] = 'Morpheus is Loading...'
+    nginx['loading_pages']['loading_page_title'] = 'Conduit Loading'
+    nginx['loading_pages']['loading_page_h1'] = 'Conduit is Loading...'
     nginx['loading_pages']['loading_page_h2'] = 'please wait'
-    nginx['loading_pages']['timout_page_title'] = 'Morpheus timeout, please try again...'
-    nginx['loading_pages']['timout_page_h1'] = 'Timeout waiting for Morpheus to load, click below to try again.'
-    nginx['loading_pages']['failure_page_title'] = 'Morpheus Server Error'
-    nginx['loading_pages']['failure_page_h1'] = 'Morpheus Server Error'
+    nginx['loading_pages']['timout_page_title'] = 'Conduit timeout, please try again...'
+    nginx['loading_pages']['timout_page_h1'] = 'Timeout waiting for Conduit to load, click below to try again.'
+    nginx['loading_pages']['failure_page_title'] = 'Conduit Server Error'
+    nginx['loading_pages']['failure_page_h1'] = 'Conduit Server Error'
     nginx['loading_pages']['failure_page_h2'] = 'Please contact your system administrator for assistance.'
 
-    repo['repo_host_url'] = 'https://downloads.morpheusdata.com'
+    repo['repo_host_url'] = 'https://downloads.conduitdata.com'

@@ -8,7 +8,7 @@ Install 3 node Elasticsearch Cluster on Centos 7
 Requirements
 ^^^^^^^^^^^^
 
-#. Three Existing CentOS 7+ nodes accessible to the Morpheus Appliance
+#. Three Existing CentOS 7+ nodes accessible to the Conduit Appliance
 
 #. Install Java on each node
 
@@ -74,8 +74,8 @@ Configuring Elastic
 
    .. code-block:: yaml
 
-    cluster.name: morpheusha1
-    node.name: "morpheuses1"
+    cluster.name: conduitha1
+    node.name: "conduites1"
     network.host: enter the IP of the node ex: 10.30.22.130
     http.port: 9200
     discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
@@ -84,8 +84,8 @@ Configuring Elastic
 
    .. code-block:: yaml
 
-     cluster.name: morpheusha1
-     node.name: "morpheuses2"
+     cluster.name: conduitha1
+     node.name: "conduites2"
      network.host: enter the IP of the node ex: 10.30.22.130
      http.port: 9200
      discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]
@@ -94,8 +94,8 @@ Configuring Elastic
 
    .. code-block:: yaml
 
-     cluster.name: morpheusha1
-     node.name: "morpheuses3"
+     cluster.name: conduitha1
+     node.name: "conduites3"
      network.host: enter the IP of the node ex: 10.30.22.130
      http.port: 9200
      discovery.zen.ping.unicast.hosts: ["10.30.20.91","10.30.20.149","10.30.20.165"]

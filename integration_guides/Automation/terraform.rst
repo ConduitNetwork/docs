@@ -7,9 +7,9 @@ Requirements
 Role Access
 ^^^^^^^^^^^
 
-* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `Provisioning -> Blueprints`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
+* In order to see the Terraform Blueprint type option and create Terraform App Blueprints in `Provisioning -> Blueprints`, the Conduit user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
-* In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
+* In order to provision Terraform Apps in `Provisioning -> Apps`, the Conduit user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
 
 * Existing Terraform Blueprints must be added before they can be provisioned from `Provisioning -> Apps`.
 
@@ -30,41 +30,41 @@ Supported App Provisioning Targets
 Terraform Installation
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|morpheus| will automatically install Terraform locally upon the first Terraform App provision. It is possible on some operating system configurations for the automated terraform installation to fail, in which case it can be manually installed (run ``terraform --version`` to verify).
+|conduit| will automatically install Terraform locally upon the first Terraform App provision. It is possible on some operating system configurations for the automated terraform installation to fail, in which case it can be manually installed (run ``terraform --version`` to verify).
 
-To manually install and configure terraform on the Morpheus Appliance:
+To manually install and configure terraform on the Conduit Appliance:
 
-#. Run the following curl on the |morpheus| Appliance to install Terraform:
+#. Run the following curl on the |conduit| Appliance to install Terraform:
 
    .. code-block:: bash
 
     curl -k -s "https://applianceServerUrl/api/server-script/terraform-install?local=true" | bash
 
 
-   .. NOTE:: Replace applianceServerUrl with your |morpheus| appliance url or ip.
+   .. NOTE:: Replace applianceServerUrl with your |conduit| appliance url or ip.
 
-#. Create a working directory for Terraform, and change owner to ``morpheus-app``.
-
-   .. code-block:: bash
-
-    sudo mkdir /var/opt/morpheus/morpheus-ui/terraform
-
-    sudo chown morpheus-app.morpheus-app /var/opt/morpheus/morpheus-ui/terraform
-
-   The default location is ``/var/opt/morpheus/morpheus-ui/terraform`` but can be changed.
-
-#. Add the Terraform working path to ``/opt/morpheus/conf/application.yml``
+#. Create a working directory for Terraform, and change owner to ``conduit-app``.
 
    .. code-block:: bash
 
-    sudo vi /opt/morpheus/conf/application.yml
+    sudo mkdir /var/opt/conduit/conduit-ui/terraform
+
+    sudo chown conduit-app.conduit-app /var/opt/conduit/conduit-ui/terraform
+
+   The default location is ``/var/opt/conduit/conduit-ui/terraform`` but can be changed.
+
+#. Add the Terraform working path to ``/opt/conduit/conf/application.yml``
+
+   .. code-block:: bash
+
+    sudo vi /opt/conduit/conf/application.yml
 
    Add the following to the application.yml config below and in-line with the repo section:
 
    .. code-block:: bash
 
     terraform:
-        location: '/var/opt/morpheus/morpheus-ui/terraform'
+        location: '/var/opt/conduit/conduit-ui/terraform'
 
    Example application.yml config with Terraform location added:
 
@@ -72,27 +72,27 @@ To manually install and configure terraform on the Morpheus Appliance:
 
     repo:
         git:
-            location: '/var/opt/morpheus/morpheus-ui/repo/git'
+            location: '/var/opt/conduit/conduit-ui/repo/git'
         local:
-            location: '/var/opt/morpheus/morpheus-ui/repo/local'
+            location: '/var/opt/conduit/conduit-ui/repo/local'
     terraform:
-        location: '/var/opt/morpheus/morpheus-ui/terraform'
+        location: '/var/opt/conduit/conduit-ui/terraform'
     bitcan:
         backup:
             destination:
-                root: '/var/opt/morpheus/bitcan/backup'
-                working: '/var/opt/morpheus/bitcan/working'
+                root: '/var/opt/conduit/bitcan/backup'
+                working: '/var/opt/conduit/bitcan/working'
 
    .. IMPORTANT:: Uses spaces not tabs to indent or ui startup will fail. If you used a different path than the default location, enter that path instead.
 
-#. Restart the morpheus-ui to apply the ``application.yml`` config.
+#. Restart the conduit-ui to apply the ``application.yml`` config.
 
    .. code-block:: bash
 
-    sudo morpheus-ctl restart morpheus-ui
+    sudo conduit-ctl restart conduit-ui
 
 
-Terraform is now installed and configured, and Terraform apps can be provisioned from Morpheus.
+Terraform is now installed and configured, and Terraform apps can be provisioned from Conduit.
 
 
 Creating Terraform App Blueprints
@@ -100,13 +100,13 @@ Creating Terraform App Blueprints
 
 In order to provision Terraform apps, Terraform App Blueprints must be created first.
 
-.. IMPORTANT:: In |morpheus| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
+.. IMPORTANT:: In |conduit| versions 3.3.0 and 3.3.1 VMware cloud types are supported for Terraform App provisioning targets. Additional clouds will be available in later releases.
 
 #. Navigate to `Provisioning -> Blueprints`
 #. Select :guilabel:`+ ADD`
 #. Name the Blueprint and select `Terraform` type.
 
-   .. NOTE:: In order to see the Terraform Blueprint type option, the |morpheus| user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
+   .. NOTE:: In order to see the Terraform Blueprint type option, the |conduit| user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Full`.
 
 #. Select :guilabel:`NEXT`
 #. Configure the following:
@@ -137,7 +137,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
       CONFIG
         .tf files found in the working path will populate in the CONFIG section.
 
-        .. NOTE:: If no files are found please ensure your Github or Git integration is configured properly (Private repos need to have a key pair added to |morpheus|, the keypair selected on the integration in |morpheus|, and the keypair's public key added to the GitHub users SSH keys in github or to the git repo).
+        .. NOTE:: If no files are found please ensure your Github or Git integration is configured properly (Private repos need to have a key pair added to |conduit|, the keypair selected on the integration in |conduit|, and the keypair's public key added to the GitHub users SSH keys in github or to the git repo).
    TFVAR SECRET
     Select a tfvars secret for .tf variables. Tfvars secrets can be added in `Services -> Cypher` using the tfvars/name mountpoint. This allows sensitive data and passwords to be encrypted and securely used with Terraform Blueprints.
    OPTIONS
@@ -152,7 +152,7 @@ Provisioning Terraform Apps
 
 .. NOTE:: An existing Terraform App Blueprints must be added to `Provisioning -> Blueprints` before it can be provisioned.
 
-.. NOTE:: In order to provision Terraform Apps in `Provisioning -> Apps`, the Morpheus user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
+.. NOTE:: In order to provision Terraform Apps in `Provisioning -> Apps`, the Conduit user must have Role permissions for `Provisioning: Blueprints - Terraform` set to `Provision` or `Full`.
 
 #. Navigate to `Provisioning -> Apps`
 #. Select :guilabel:`+ ADD`

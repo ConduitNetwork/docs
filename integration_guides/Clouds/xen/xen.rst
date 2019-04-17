@@ -9,7 +9,7 @@ Add a Xen Server Cloud
 #. Enter the following into the Create Cloud modal:
 
    Name
-      Name of the Cloud in |morpheus|
+      Name of the Cloud in |conduit|
    Location
       Description field for adding notes on the cloud, such as location.
    Visibility
@@ -23,7 +23,7 @@ Add a Xen Server Cloud
    PASSWORD
       Xen Host Password
    Inventory Existing Instances
-      If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |morpheus| .
+      If enabled, existing Virtual Machines will be inventoried and appear as unmanaged Virtual Machines in |conduit| .
 
 #. The Cloud can now be added to a Group or configured with additional Advanced options.
 

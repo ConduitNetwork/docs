@@ -1,24 +1,24 @@
 v3.6.0
 ======
 
-Morpheus v3.6 promotes v3.5 to a LTS branch. v3.6.0 contains everything in 3.5.3, please refer to all 3.5 release notes when upgrading from the 3.4 LTS branch to v3.6.
+Conduit v3.6 promotes v3.5 to a LTS branch. v3.6.0 contains everything in 3.5.3, please refer to all 3.5 release notes when upgrading from the 3.4 LTS branch to v3.6.
 
 .. NOTE:: If upgrading from 3.5.2 or earlier, yum and msi agent package requests are now over port 443 instead of 80. 80 is still required for apt packages.
 
-.. IMPORTANT:: If upgrading from 3.5.2 or earlier, ngnix needs to be restarted after 3.5.3 upgrade with ``morpheus-ctl restart nginx`` to accommodate yum and msi agent installs over 443
+.. IMPORTANT:: If upgrading from 3.5.2 or earlier, ngnix needs to be restarted after 3.5.3 upgrade with ``conduit-ctl restart nginx`` to accommodate yum and msi agent installs over 443
 
 .. IMPORTANT:: Amazon Cost & Reservations sync uses the AWS Cost Explorer API. Please be aware of any additional costs incurred from Amazon.
 
-.. NOTE:: Update to the latest morpheus-cli with ``gem update morpheus-cli``
+.. NOTE:: Update to the latest conduit-cli with ``gem update conduit-cli``
 
 Release date: 2/9/19
 
 New Features
 ------------
 
-- Agent: `New Morpheus Windows Agent Install modes`_. Morpheus Windows Agent can now install via Guest Customizations or Cloudbase-Init`_
-- Agent: Morpheus Windows Agent updated to v1.4.4
-- Ansible: `Ansible execution over command bus`_ added. Morpheus has removed the need for ssh or winrm for Ansible!
+- Agent: `New Conduit Windows Agent Install modes`_. Conduit Windows Agent can now install via Guest Customizations or Cloudbase-Init`_
+- Agent: Conduit Windows Agent updated to v1.4.4
+- Ansible: `Ansible execution over command bus`_ added. Conduit has removed the need for ssh or winrm for Ansible!
 - Ansible: `Ansible verbose logging mode`_ added
 - API & CLI : `Mute and Unmute Monitoring Checks now available from CLI & API`_
 - API & CLI: Billing Data now contains server ID & external ID
@@ -27,7 +27,7 @@ New Features
 - ARM Templates: Added support for conditional 'if(..)' statements
 - Automation: Added Post Provision phase output to Instance history for Workflows.
 - AWS: `Amazon Clouds can now be scoped to all VPCs`_ in a region instead of a single VPC per cloud.
-- AWS: `Amazon Cost & Reservations sync`_: |morpheus| now syncs in AWS costs and EC2 Reservations from AWS.
+- AWS: `Amazon Cost & Reservations sync`_: |conduit| now syncs in AWS costs and EC2 Reservations from AWS.
 - AWS: New Summary Tab added to AWS Cloud detail pages containing cost and EC2 Reservation statistics.
 - Azure: Resource Pool creation and removal added
 - Backups: Backup archives on failures are now automatically cleaned up
@@ -62,7 +62,7 @@ Highlights
 AWS: Amazon Costing & Reservations sync
 .......................................
 
-Morpheus now syncs in actual costs from AWS, including Month To Date, estimated spend, last months costs, broken down by service, including On-Demand and Reserved hours per EC2 Instance Type.
+Conduit now syncs in actual costs from AWS, including Month To Date, estimated spend, last months costs, broken down by service, including On-Demand and Reserved hours per EC2 Instance Type.
 
 .. IMPORTANT:: Amazon Cost & Reservations sync uses the AWS Cost Explorer API. Please be aware of any additional costs incurred from Amazon.
 
@@ -72,16 +72,16 @@ Morpheus now syncs in actual costs from AWS, including Month To Date, estimated 
 Amazon Clouds can now be scoped to all VPCs
 ............................................
 
-Morpheus v3.6.0 added the ability to choose all VPC's in an AWS region when adding an Amazon cloud. VPS's are listed in the Resources tab in an Amazon Cloud detail page and similar to other resource pools, a VPC has Group Access, Tenant Access, Service Plan Access, default and active configuration options. This allows users to add a single aws cloud per region and then carve up access across groups and tenants and limit which Service Plans/EC2 Instance Types can be access per VPC. Users with access to multiple VPC's can choose target VPC at provision time.
+Conduit v3.6.0 added the ability to choose all VPC's in an AWS region when adding an Amazon cloud. VPS's are listed in the Resources tab in an Amazon Cloud detail page and similar to other resource pools, a VPC has Group Access, Tenant Access, Service Plan Access, default and active configuration options. This allows users to add a single aws cloud per region and then carve up access across groups and tenants and limit which Service Plans/EC2 Instance Types can be access per VPC. Users with access to multiple VPC's can choose target VPC at provision time.
 
 .. image:: /images/infrastructure/clouds/aws/3_6_0_aws_all_vpcs.png
 
 Ansible execution over command bus
 ..................................
 
-Morpheus has removed the need for ssh or winrm for Ansible! The new Ansible execution over command bus feature allows running ansible over the |morpheus| agent command bus, removing the need for an ssh or winrm connection for Ansible, or any open incoming ports on the target host. The Morpheus Agent (which can be installed with no open incoming ports on the target vm/host as well) will pull and execute Ansible commands locally.
+Conduit has removed the need for ssh or winrm for Ansible! The new Ansible execution over command bus feature allows running ansible over the |conduit| agent command bus, removing the need for an ssh or winrm connection for Ansible, or any open incoming ports on the target host. The Conduit Agent (which can be installed with no open incoming ports on the target vm/host as well) will pull and execute Ansible commands locally.
 
-To enable Ansible execution over the |morpheus| agent command bus, edit you Ansible integration and select " Use Morpheus Agent Command Bus"
+To enable Ansible execution over the |conduit| agent command bus, edit you Ansible integration and select " Use Conduit Agent Command Bus"
 
 .. image:: /images/provisioning/automation/ansible/360_ansible_enable_command_bus.png
 
@@ -89,7 +89,7 @@ To enable Ansible execution over the |morpheus| agent command bus, edit you Ansi
 Ansible verbose logging mode
 ............................
 
-When using Ansible execution over the Morpheus Agent command bus, verbose debug logging can be enabled but editing an Ansible Integration. Along with the "Use Morpheus Agent Command Bus" flag, "Enable Verbose Logging" is a new setting on Ansible integration settings that will output debug level logs for Ansible execution, visible in the Instance history section by selection the "i" bubble on an executed Ansible task.
+When using Ansible execution over the Conduit Agent command bus, verbose debug logging can be enabled but editing an Ansible Integration. Along with the "Use Conduit Agent Command Bus" flag, "Enable Verbose Logging" is a new setting on Ansible integration settings that will output debug level logs for Ansible execution, visible in the Instance history section by selection the "i" bubble on an executed Ansible task.
 
 .. image:: /images/provisioning/automation/ansible/3_6_0_ansible_verbose_logging_flag
 
@@ -142,7 +142,7 @@ Instance and Host list pages now wrap long Instance and Host names, allowing for
 Huawei Cloud integration added
 ..............................
 
-Huawei Cloud now available as a Cloud integration in Morpheus v3.6.0.
+Huawei Cloud now available as a Cloud integration in Conduit v3.6.0.
 
 .. image:: /images/provisioning/automation/ansible/3_6_0_huawei
 
@@ -158,35 +158,35 @@ Mute and Unmute Monitoring Checks now available from CLI & API
 
 .. code-block:: bash
 
-   Usage: morpheus monitor-checks mute [name]
-   Usage: morpheus monitor-groups mute [name]
-   Usage: morpheus monitor-apps mute [name]
+   Usage: conduit monitor-checks mute [name]
+   Usage: conduit monitor-groups mute [name]
+   Usage: conduit monitor-apps mute [name]
 
     Mute a check, check group, or monitoring app. This prevents it from creating new incidents.
     [name] is required. This is the name or id of a check.
       --disable can be passed to disable mute state instead, the same as unmute
 
-   Usage: morpheus monitor-checks mute-all
-   Usage: morpheus monitor-groups mute-all
-   Usage: morpheus monitor-apps mute-all
+   Usage: conduit monitor-checks mute-all
+   Usage: conduit monitor-groups mute-all
+   Usage: conduit monitor-apps mute-all
 
     Mute all checks. This prevents the creation new incidents.
       --disable can be passed to disable mute state instead, the same as unmute
 
-   Usage: morpheus monitor-incidents mute-all
+   Usage: conduit monitor-incidents mute-all
 
 	 	Mute all incidents.
 
-   Usage: morpheus monitor-checks unmute [name]
+   Usage: conduit monitor-checks unmute [name]
 
       Unmute a check.
       [name] is required. This is the name or id of a check.
 
 
-Morpheus Windows Agent Install modes
+Conduit Windows Agent Install modes
 ....................................
 
-3.6.0 adds the ability to execute Windows Agent install script with vmware guest customizations or cloudbase-Init utilizing unattend.xml. Now, in addition to winrm and vmtools, morpheus can inject the agent install script into the unattend.xml, reducing vmware provision times and removing winrm/5985 requirement for agent install when using images configured with cloudbase-init.
+3.6.0 adds the ability to execute Windows Agent install script with vmware guest customizations or cloudbase-Init utilizing unattend.xml. Now, in addition to winrm and vmtools, conduit can inject the agent install script into the unattend.xml, reducing vmware provision times and removing winrm/5985 requirement for agent install when using images configured with cloudbase-init.
 
 .. NOTE:: Agent Install mode must be set to "Cloud-init when available" on target cloud for cloudbase-init agent install.
 
@@ -227,16 +227,16 @@ Fixes & other updates
 - API/CLI: Fix for history API query filters not working
 - API/CLI: Fix for updating cloud access settings in roles
 - API/CLI: Fix for updating user role multitenant flag
-- API/CLI: Fix for |morpheus| push API checks
+- API/CLI: Fix for |conduit| push API checks
 - Apps: Fix for instance configuration getting reset when using "previous" in the app wizard
-- Archive: Fix for |morpheus| user session timeout during large file upload
+- Archive: Fix for |conduit| user session timeout during large file upload
 - Backups: Updated backup message in Admin - Backups when backups are disabled
 - Blueprint: Fix for exposed ports not being lockable
 - Blueprint: Fix for tier order display in multi tier blueprint
 - Blueprint: Fix for volume size field responsiveness
 - Clouds: Fix for AWS security group subtenant visibility
 - Clouds: Fix for Open Telekom Cloud router & network creation
-- Clouds: Fix for |morpheus| IP-pool ranges being deleted when a cloud with associated network is deleted
+- Clouds: Fix for |conduit| IP-pool ranges being deleted when a cloud with associated network is deleted
 - Custom Library: Fix for instance wizard not allowing a custom library item for oracleVM
 - Custom Library: Fix for Sub-Tenants role permissions for custom instance types when tenant role Instance Type Access is set to Global:Custom
 - Groups: Fix for User Group deletion when user group is associated with existing instances
@@ -275,7 +275,7 @@ Fixes & other updates
 - vCD: Fix for issue with large number of templates
 - vCD: Fix for vCD guest customizations running after instance restart triggered
 - vCD: Fix for Windows instances appearing as discovered when provisioned onto vCD
-- vCD: Fix for |morpheus| triggering a power off instead of graceful shutdown for vApps
+- vCD: Fix for |conduit| triggering a power off instead of graceful shutdown for vApps
 - vCD: vmId and vappId sent to their proper homes
 - Veeam: Fix for Actions -> Backup on an instance executing the entire job
 - Veeam: Fix for removing existing backup job removing other jobs

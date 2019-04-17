@@ -114,9 +114,9 @@ Using following command you can check the current ruby version is used.
     ruby --version
     ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
 
-Step 7 – Install Morpheus CLI
+Step 7 – Install Conduit CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
 
-    gem install morpheus-cli
+    gem install conduit-cli

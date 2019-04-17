@@ -55,7 +55,7 @@ max-width: 1200px !important;
     margin-bottom: .001em
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 0px) {
     .wy-nav-content-wrap {
         background: #111111;
     }
@@ -187,16 +187,27 @@ h2 {
 .wy-nav-side {
   background-color: #111111!important;
 }
-
-
 .ethical-rtd, .ethical-dark-theme, .ethical-rtd.ethical-dark-theme {
   display: none!important;
 }
-
 .wy-nav-side, .wy-nav-content a:link, .wy-nav-content a:visited {
   color: #ff7315!important;
 }
-
 .wy-menu-vertical a:active {
   background-color: #ff7315!important;
+}
+
+@media screen and (min-width: 0px) {
+  .wy-nav-side {
+    background-color: #111111!important;
+  }
+  .ethical-rtd, .ethical-dark-theme, .ethical-rtd.ethical-dark-theme {
+    display: none!important;
+  }
+  .wy-nav-side, .wy-nav-content a:link, .wy-nav-content a:visited {
+    color: #ff7315!important;
+  }
+  .wy-menu-vertical a:active {
+    background-color: #ff7315!important;
+  }
 }

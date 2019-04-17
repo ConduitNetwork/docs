@@ -4220,7 +4220,7 @@ button[disabled] {
 }
 
 .btn-invert {
-    background-color: #222
+    background-color: #111111
 }
 
 .btn-invert:hover {
@@ -5394,7 +5394,7 @@ h6,
 legend {
     margin-top: 0;
     font-weight: 700;
-    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+    /* font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif */
 }
 
 p {
@@ -6220,7 +6220,7 @@ div[class^='highlight'] pre {
 .wy-side-nav-search input[type=text] {
     width: 100%;
     border-radius: 50px;
-    padding: 6px 12px;
+    padding: 10px 12px;
     border-color: #2472a4
 }
 
@@ -6335,7 +6335,7 @@ div[class^='highlight'] pre {
     overflow-x: hidden;
     overflow-y: hidden;
     min-height: 100%;
-    background: #343131;
+    background: #111111;
     z-index: 200
 }
 
@@ -6553,7 +6553,7 @@ footer span.commit .rst-content tt,
     width: 300px;
     color: #fcfcfc;
     background: #1f1d1d;
-    border-top: solid 10px #343131;
+    border-top: solid 10px #111111;
     font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
     z-index: 400
 }
@@ -6883,7 +6883,7 @@ footer span.commit .rst-content tt,
 
 .rst-content .sidebar .sidebar-title {
     display: block;
-    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    /* font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif; */
     font-weight: bold;
     background: #e1e4e5;
     padding: 6px 12px;

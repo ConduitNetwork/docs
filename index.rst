@@ -5,7 +5,6 @@ Conduit Documentation
 .. toctree::
    :maxdepth: 2
 
-   getting_started/getting_started
    provisioning/provisioning
    infrastructure/infrastructure
    administration/administration

@@ -3,11 +3,11 @@ max-width: 1200px !important;
 }
 
 .wy-side-nav-search img {
-  width: 200px !important;
+  width: 220px !important;
 }
 
 .wy-side-nav-search {
-  background-color: #222 !important;
+  background-color: #111111 !important;
 }
 .wy-alert.wy-alert-success .wy-alert-title, .rst-content .wy-alert-success.note .wy-alert-title,
 .rst-content .wy-alert-success.attention .wy-alert-title, .rst-content .wy-alert-success.caution .wy-alert-title,
@@ -43,7 +43,7 @@ max-width: 1200px !important;
 
 @media screen and (min-width: 1400px) {
     .wy-nav-content-wrap {
-        background: #222;
+        background: #111111;
     }
 
 .fa-book {
@@ -165,4 +165,8 @@ h2 {
 /* Tip box bottom */
 .admonition.tip {
     background-color: #81828629;
+}
+
+.ethical-dark-theme {
+  display: none!important;
 }

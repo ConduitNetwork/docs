@@ -92,7 +92,7 @@ html_theme_options = {
 'logo_only': True
 }
 
-html_logo = "_static/logo.svg"
+html_logo = "_static/logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -135,7 +135,7 @@ def setup(app):
 context = {
     'display_github': False,
 }
-html_favicon = "_static/conduit_fav_64.ico"
+html_favicon = "_static/favicon.ico"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
